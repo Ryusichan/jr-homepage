@@ -14,8 +14,9 @@ import {
 } from "@mui/material";
 import AdbIcon from "@mui/icons-material/Adb";
 import MenuIcon from "@mui/icons-material/Menu";
+import Link from "next/link";
 
-const pages = ["Home", "About", "Contact"];
+const pages = ["Home", "About", "Contact", "Pricing"];
 const settings = ["Profile", "Settings", "Logout"];
 
 const Appbar = () => {
@@ -120,13 +121,14 @@ const Appbar = () => {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page}
-              </Button>
+              <Link key={page} href={`/${page.toLowerCase()}`}>
+                <Button
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: "white", display: "block" }}
+                >
+                  {page}
+                </Button>
+              </Link>
             ))}
           </Box>
 

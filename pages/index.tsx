@@ -5,13 +5,12 @@ import styles from "../styles/Home.module.css";
 import { Container } from "@mui/material";
 import Appbar from "../components/Appbar";
 import Footer from "../components/Footer";
+import Seo from "../components/Seo";
 
 const Home: NextPage = () => {
   return (
     <>
-      {/* appbar */}
-      <Appbar />
-
+      <Seo title="Home" />
       {/* topcontainer   */}
       <Container maxWidth="sm">main page</Container>
 
