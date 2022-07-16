@@ -12,10 +12,14 @@ const Home: NextPage = () => {
     <>
       <Seo title="Home" />
       {/* topcontainer   */}
-      <Container maxWidth="sm">main page</Container>
+      <Container maxWidth="sm" id="home">
+        main page
+      </Container>
 
       {/* ProgremInfo */}
-      <Container maxWidth="sm">main page</Container>
+      <Container maxWidth="sm" id="about">
+        main page
+      </Container>
 
       {/* Portfolio */}
       <Container maxWidth="sm">main page</Container>
