@@ -14,6 +14,7 @@ import TextField from "./TextField";
 import Toggle from "./Toggle";
 import Table from "./Table";
 import Link from "./Link";
+import Appbar from "./Appbar";
 
 // ----------------------------------------------------------------------
 
@@ -33,6 +34,7 @@ export default function ComponentsOverrides(theme: any) {
     Fab(theme),
     Toggle(theme),
     Table(theme),
-    Link(theme)
+    Link(theme),
+    Appbar(theme)
   );
 }

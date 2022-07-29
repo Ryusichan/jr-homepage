@@ -8,6 +8,7 @@ import {
   IconButton,
   Menu,
   MenuItem,
+  Stack,
   Toolbar,
   Tooltip,
   Typography,
@@ -42,7 +43,7 @@ const Appbar = () => {
     setAnchorElUser(null);
   };
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{ backgroundColor: "#fff", color: "black" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
@@ -103,35 +104,44 @@ const Appbar = () => {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            LOGO
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Link key={page} href={`/${page.toLowerCase()}`}>
-                <Button
-                  onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "white", display: "block" }}
-                >
-                  {page}
-                </Button>
-              </Link>
-            ))}
+          <Box sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}>
+            <AdbIcon />
+            <Typography
+              variant="h5"
+              noWrap
+              component="a"
+              sx={{
+                mr: 2,
+                flexGrow: 1,
+                fontFamily: "monospace",
+                fontWeight: 700,
+                letterSpacing: ".3rem",
+                color: "inherit",
+                textDecoration: "none",
+              }}
+            >
+              Pluton
+            </Typography>
+          </Box>
+
+          <Box sx={{ flex: 1 }} />
+
+          <Box sx={{ display: { xs: "none", md: "flex" } }}>
+            <Stack spacing={4} direction={"row"} alignItems={"center"}>
+              {pages.map((page) => (
+                <Link key={page} href={`/${page.toLowerCase()}`}>
+                  <Button
+                    onClick={handleCloseNavMenu}
+                    sx={{ my: 2, color: "black", display: "block" }}
+                  >
+                    {page}
+                  </Button>
+                </Link>
+              ))}
+              <Button variant="contained" sx={{ height: "48px" }}>
+                Contact Us
+              </Button>
+            </Stack>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>

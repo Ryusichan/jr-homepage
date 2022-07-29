@@ -7,12 +7,12 @@ interface Props {
 }
 
 const ContainerBox = styled(Container)`
-  margin-top: 6rem;
-  margin-bottom: 6rem;
+  margin-top: 8rem;
+  margin-bottom: 8rem;
 `;
 
 const ComponentUI = ({ children }: Props) => {
-  return <ContainerBox maxWidth="sm">{children}</ContainerBox>;
+  return <ContainerBox maxWidth="lg">{children}</ContainerBox>;
 };
 
 export default ComponentUI;

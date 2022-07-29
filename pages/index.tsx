@@ -23,7 +23,7 @@ const Home: NextPage = () => {
 
       {/* ProgremInfo */}
       <ComponentUI>
-        <Typography variant="h6" component="h4">
+        <Typography variant="h3" component="h4">
           고객님 만을 위한 맞춤형 웹앱 사이트를 제작해드립니다.
         </Typography>
         <Typography variant="body2" component="h6">

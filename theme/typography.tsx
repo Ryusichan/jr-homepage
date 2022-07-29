@@ -82,6 +82,7 @@ const typography: TypographyOptions = {
   body2: {
     lineHeight: 22 / 14,
     fontSize: pxToRem(14),
+    color: "#707070",
   },
   caption: {
     lineHeight: 1.5,
