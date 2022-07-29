@@ -2,34 +2,53 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import { Container } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 import Appbar from "../components/Appbar";
 import Footer from "../components/Footer";
 import Seo from "../components/Seo";
+import Mainpage from "../components/main/Mainpage";
+import ComponentUI from "../components/UI/Component.UI";
+import ThemeConfig from "../theme";
+import GlobalStyles from "../theme/globalStyles";
 
 const Home: NextPage = () => {
   return (
-    <>
-      <Seo title="Home" />
+    <ThemeConfig>
+      <GlobalStyles />
+      <Seo title="Home | Pluton" />
       {/* topcontainer   */}
-      <Container maxWidth="sm" id="home">
-        main page
-      </Container>
+      <ComponentUI>
+        <Mainpage />
+      </ComponentUI>
 
       {/* ProgremInfo */}
-      <Container maxWidth="sm" id="about">
-        main page
-      </Container>
+      <ComponentUI>
+        <Typography variant="h6" component="h4">
+          고객님 만을 위한 맞춤형 웹앱 사이트를 제작해드립니다.
+        </Typography>
+        <Typography variant="body2" component="h6">
+          많은 업체들이 짜여진 Templet 에 붙여넣기 하여 웹을 제작합니다
+          <br />
+          저희는 고객님과의 상담을 바탕으로 철저히 고객님만을 위한 맞춤형 웹을
+          제공합니다
+        </Typography>
+      </ComponentUI>
 
       {/* Portfolio */}
-      <Container maxWidth="sm">main page</Container>
+      <ComponentUI>main page</ComponentUI>
 
       {/* ServiceProgrem */}
-      <Container maxWidth="sm">main page</Container>
+      <ComponentUI>main page</ComponentUI>
 
       {/* Footer */}
       <Footer />
-    </>
+      <Image
+        src="/images/gotalk_main.png"
+        width={364}
+        height={397}
+        alt="name"
+      />
+    </ThemeConfig>
   );
 };
 

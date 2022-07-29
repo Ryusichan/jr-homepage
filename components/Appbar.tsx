@@ -16,7 +16,7 @@ import AdbIcon from "@mui/icons-material/Adb";
 import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
 
-const pages = ["Home", "About", "Contact", "Pricing"];
+const pages = ["Progress", "Portfolio", "why Pluton?", "Pricing"];
 const settings = ["Profile", "Settings", "Logout"];
 
 const Appbar = () => {
@@ -62,7 +62,7 @@ const Appbar = () => {
                   textDecoration: "none",
                 }}
               >
-                LOGO
+                Pluton
               </Typography>
             </a>
           </Link>
@@ -137,7 +137,7 @@ const Appbar = () => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
               </IconButton>
             </Tooltip>
             <Menu
