@@ -10,6 +10,7 @@ import Mainpage from "../components/main/Mainpage";
 import ComponentUI from "../components/UI/Component.UI";
 import ThemeConfig from "../theme";
 import GlobalStyles from "../theme/globalStyles";
+import StepUpUI from "../components/UI/StepUp.UI";
 
 const Home: NextPage = () => {
   return (
@@ -22,17 +23,12 @@ const Home: NextPage = () => {
       </ComponentUI>
 
       {/* ProgremInfo */}
-      <ComponentUI>
-        <Typography variant="h3" component="h4">
-          고객님 만을 위한 맞춤형 웹앱 사이트를 제작해드립니다.
-        </Typography>
-        <Typography variant="body2" component="h6">
-          많은 업체들이 짜여진 Templet 에 붙여넣기 하여 웹을 제작합니다
-          <br />
-          저희는 고객님과의 상담을 바탕으로 철저히 고객님만을 위한 맞춤형 웹을
-          제공합니다
-        </Typography>
-      </ComponentUI>
+      <StepUpUI
+        primary="고객님 만을 위한 맞춤형 웹앱 사이트를 제작해드립니다."
+        secondary="많은 업체들이 짜여진 Templet 에 붙여넣기 하여 웹을 제작합니다"
+        third="저희는 고객님과의 상담을 바탕으로 철저히 고객님만을 위한 맞춤형 웹을
+        제공합니다"
+      />
 
       {/* Portfolio */}
       <ComponentUI>main page</ComponentUI>

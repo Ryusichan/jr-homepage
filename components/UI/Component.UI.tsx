@@ -7,8 +7,8 @@ interface Props {
 }
 
 const ContainerBox = styled(Container)`
-  margin-top: 8rem;
-  margin-bottom: 8rem;
+  margin-top: 12rem;
+  margin-bottom: 12rem;
 `;
 
 const ComponentUI = ({ children }: Props) => {
