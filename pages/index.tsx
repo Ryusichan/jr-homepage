@@ -11,6 +11,7 @@ import ComponentUI from "../components/UI/Component.UI";
 import ThemeConfig from "../theme";
 import GlobalStyles from "../theme/globalStyles";
 import StepUpUI from "../components/UI/StepUp.UI";
+import MainTab from "../components/main/MainTab";
 
 const Home: NextPage = () => {
   return (
@@ -31,7 +32,9 @@ const Home: NextPage = () => {
       />
 
       {/* Portfolio */}
-      <ComponentUI>main page</ComponentUI>
+      <ComponentUI>
+        <MainTab />
+      </ComponentUI>
 
       {/* ServiceProgrem */}
       <ComponentUI>main page</ComponentUI>

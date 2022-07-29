@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80" height="82.694" viewBox="0 0 80 82.694">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_1608" data-name="사각형 1608" width="80" height="82.694" fill="none" stroke="#000" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="그룹_729" data-name="그룹 729" transform="translate(-429.5 -1414)">
+    <path id="패스_1154" data-name="패스 1154" d="M431.884,1544.226l62.745-62.172,1.259,5.5-55.646,55.188Z" transform="translate(-0.504 -49)" fill="#d9c8f6"/>
+    <path id="패스_1153" data-name="패스 1153" d="M443.334,1538.846v-5.725H496v-24.846h5.038v30.571H488.332l-5.152,3.091-14.083-.573s-4.923-2.977-5.267-2.977S443.334,1538.846,443.334,1538.846Z" transform="translate(0.229 -49)" fill="#d9c8f6"/>
+    <g id="그룹_606" data-name="그룹 606" transform="translate(429.5 1414)">
+      <line id="선_43" data-name="선 43" x2="14.653" transform="translate(17.427 16.247)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="3"/>
+      <line id="선_44" data-name="선 44" y2="14.36" transform="translate(24.753 9.067)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="3"/>
+      <g id="그룹_601" data-name="그룹 601">
+        <g id="그룹_600" data-name="그룹 600" clip-path="url(#clip-path)">
+          <line id="선_45" data-name="선 45" x2="4.689" transform="translate(0 34.288)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="3"/>
+        </g>
+      </g>
+      <line id="선_46" data-name="선 46" x2="5.275" transform="translate(10.55 34.288)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="3"/>
+      <line id="선_47" data-name="선 47" y2="4.396" transform="translate(7.913 25.496)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="3"/>
+      <line id="선_48" data-name="선 48" y2="4.41" transform="translate(7.913 37.219)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="3"/>
+      <g id="그룹_603" data-name="그룹 603">
+        <g id="그룹_602" data-name="그룹 602" clip-path="url(#clip-path)">
+          <line id="선_49" data-name="선 49" x2="4.103" y2="4.103" transform="translate(39.453 1.06)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="3"/>
+        </g>
+      </g>
+      <line id="선_50" data-name="선 50" x2="4.103" y2="4.103" transform="translate(47.403 9.01)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="3"/>
+      <line id="선_51" data-name="선 51" y1="4.103" x2="4.103" transform="translate(39.453 9.01)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="3"/>
+      <g id="그룹_605" data-name="그룹 605">
+        <g id="그룹_604" data-name="그룹 604" clip-path="url(#clip-path)">
+          <line id="선_52" data-name="선 52" y1="4.103" x2="4.103" transform="translate(47.403 1.06)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="3"/>
+          <path id="패스_1135" data-name="패스 1135" d="M24.337,65.507l41.6-40.989s2.5-2.74-1.43-6.672a4.856,4.856,0,0,0-7.388,0L4.689,70.75,2.344,80.759,10.55,79.09l3.386-3.336" transform="translate(0 0)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="3"/>
+          <path id="패스_1136" data-name="패스 1136" d="M80,39.424H71.9V77.9H80" transform="translate(0 0)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="3"/>
+          <path id="패스_1137" data-name="패스 1137" d="M65.7,41.629s-11.246-.526-12.653-4.41" transform="translate(0 0)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="3"/>
+          <path id="패스_1138" data-name="패스 1138" d="M43.364,31.728s-7.689-5.182-13.885,0S14.293,47.158,13.188,50.017,2.138,57.881,2.345,62.171s.683,5.172,5.568,5.326" transform="translate(0 0)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="3"/>
+          <path id="패스_1139" data-name="패스 1139" d="M36.416,53.607a7.568,7.568,0,0,1,3.549,6.657c0,4.766-3.549,5.243-3.549,5.243H19.471s-6.283,0-6.283,10.247H35.437s1.43,3.1,12.63,3.1,11.308-3.574,11.308-3.574l12.523.238" transform="translate(0 0)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="3"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
