@@ -35,7 +35,7 @@ const Mainpage = () => {
       </TextComponent>
       <ImgComponent>
         <Image
-          src="/images/gotalk_main.png"
+          src="/images/svg-image/img_mainimg.svg"
           width={640}
           height={397}
           alt="name"
