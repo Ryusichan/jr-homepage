@@ -19,8 +19,10 @@ import {
 import AdbIcon from "@mui/icons-material/Adb";
 import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
+import { Link as Link2 } from "react-scroll";
+import { useRouter } from "next/router";
 
-const pages = ["Progress", "Portfolio", "why Pluton?", "Pricing"];
+const pages = ["why Pluton?", "Pricing"];
 const settings = ["Profile", "Settings", "Logout"];
 
 interface Props {
@@ -60,6 +62,8 @@ const Appbar = () => {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
+
+  const { asPath } = useRouter();
 
   return (
     <React.Fragment>
@@ -130,10 +134,60 @@ const Appbar = () => {
                     display: { xs: "block", md: "none" },
                   }}
                 >
+                  {asPath === "/" ? (
+                    <Link2
+                      to="progress"
+                      spy={true}
+                      smooth={true}
+                      duration={500}
+                    >
+                      <MenuItem onClick={handleCloseNavMenu}>
+                        <Typography variant="body2" component="h6">
+                          Progress
+                        </Typography>
+                      </MenuItem>
+                    </Link2>
+                  ) : (
+                    <Link key={"progress"} href={"/"}>
+                      <MenuItem key={"progress"} onClick={handleCloseNavMenu}>
+                        <Typography textAlign="center">progress</Typography>
+                      </MenuItem>
+                    </Link>
+                  )}
+
+                  {asPath === "/" ? (
+                    <Link2
+                      to="portfolio"
+                      spy={true}
+                      smooth={true}
+                      duration={500}
+                    >
+                      <MenuItem onClick={handleCloseNavMenu}>
+                        <Typography variant="body2" component="h6">
+                          Portfolio
+                        </Typography>
+                      </MenuItem>
+                    </Link2>
+                  ) : (
+                    <Link key={"portfolio"} href={"/"}>
+                      <MenuItem onClick={handleCloseNavMenu}>
+                        <Typography textAlign="center">portfolio</Typography>
+                      </MenuItem>
+                    </Link>
+                  )}
+
                   {pages.map((page) => (
-                    <MenuItem key={page} onClick={handleCloseNavMenu}>
-                      <Typography textAlign="center">{page}</Typography>
-                    </MenuItem>
+                    <Link
+                      key={page}
+                      href={`/${page
+                        .replace(" ", "")
+                        .replace("?", "")
+                        .toLowerCase()}`}
+                    >
+                      <MenuItem onClick={handleCloseNavMenu}>
+                        <Typography textAlign="center">{page}</Typography>
+                      </MenuItem>
+                    </Link>
                   ))}
                 </Menu>
               </Box>
@@ -161,8 +215,52 @@ const Appbar = () => {
 
               <Box sx={{ display: { xs: "none", md: "flex" } }}>
                 <Stack spacing={4} direction={"row"} alignItems={"center"}>
+                  {asPath === "/" ? (
+                    <Link2
+                      to="progress"
+                      spy={true}
+                      smooth={true}
+                      duration={500}
+                    >
+                      <Button sx={{ my: 2, color: "black", display: "block" }}>
+                        Progress
+                      </Button>
+                    </Link2>
+                  ) : (
+                    <Link key={"progress"} href={"/"}>
+                      <Button sx={{ my: 2, color: "black", display: "block" }}>
+                        Progress
+                      </Button>
+                    </Link>
+                  )}
+
+                  {asPath === "/" ? (
+                    <Link2
+                      to="portfolio"
+                      spy={true}
+                      smooth={true}
+                      duration={500}
+                    >
+                      <Button sx={{ my: 2, color: "black", display: "block" }}>
+                        Portfolio
+                      </Button>
+                    </Link2>
+                  ) : (
+                    <Link key={"portfolio"} href={"/"}>
+                      <Button sx={{ my: 2, color: "black", display: "block" }}>
+                        Portfolio
+                      </Button>
+                    </Link>
+                  )}
+
                   {pages.map((page) => (
-                    <Link key={page} href={`/${page.toLowerCase()}`}>
+                    <Link
+                      key={page}
+                      href={`/${page
+                        .replace(" ", "")
+                        .replace("?", "")
+                        .toLowerCase()}`}
+                    >
                       <Button
                         onClick={handleCloseNavMenu}
                         sx={{ my: 2, color: "black", display: "block" }}

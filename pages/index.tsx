@@ -4,6 +4,7 @@ import styles from "../styles/Home.module.css";
 import { Container, Typography } from "@mui/material";
 import Footer from "../components/Footer";
 import Seo from "../components/Seo";
+import { Link } from "react-scroll";
 import Mainpage from "../components/main/Mainpage";
 import ComponentUI from "../components/UI/Component.UI";
 import ThemeConfig from "../theme";
@@ -42,12 +43,6 @@ const Home: NextPage = () => {
 
       {/* Footer */}
       <Footer />
-      <Image
-        src="/images/gotalk_main.png"
-        width={364}
-        height={397}
-        alt="name"
-      />
     </ThemeConfig>
   );
 };

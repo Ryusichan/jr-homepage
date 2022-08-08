@@ -5,6 +5,19 @@ import styled from "styled-components";
 import Footer from "../components/Footer";
 import MenuIcon from "@mui/icons-material/Menu";
 import Seo from "../components/Seo";
+import {
+  BrandingWatermark,
+  Brush,
+  Category,
+  CloudDownload,
+  DashboardCustomize,
+  Devices,
+  Dns,
+  ManageSearch,
+  Settings,
+  Timeline,
+  Widgets,
+} from "@mui/icons-material";
 
 const PriceDetailContent = styled(Grid)``;
 
@@ -15,7 +28,6 @@ const PringContainer = styled.div`
   > div {
     max-width: 1500px;
     position: relative;
-    max-width: 1000px;
     min-width: 320px;
     margin: 150px auto 100px;
     padding: 0 30px;
@@ -56,8 +68,8 @@ const ContentBox = styled(Grid)`
 `;
 
 const IconAvatar = styled.div`
-  width: 72px;
-  height: 72px;
+  width: 60px;
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -65,6 +77,10 @@ const IconAvatar = styled.div`
   background-color: #e4ebf1;
   color: #637381;
   margin-right: 20px;
+  > * {
+    width: 32px;
+    height: 32px;
+  }
 `;
 
 const TextBox = styled.div`
@@ -75,11 +91,12 @@ const TextBox = styled.div`
 
 const ContentTitle = styled.div`
   font-size: 18px;
+  margin-bottom: 8px;
   color: #323232;
 `;
 
 const ContentText = styled.div`
-  font-size: 16px;
+  font-size: 14px;
   color: #969696;
 `;
 
@@ -199,17 +216,79 @@ const Pricing = () => {
 
   const serviceFunction = [
     {
-      icon: <MenuIcon />,
-      title: "제작진에 대한 정보",
-      info1: "제작진의 이름, 전화번호, 주소, 이메일, 제작진 사진",
-      info2: "제작진의 이름, 전화번호, 주소, 이메일, 제작진 사진",
+      icon: <Timeline />,
+      title: "Wire Frame",
+      info1: "고객님과의 상담을 바탕으로 WEB 설계 Wire Frame을 제공합니다.",
+    },
+    {
+      icon: <Category />,
+      title: "차별화된 디자인",
+      info1: "단순한 Templet이 아닌 고객만을 위한 맞춤형 디자인이 제공됩니다.",
+    },
+    {
+      icon: <Brush />,
+      title: "Art Work",
+      info1: "전문 Art Derector가 메인, 서브 이미지등을 직접 제작해 드립니다.",
+    },
+
+    {
+      icon: <Widgets />,
+      title: "Material UI",
+      info1:
+        "Google의 UI플랫폼 Material UI로 제작됩니다. 세련된 디자인 UI를 느낄수 있습니다.",
+    },
+
+    {
+      icon: <Devices />,
+      title: "반응형 웹사이트",
+      info1:
+        "PC, 노트북, Mobile, Tablet등 다양한 장치의 크기에 따라 변경되는 WEB을 만듭니다.",
+    },
+    {
+      icon: <DashboardCustomize />,
+      title: "사용자 맞춤형 제작",
+      info1:
+        "배너, 모달, Tab, Snackbar등 다양한 기술을 바탕으로 고객님의 요구조건을 반영합니다.",
+    },
+  ];
+
+  const serviceSkill = [
+    {
+      icon: <ManageSearch />,
+      title: "SEO 최적화",
+      info1:
+        "고객님의 WEB이 네이버, 구글등 검색에 노출될수있게 SEO를 최적화 해드립니다.",
+    },
+    {
+      icon: <Settings />,
+      title: "Design System",
+      info1:
+        "상담을 바탕으로 진행된 Design을 시스템화 하여 동일한 Design 폼을 유지합니다.",
     },
     {
       icon: <MenuIcon />,
+      title: "React + Next JS",
+      info1:
+        "최적화된 WEB APP으로 제작합니다 불필요한 데이터 소모없이 WEB을 접속할수 있습니다.",
+    },
 
-      title: "제작진에 대한 정보",
-      info1: "제작진의 이름, 전화번호, 주소, 이메일, 제작진 사진",
-      info2: "제작진의 이름, 전화번호, 주소, 이메일, 제작진 사진",
+    {
+      icon: <Dns />,
+      title: "최적화된 서버",
+      info1: "고객님의 상황에 맞는 가장 최적화된 서버를 제공해드립니다.",
+    },
+
+    {
+      icon: <BrandingWatermark />,
+      title: "Component 구조화",
+      info1:
+        "최적화된 Compoent로 제작하기 때문에 이용자가 불필요한 DATA 소모가 없습니다.",
+    },
+    {
+      icon: <CloudDownload />,
+      title: "SSR 방식의 WEB",
+      info1:
+        "서버에서 유저에게 보여줄 페이지를 모두 구성하여 유저에게 보여주는 방식을 사용합니다.",
     },
   ];
 
@@ -274,7 +353,7 @@ const Pricing = () => {
           </div>
           <div>
             <div>
-              <PriceCaption>영상 상담 주요 기능</PriceCaption>
+              <PriceCaption>Pluton의 특징</PriceCaption>
               <PriceDetailContent container spacing={6}>
                 {serviceFunction.map((item, index) => (
                   <Grid item xs={12} sm={6} md={4} key={index}>
@@ -283,7 +362,6 @@ const Pricing = () => {
                       <TextBox>
                         <ContentTitle>{item.title}</ContentTitle>
                         <ContentText>{item.info1}</ContentText>
-                        <ContentText>{item.info2}</ContentText>
                       </TextBox>
                     </ContentBox>
                   </Grid>
@@ -291,16 +369,15 @@ const Pricing = () => {
               </PriceDetailContent>
             </div>
             <div>
-              <PriceCaption>다양한 관리 기능</PriceCaption>
+              <PriceCaption>Pluton의 기술</PriceCaption>
               <PriceDetailContent container spacing={6}>
-                {serviceFunction.map((item, index) => (
+                {serviceSkill.map((item, index) => (
                   <Grid item xs={12} sm={6} md={4} key={index}>
                     <ContentBox>
                       <IconAvatar>{item.icon}</IconAvatar>
                       <TextBox>
                         <ContentTitle>{item.title}</ContentTitle>
                         <ContentText>{item.info1}</ContentText>
-                        <ContentText>{item.info2}</ContentText>
                       </TextBox>
                     </ContentBox>
                   </Grid>
@@ -308,28 +385,6 @@ const Pricing = () => {
               </PriceDetailContent>
             </div>
           </div>
-          {/* {intl.locale === "ko" && (
-          <PricingDetail>
-            <PricingDetailTitle>보안 사고 없는 Videohelp.me</PricingDetailTitle>
-            <PricingSubTitle>
-              videohelp.me는 영상 서비스 최초로 한국인터넷진흥원(KISA)으로부터
-              클라우드 보안인증을 받은 서비스입니다.
-            </PricingSubTitle>
-            <PricingDetailContent>
-              <PricingContent>
-                - 분기 별 한국인터넷진흥원에서 사후 관리를 위한 점검을 진행하여
-                연 1회 이상 자체 점검을 실시합니다.
-              </PricingContent>
-              <PricingContent>
-                - 보안 대책이 갖춰서 있어 고객사에서 별도의 비용과 인력을 투자할
-                필요가 없습니다.
-              </PricingContent>
-              <PricingContent>
-                - 클라우드 SaaS형 서비스로 별도의 설치 없이 이용이 가능합니다.
-              </PricingContent>
-            </PricingDetailContent>
-          </PricingDetail>
-        )} */}
         </Container>
       </PringContainer>
       <Footer />

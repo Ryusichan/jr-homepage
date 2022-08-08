@@ -132,7 +132,7 @@ const TabContainer = () => {
 
 const MainTab = () => {
   return (
-    <Stack>
+    <Stack id="progress">
       <Typography variant="h3" component="h3">
         서비스 제공절차
       </Typography>

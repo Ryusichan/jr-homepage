@@ -85,7 +85,10 @@ const MainResponsiveGallery = () => {
   };
 
   return (
-    <>
+    <Stack id="portfolio">
+      <Typography variant="h3" component="h3">
+        Work
+      </Typography>
       <Tabs value={value} onChange={handleChange} variant="fullWidth">
         {tabArray.map((tab: any, index) => (
           <Tab
@@ -122,89 +125,7 @@ const MainResponsiveGallery = () => {
           );
         })}
       </ImageContainer>
-      {/* <div className="container">
-        <ul className="nav nav-pills justify-content-center">
-          <li className="nav-item">
-            <a
-              className={active ? "nav-link" : "nav-link active"}
-              href="javascrip:0;"
-              onClick={() => filterItem("breakfast")}
-            >
-              Breackfast
-            </a>
-          </li>
-          <li className="nav-item">
-            <a
-              className={active ? "nav-link" : "nav-link active"}
-              href="javascrip:0;"
-              onClick={() => filterItem("lunch")}
-            >
-              Lunch
-            </a>
-          </li>
-          <li className="nav-item">
-            <a
-              className={active ? "nav-link" : "nav-link active"}
-              href="javascrip:0;"
-              onClick={() => filterItem("evening")}
-            >
-              Evening
-            </a>
-          </li>
-          <li className="nav-item">
-            <a
-              className={active ? "nav-link" : "nav-link active"}
-              href="javascrip:0;"
-              onClick={() => filterItem("dinner")}
-            >
-              Dinner
-            </a>
-          </li>
-          <li className="nav-item">
-            <a
-              className={active ? "nav-link" : "nav-link active"}
-              href="javascrip:0;"
-              onClick={() => setItems(Menu)}
-            >
-              All
-            </a>
-          </li>
-        </ul>
-      </div> */}
-
-      {/* <div className="container-fluid mt-4">
-        <div className="row">
-          {items.map((elem: any) => {
-            const { id, name, image, description, price } = elem;
-
-            return (
-              // @ts-ignore
-              <div className="col-sm-4" id={id}>
-                <div className="card mb-3">
-                  <div className="row no-gutters">
-                    <div className="col-md-5">
-                      <img className="img-fluid" src={image} alt={name} />
-                    </div>
-                    <div className="col-md-7">
-                      <div className="card-body">
-                        <h5 className="card-title mb-0">{name}</h5>
-                        <p className="card-text">{description}</p>
-                        <div className="d-flex justify-content-between">
-                          <div className="p-1">Price: {price}</div>
-                          <button type="button" className="btn btn-success p-1">
-                            Oreder Now
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div> */}
-    </>
+    </Stack>
   );
 };
 
