@@ -1,9 +1,7 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { Container, Typography } from "@mui/material";
-import Appbar from "../components/Appbar";
 import Footer from "../components/Footer";
 import Seo from "../components/Seo";
 import Mainpage from "../components/main/Mainpage";
@@ -12,6 +10,7 @@ import ThemeConfig from "../theme";
 import GlobalStyles from "../theme/globalStyles";
 import StepUpUI from "../components/UI/StepUp.UI";
 import MainTab from "../components/main/MainTab";
+import MainResponsiveGallery from "../components/main/MainResponsiveGallery";
 
 const Home: NextPage = () => {
   return (
@@ -37,7 +36,9 @@ const Home: NextPage = () => {
       </ComponentUI>
 
       {/* ServiceProgrem */}
-      <ComponentUI>main page</ComponentUI>
+      <ComponentUI>
+        <MainResponsiveGallery />
+      </ComponentUI>
 
       {/* Footer */}
       <Footer />

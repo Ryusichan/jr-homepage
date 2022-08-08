@@ -48,40 +48,31 @@ function HideOnScroll(props: Props) {
   );
 }
 
-const Appbar = (props: Props) => {
+const Appbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-    null
-  );
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
     null
   );
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget);
-  };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
   return (
     <React.Fragment>
       <CssBaseline />
-      <HideOnScroll {...props}>
+      <HideOnScroll>
         <AppBar
           sx={{
             backgroundColor: "#fff",
             color: "black",
-            width: "calc(100% - 48px)",
-            top: "26px",
-            borderRadius: "12px",
-            left: "24px",
+            width: { xs: "100%", md: "calc(100% - 48px)" },
+            top: { xs: "0px", md: "26px" },
+            borderRadius: { xs: "0px", md: "12px" },
+            left: { xs: "0px", md: "24px" },
             boxShadow:
               "0px 2px 4px -1px rgb(0 0 0 / 10%), 0px 4px 5px 6px rgb(0 0 0 / 3%), 0px 1px 10px 8px rgb(0 0 0 / 4%)",
           }}
@@ -184,36 +175,6 @@ const Appbar = (props: Props) => {
                     Contact Us
                   </Button>
                 </Stack>
-              </Box>
-
-              <Box sx={{ flexGrow: 0 }}>
-                <Tooltip title="Open settings">
-                  <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                    {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
-                  </IconButton>
-                </Tooltip>
-                <Menu
-                  sx={{ mt: "45px" }}
-                  id="menu-appbar"
-                  anchorEl={anchorElUser}
-                  anchorOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
-                  }}
-                  keepMounted
-                  transformOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
-                  }}
-                  open={Boolean(anchorElUser)}
-                  onClose={handleCloseUserMenu}
-                >
-                  {settings.map((setting) => (
-                    <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                      <Typography textAlign="center">{setting}</Typography>
-                    </MenuItem>
-                  ))}
-                </Menu>
               </Box>
             </Toolbar>
           </Container>
