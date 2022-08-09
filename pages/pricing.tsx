@@ -387,7 +387,6 @@ const Pricing = () => {
           </div>
         </Container>
       </PringContainer>
-      <Footer />
     </>
   );
 };

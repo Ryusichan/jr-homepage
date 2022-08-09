@@ -20,7 +20,7 @@ const whyContentArray: ArrayProps[] = [
   {
     title: "Plan",
     subTitle:
-      "현재 많은 업체들이 WEB 제작을 진행할때 단순히 Template 복사 붙여넣기로만 웹을 구성하는 작업을 합니다 저희는 그렇게 제작하지 않습니다 고객과 상담후 WEB의 기초 설계를 튼튼히 작업하고 디자인 완료의 과정까지 고객과 철저한 소통으로 고객과 함께 WEB을 만들어갑니다.",
+      "고객과 상담후 WEB의 기초 설계를 튼튼히 작업하고 디자인 완료의 과정까지 고객과 철저한 소통으로 고객과 함께 WEB을 만들어갑니다.",
     firstContent: {
       icon: "phone",
       title: "친절한 상담",
@@ -39,7 +39,7 @@ const whyContentArray: ArrayProps[] = [
   {
     title: "Design",
     subTitle:
-      "현재 많은 업체들이 WEB 제작을 진행할때 단순히 Template 복사 붙여넣기로만",
+      "Web에 들어가는 전체 구성뿐아니라 사소한 image까지 전체 web에 조화롭게 design 해드립니다.",
     firstContent: {
       icon: "brush",
       title: "Art Work",
@@ -64,12 +64,12 @@ const whyContentArray: ArrayProps[] = [
   {
     title: "Develop",
     subTitle:
-      "WEB은 어떻게 구성하느냐가 중요합니다 대부분의 업체들이 한 요소에 모든 요소를 전부 넣어서 하나의 변경사항으로도 전체 페이지가 새로 고침되는 방식을 이용하여 모든 Data를 다시 가져오는 최적화 되지못한 방식을 이용하고 있습니다. 저희는 모든요소를 Component 화 하여 불필요한 DATA 소모 없이 WEB을 Mobile APP처럼 쾌적하게 사용가능하게 만듭니다.",
+      "WEB은 어떻게 구성하느냐가 중요합니다. 많은 업체들이 모든 요소를 한페이지에 만들어 하나의 변경사항으로도 전체 페이지가 새로 고침되는 방식을 이용하고 있습니다. 저희는 모든 요소를 Component 화 하여 불필요한 DATA 소모 없이 WEB을 Mobile APP처럼 쾌적하게 사용가능하게 만듭니다.",
     firstContent: {
       icon: "settings",
       title: "Design System",
       content:
-        "Design 을 System화 시키는 방식입니다. 고객님의 다양한 페이지는 제각각 다른형태로 보여지면 일률적인 Design이 진행되지 않아 전혀 다른 WEB에 접속한 느낌을 주게 됩니다. 고객님과 협의한 Design을 System화 시켜서 다양한 Page 에 고객님만의 색을 입힐수 있게 합니다.",
+        "Design 을 System화 시키는 방식입니다. 고객님과 협의한 Design을 System화 시켜서 다양한 Page 에 고객님만의 색을 입힐수 있게 합니다.",
     },
     secondContent: {
       icon: "devices",
@@ -81,20 +81,21 @@ const whyContentArray: ArrayProps[] = [
       icon: "",
       title: "Material UI",
       content:
-        "현재 가장 세련된 UI 로 주목받는 Material UI를 활용해 제작합니다. 고객님은 버튼 클릭 효과 하나까지 세심하게 Design 됩니다.",
+        "Google에서 제작한 가장 세련된 UI 로 주목받는 Material UI를 활용해 제작합니다. 고객님은 버튼 클릭 효과 하나까지 세심하게 Design 됩니다.",
     },
     forthContent: {
       icon: "",
       title: "React + Next JS",
       content:
-        "모든 요소를 각 Component화 시켜서 각각의 요소를 세분화 시키고 필요할때 불러오는 구조로 구성하여 WEB을 Mobile APP 처럼 쾌적하게 사용이 가능합니다.",
+        "모든 요소를 각 Component화 시켜서 각각의 요소를 세분화 시키고 필요할때 불러오는 구조로 구성하여 최적화된 Data를 가져올수있습니다.",
     },
     whyImage: "/images/image-res/whycontent03.png",
     direction: "left",
   },
   {
     title: "Deploy",
-    subTitle: "WEB에 업로드 하는 작업입니다.",
+    subTitle:
+      "고객님의 제품이 알맞는 호스팅 server를 만나 인터넷에 upload 하는 작업입니다.",
     firstContent: {
       icon: "ManageSearch",
       title: "SEO 최적화",

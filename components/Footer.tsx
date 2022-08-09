@@ -14,7 +14,7 @@ const Footer = () => {
   return (
     <React.Fragment>
       <Box sx={{ bgcolor: "#3F3059", p: 4 }}>
-        <Container maxWidth="md">
+        <Container maxWidth="lg">
           <Stack
             sx={{ color: "white", width: "100%" }}
             direction="row"

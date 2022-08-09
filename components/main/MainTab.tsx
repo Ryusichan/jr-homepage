@@ -107,7 +107,7 @@ const TabContainer = () => {
               backgroundColor: `${index === value ? "#7162D7" : undefined}`,
               color: `${index === value ? "#fff!important" : undefined}`,
               borderRadius: "18px",
-              padding: "36px 24px",
+              padding: { xs: "8px", lg: "36px 48px" },
               maxWidth: "180px",
               "& > span": {
                 marginBottom: "1rem!important",
@@ -132,7 +132,7 @@ const TabContainer = () => {
 
 const MainTab = () => {
   return (
-    <Stack id="progress">
+    <Stack id="progress" spacing={4}>
       <Typography variant="h3" component="h3">
         서비스 제공절차
       </Typography>
