@@ -332,7 +332,7 @@ const Pricing = () => {
                         <div>- component 웹구조 제공</div>
                         <div> (페이지 이동시 새로고침 없는 최적화)</div>
                         <div>
-                          - 다양한 View 맞춤형 반응형 웹(웹, 모바일 + 타블렛)
+                          - 다양한 View 맞춤형 반응형 웹(웹, 모바일 + 타블렛)
                         </div>
                       </PriceBody>
 

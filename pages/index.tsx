@@ -7,16 +7,13 @@ import Seo from "../components/Seo";
 import { Link } from "react-scroll";
 import Mainpage from "../components/main/Mainpage";
 import ComponentUI from "../components/UI/Component.UI";
-import ThemeConfig from "../theme";
-import GlobalStyles from "../theme/globalStyles";
 import StepUpUI from "../components/UI/StepUp.UI";
 import MainTab from "../components/main/MainTab";
 import MainResponsiveGallery from "../components/main/MainResponsiveGallery";
 
 const Home: NextPage = () => {
   return (
-    <ThemeConfig>
-      <GlobalStyles />
+    <>
       <Seo title="Home | Pluton" />
       {/* topcontainer   */}
       <ComponentUI>
@@ -40,10 +37,7 @@ const Home: NextPage = () => {
       <ComponentUI>
         <MainResponsiveGallery />
       </ComponentUI>
-
-      {/* Footer */}
-      <Footer />
-    </ThemeConfig>
+    </>
   );
 };
 
