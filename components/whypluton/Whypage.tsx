@@ -9,8 +9,8 @@ const ImgComponent = styled(Stack)``;
 const Whypage = () => {
   return (
     <Stack direction={"row"} spacing={6}>
-      <TextComponent spacing={2} sx={{ flex: 1 }}>
-        <Typography variant="h1" component="h1">
+      <TextComponent spacing={4} sx={{ flex: 1 }}>
+        <Typography variant="h2" component="h1" sx={{ wordBreak: "keep-all" }}>
           Pluton은 최적의 WEB을 구성하기
           <br />
           <span style={{ color: "#7162D7" }}>좋은 능력</span> 을 가지고
@@ -20,7 +20,10 @@ const Whypage = () => {
           웹 최적화를 위한 최신 기술을 바탕으로 고객님이 원하는 WEB에 더
           다가갈수 있습니다.
         </Typography>
-        <Button style={{ maxWidth: "210px" }} variant="contained">
+        <Button
+          style={{ maxWidth: "210px", minHeight: "48px" }}
+          variant="contained"
+        >
           Contact Us
         </Button>
       </TextComponent>

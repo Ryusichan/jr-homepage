@@ -20,8 +20,8 @@ const Homebg = styled.span`
 const Mainpage = () => {
   return (
     <Stack direction={"row"} spacing={6}>
-      <TextComponent spacing={2} sx={{ flex: 1 }}>
-        <Typography variant="h1" component="h1">
+      <TextComponent spacing={4} sx={{ flex: 1 }}>
+        <Typography variant="h1" component="h1" sx={{ wordBreak: "keep-all" }}>
           당신의 시작을 함께 <span style={{ color: "#7162D7" }}>Design</span>{" "}
           하겠습니다.
         </Typography>
@@ -29,7 +29,10 @@ const Mainpage = () => {
           고객의 맞춤형 웹사이트를 기획부터 디자인, 제작, 배포까지 고객과 함께
           제작해 드립니다.
         </Typography>
-        <Button style={{ maxWidth: "210px" }} variant="contained">
+        <Button
+          style={{ maxWidth: "210px", minHeight: "48px" }}
+          variant="contained"
+        >
           Contact Us
         </Button>
       </TextComponent>

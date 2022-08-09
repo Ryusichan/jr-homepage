@@ -39,6 +39,7 @@ const typography: TypographyOptions = {
     lineHeight: 64 / 48,
     fontSize: pxToRem(32),
     ...responsiveFontSizes({ sm: 40, md: 44, lg: 48 }),
+    color: "#0F0F25",
   },
   h3: {
     fontWeight: 600,

@@ -1,4 +1,16 @@
-import { Menu } from "@mui/icons-material";
+import {
+  BrandingWatermark,
+  Brush,
+  Collections,
+  DashboardCustomize,
+  Devices,
+  Dns,
+  ManageSearch,
+  Menu,
+  PhoneInTalk,
+  Settings,
+  Timeline,
+} from "@mui/icons-material";
 import { Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
@@ -7,18 +19,47 @@ import { ArrayProps } from "../whypluton/WhyContentPage";
 
 const WhyContainer = styled(Stack)`
   margin: 6rem 24px;
+  align-items: center;
+  > div:nth-child(1) {
+    flex: 1;
+    margin: 0 4rem;
+  }
 `;
-const WhyTextContent = styled(Stack)``;
+const WhyTextContent = styled(Stack)`
+  > :nth-child(1) {
+    font-size: 36px;
+    font-weight: 500;
+  }
+  > :nth-child(2) {
+    font-size: 14px;
+    font-weight: 500;
+  }
+`;
 const WhyItem = styled(Stack)`
   flex-direction: row;
+  > :nth-child(2) {
+    flex: 1;
+  }
 `;
+
+const WhyInnerItem = styled(Stack)`
+  > :nth-child(1) {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  > :nth-child(2) {
+    font-size: 14px;
+  }
+`;
+
 const IconAvatar = styled.div`
   width: 60px;
   height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
+  border-radius: 24px;
   background-color: #e4ebf1;
   color: #637381;
   margin-right: 20px;
@@ -40,41 +81,31 @@ const WhyContentUI = ({
 }: ArrayProps) => {
   const iconFinder = (icon: string) => {
     switch (icon) {
-      case "firstIcon":
-        return <Menu />;
-      case "secondIcon":
-        return <Menu />;
-      case "thirdIcon":
-        return <Menu />;
+      case "phone":
+        return <PhoneInTalk />;
+      case "timeline":
+        return <Timeline />;
+      case "brush":
+        return <Brush />;
+      case "custom":
+        return <DashboardCustomize />;
+      case "collect":
+        return <Collections />;
+      case "settings":
+        return <Settings />;
+      case "devices":
+        return <Devices />;
+      case "ManageSearch":
+        return <ManageSearch />;
+      case "Dns":
+        return <Dns />;
+      case "BrandingWatermark":
+        return <BrandingWatermark />;
       default:
         return <Menu />;
     }
   };
 
-  // const whyArray = [
-  //   {
-  //     icon: firstContent.icon,
-  //     title: firstContent.title,
-  //     content: firstContent.content,
-  //   },
-  //   {
-  //     icon: secondContent.icon,
-  //     title: secondContent.title,
-  //     content: secondContent.content,
-  //   },
-  //   thirdContent && {
-  //     icon: thirdContent.icon,
-  //     title: thirdContent.title,
-  //     content: thirdContent.content,
-  //   },
-  //   forthContent && {
-  //     icon: forthContent.icon,
-  //     title: forthContent.title,
-  //     content: forthContent.content,
-  //   },
-  // ];
-
-  // console.log("whyArray", whyArray);
   const directionProps = direction === "left" ? "row" : "row-reverse";
 
   return (
@@ -83,39 +114,45 @@ const WhyContentUI = ({
         <Typography>{title}</Typography>
         <Typography>{subTitle}</Typography>
         <WhyItem>
-          <IconAvatar>{firstContent.icon}</IconAvatar>
-          <Stack>
+          <IconAvatar>{iconFinder(firstContent.icon)}</IconAvatar>
+          <WhyInnerItem>
             <Typography>{firstContent.title}</Typography>
             <Typography>{firstContent.content}</Typography>
-          </Stack>
+          </WhyInnerItem>
         </WhyItem>
         <WhyItem>
-          <IconAvatar>{secondContent.icon}</IconAvatar>
-          <Stack>
+          <IconAvatar>{iconFinder(secondContent.icon)}</IconAvatar>
+          <WhyInnerItem>
             <Typography>{secondContent.title}</Typography>
             <Typography>{secondContent.content}</Typography>
-          </Stack>
+          </WhyInnerItem>
         </WhyItem>
         {thirdContent && (
           <WhyItem>
-            <IconAvatar>{thirdContent.icon}</IconAvatar>
-            <Stack>
+            <IconAvatar>{iconFinder(thirdContent.icon)}</IconAvatar>
+            <WhyInnerItem>
               <Typography>{thirdContent.title}</Typography>
               <Typography>{thirdContent.content}</Typography>
-            </Stack>
+            </WhyInnerItem>
           </WhyItem>
         )}
         {forthContent && (
           <WhyItem>
-            <IconAvatar>{forthContent.icon}</IconAvatar>
-            <Stack>
+            <IconAvatar>{iconFinder(forthContent.icon)}</IconAvatar>
+            <WhyInnerItem>
               <Typography>{forthContent.title}</Typography>
               <Typography>{forthContent.content}</Typography>
-            </Stack>
+            </WhyInnerItem>
           </WhyItem>
         )}
       </WhyTextContent>
-      {/* <Image src={whyImage} alt="why" width={600} height={550} /> */}
+      <Image
+        src={whyImage}
+        alt="why"
+        width={500}
+        height={450}
+        layout={"intrinsic"}
+      />
     </WhyContainer>
   );
 };
