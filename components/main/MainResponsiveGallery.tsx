@@ -85,46 +85,60 @@ const MainResponsiveGallery = () => {
   };
 
   return (
-    <Stack id="portfolio">
-      <Typography variant="h3" component="h3">
-        Work
+    <Stack id="portfolio" spacing={8} sx={{ minHeight: "40rem" }}>
+      <Typography variant="h3" component="h3" align="center">
+        With Pluton
       </Typography>
-      <Tabs value={value} onChange={handleChange} variant="fullWidth">
-        {tabArray.map((tab: any, index) => (
-          <Tab
-            key={index}
-            label={tab.label}
-            icon={tab.icon}
-            value={tab.value}
-            sx={{
-              backgroundColor: `${tab.value === value ? "#7162D7" : undefined}`,
-              color: `${tab.value === value ? "#fff!important" : undefined}`,
-              borderRadius: "18px",
-              padding: "36px 24px",
-              maxWidth: "180px",
-              "& > span": {
-                marginBottom: "1rem!important",
-              },
-            }}
-          />
-        ))}
-      </Tabs>
-      <ImageContainer direction={"row"}>
-        {items.map((elem: any) => {
-          const { id, name, image } = elem;
+      <Stack direction={"row"} spacing={2}>
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          // variant="fullWidth"
+          orientation="vertical"
+          sx={{ minWidth: "180px" }}
+        >
+          {tabArray.map((tab: any, index) => (
+            <Tab
+              key={index}
+              label={tab.label}
+              icon={tab.icon}
+              iconPosition="start"
+              value={tab.value}
+              sx={{
+                backgroundColor: `${
+                  tab.value === value ? "#7162D7" : undefined
+                }`,
+                color: `${tab.value === value ? "#fff!important" : undefined}`,
+                minHeight: "62px",
+                borderRadius: "12px",
+                marginRight: "1rem",
+                marginBottom: "1rem",
+                justifyContent: "flex-start",
+                padding: "12px 28px",
+                "& > svg": {
+                  marginRight: "1rem!important",
+                },
+              }}
+            />
+          ))}
+        </Tabs>
+        <ImageContainer direction={"row"}>
+          {items.map((elem: any) => {
+            const { id, name, image } = elem;
 
-          return (
-            <ImageList key={`${name}_${id}`} id={id}>
-              <img
-                src={image}
-                srcSet={`${image}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-                alt={name}
-                loading="lazy"
-              />
-            </ImageList>
-          );
-        })}
-      </ImageContainer>
+            return (
+              <ImageList key={`${name}_${id}`} id={id}>
+                <img
+                  src={image}
+                  srcSet={`${image}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+                  alt={name}
+                  loading="lazy"
+                />
+              </ImageList>
+            );
+          })}
+        </ImageContainer>
+      </Stack>
     </Stack>
   );
 };

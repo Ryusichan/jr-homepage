@@ -35,8 +35,8 @@ const ImportTabIcon = (icon: string) => {
   return (
     <Image
       src={`/images/icons/ic_${icon}.svg`}
-      width={80}
-      height={80}
+      width={58}
+      height={58}
       alt={icon}
     />
   );
@@ -96,6 +96,11 @@ const TabContainer = () => {
         onChange={handleChange}
         aria-label="icon label tabs example"
         variant="fullWidth"
+        sx={{
+          "& > div > div": {
+            justifyContent: "space-between",
+          },
+        }}
       >
         {tabArray.map((tab, index) => (
           <Tab
@@ -108,7 +113,7 @@ const TabContainer = () => {
               color: `${index === value ? "#fff!important" : undefined}`,
               borderRadius: "18px",
               padding: { xs: "8px", lg: "36px 48px" },
-              maxWidth: "180px",
+              maxWidth: "156px",
               "& > span": {
                 marginBottom: "1rem!important",
               },
@@ -133,7 +138,7 @@ const TabContainer = () => {
 const MainTab = () => {
   return (
     <Stack id="progress" spacing={4}>
-      <Typography variant="h3" component="h3">
+      <Typography variant="h3" component="h3" align="center">
         서비스 제공절차
       </Typography>
 
