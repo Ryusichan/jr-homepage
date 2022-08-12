@@ -341,7 +341,7 @@ const Pricing = () => {
                         <div>수정횟수 : {item.editCount}</div>
                       </PriceFooter>
                       <PriceAction>
-                        <Button fullWidth variant="outlined" onClick={() => {}}>
+                        <Button fullWidth variant="outlined" sx={{ minHeight: '48px' }} onClick={() => {}}>
                           진행 하기
                         </Button>
                       </PriceAction>

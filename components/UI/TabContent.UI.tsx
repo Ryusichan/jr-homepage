@@ -13,6 +13,7 @@ const ContainerBox = styled(Stack)`
   margin-bottom: 2rem;
   > div:nth-child(1) {
     flex: 1;
+    margin-right: 2rem;
   }
 `;
 
