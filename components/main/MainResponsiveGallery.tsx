@@ -177,9 +177,10 @@ const MainResponsiveGallery = () => {
                   handleSelectImg({ name, image });
                 }}
               >
-                <img
+                <Image
                   src={image}
-                  srcSet={`${image}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+                  width={180}
+                  height={180}
                   alt={name}
                   loading="lazy"
                 />
