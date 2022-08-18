@@ -1,4 +1,4 @@
-import { Box, Modal, Stack, Tab, Tabs, Typography } from "@mui/material";
+import { Box, Dialog, Modal, Stack, Tab, Tabs, Typography } from "@mui/material";
 import React from "react";
 import SwipeableViews from "react-swipeable-views";
 import Menu from "../library/menu";
@@ -11,6 +11,7 @@ import {
 } from "@mui/icons-material";
 import styled from "styled-components";
 import Image from "next/image";
+import DialogModal from "../DialogModal";
 
 const ImageContainer = styled(Stack)`
   flex-wrap: wrap;
@@ -34,18 +35,15 @@ const ImageList = styled.div`
     transform: translate(-50%, -50%);
   }
   img {
-    width: 100%;
-    height: auto;
+    transition: transform 0.3s ease-in-out;
   }
   :hover {
     > svg {
       opacity: 1;
     }
-    > img {
+    img {
       opacity: 0.5;
       transform: scale(1.1);
-
-      transition: transform 0.3s ease-in-out;
     }
   }
 `;
@@ -57,35 +55,13 @@ const tabArray = [
   { label: "Art Work", icon: <Brush />, value: "artWork" },
 ];
 
-function modalOpen(props: any) {
-  const { name, image, openModal, setOpenmodal } = props;
-
-  const handleClose = () => setOpenmodal(false);
-
-  return (
-    <Modal
-      open={openModal}
-      onClose={handleClose}
-      aria-labelledby="modal-modal-title"
-      aria-describedby="modal-modal-description"
-    >
-      <Image
-        src={`${image}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-        width={400}
-        height={400}
-        alt={name}
-        // srcSet={`${image}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-        loading="lazy"
-      />
-    </Modal>
-  );
-}
-
 const MainResponsiveGallery = () => {
   const [value, setValue] = React.useState("full");
   const [items, setItems] = React.useState(Menu);
   const [active, setActive] = React.useState(false);
   const [openModal, setOpenmodal] = React.useState(false);
+  const [name, setName] = React.useState("");
+  const [imageSrc, setImageSrc] = React.useState("");
 
   const filterItem = (categItem: string) => {
     const updateItems = Menu.filter((curElem: any) => {
@@ -95,6 +71,10 @@ const MainResponsiveGallery = () => {
     setItems(updateItems);
     setActive(true);
   };
+
+  const handleClose = () => {
+    setOpenmodal(false);
+  }
 
   const handleChange = (event: React.ChangeEvent<{}>, newValue: string) => {
     setValue(newValue);
@@ -110,7 +90,10 @@ const MainResponsiveGallery = () => {
 
   const handleSelectImg = ({ name, image }: any) => {
     setOpenmodal(true);
-    modalOpen({ name, image, openModal, setOpenmodal });
+    setName(name);
+    setImageSrc(image);
+
+    console.log(name, image, "openModal:", openModal);
   };
 
   const handleChangeIndex = (newValue: string) => {
@@ -118,6 +101,7 @@ const MainResponsiveGallery = () => {
   };
 
   return (
+    <>
     <Stack id="portfolio" sx={{ minHeight: "40rem" }}>
       <Typography
         variant="h3"
@@ -191,6 +175,8 @@ const MainResponsiveGallery = () => {
         </ImageContainer>
       </Stack>
     </Stack>
+    <DialogModal openModal={openModal} imageSrc={imageSrc} name={name} handleClose={handleClose}/>
+    </>
   );
 };
 
