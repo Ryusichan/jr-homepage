@@ -10,6 +10,9 @@ export default function Typography(theme: any) {
         gutterBottom: {
           marginBottom: theme.spacing(1),
         },
+        root: {
+          wordBreak: "keep-all",
+        },
         // root: {
         //   fontSize: '13px',
         // }

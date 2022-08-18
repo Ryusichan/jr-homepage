@@ -4,7 +4,11 @@ import styled from "styled-components";
 import Image from "next/image";
 
 const TextComponent = styled(Stack)``;
-const ImgComponent = styled(Stack)``;
+const ImgComponent = styled(Stack)`
+  position: relative;
+  flex: 1.5;
+  min-height: 440px;
+`;
 
 const Homebg = styled.span`
   background: url("/images/home-bg.svg");
@@ -19,13 +23,13 @@ const Homebg = styled.span`
 
 const Mainpage = () => {
   return (
-    <Stack direction={"row"} spacing={6}>
+    <Stack direction={"row"} spacing={6} alignItems="center">
       <TextComponent spacing={4} sx={{ flex: 1 }}>
-        <Typography variant="h1" component="h1" sx={{ wordBreak: "keep-all" }}>
+        <Typography variant="h2" component="h1" sx={{ wordBreak: "keep-all" }}>
           당신의 시작을 함께 <span style={{ color: "#7162D7" }}>Design</span>{" "}
           하겠습니다.
         </Typography>
-        <Typography variant="body2" component="h6">
+        <Typography variant="body1" component="h6">
           고객의 맞춤형 웹사이트를 기획부터 디자인, 제작, 배포까지 고객과 함께
           제작해 드립니다.
         </Typography>
@@ -39,8 +43,10 @@ const Mainpage = () => {
       <ImgComponent>
         <Image
           src="/images/svg-image/img_mainimg.svg"
-          width={500}
-          height={397}
+          // width={500}
+          // height={397}
+          layout="fill"
+          objectFit="contain"
           alt="name"
         />
       </ImgComponent>
