@@ -307,9 +307,20 @@
 		begin="0s"
 		dur="3.5s"
 		keyTimes="0; 0.1;0.2;0.3;0.4; 0.5;0.6;0.7;0.8;0.9;1"
-		values="0 0; 0 -10; 0 0; 0 -6; 0 0; 0 -4; 0 0; 0 -2; 0 0; 0 -1; 0 0; 0 0"
+		values="0 0; 0 -20; 0 0; 0 -16; 0 0; 0 -8; 0 0; 0 -6; 0 0; 0 -2; 0 0; 0 0"
 		repeatCount="indefinite"
 		calcMode="paced"
+	/>
+	<animateTransform
+		additive="sum"
+		attributeName="transform"
+		type="rotate"
+		begin="0s"
+		dur="3.5s"
+		keyTimes="0; 0.1;0.2;0.3;0.4; 0.5;0.6;0.7;0.8;0.9;1"
+		calcMode="paced"
+		values="0 332 470; -4 332 470; 4 332 470;-4 332 470;4 332 470;0 332 470;"
+		repeatCount="indefinite"
 	/>
 </g>
 </svg>

@@ -280,6 +280,17 @@
 			<path id="패스_1121" class="st29" d="M1588.8,525.7c0,0,4.4,9.3,10.8,9.7c12.4,0.8,19,9.3,27.6,13c10.4,4.4,20.1,8.9,21.2,30.2
 				c1,21.3-23.7,27.1-38.9,20.2c-43.4-19.8-28.3-23.7-32.3-31.4c-2.9-5.6-11.6-5.7-12.8-20s0.9-19.8,3.7-22.3
 				c2.8-2.5-2.9-15.4,4.1-14.7c4.2-1.6,9.3-0.9,12,1C1590.3,516.3,1585.8,517.6,1588.8,525.7"/>
+			<animateTransform
+				additive="sum"
+				attributeName="transform"
+				type="rotate"
+				begin="0s"
+				dur="4.5s"
+				keyTimes="0; 0.5; 1"
+				calcMode="paced"
+				values="0 1550 560; 3 1550 560; 0 1550 560"
+				repeatCount="indefinite"
+			/>
 		</g>
 	</g>
 	<g id="squar" transform="translate(39.869)">
@@ -328,11 +339,15 @@
 			attributeName="transform"
 			type="translate"
 			begin="0s"
-			dur="3.5s"
+			dur="4.5s"
 			keyTimes="0; 0.1;0.2;0.3;0.4; 0.5;0.6;0.7;0.8;0.9;1"
 			values="0 0; 0 -10; 0 0; 0 -6; 0 0; 0 -4; 0 0; 0 -2; 0 0; 0 -1; 0 0; 0 0"
 			repeatCount="indefinite"
 			calcMode="paced"
+		/>
+		<animate attributeName="fill-opacity" attributeType="CSS"
+			begin="0s" dur="4.5s" fill="freeze" repeatCount="indefinite"
+			values="0; 0; 1; 1; 1; 1; 1; 1; 1; 1; 0; 0"
 		/>
 	</g>
 	<g id="buble01">
@@ -349,24 +364,43 @@
 			attributeName="transform"
 			type="translate"
 			begin="0s"
-			dur="3s"
+			dur="4s"
 			keyTimes="0; 0.1;0.2;0.3;0.4; 0.5;0.6;0.7;0.8;0.9;1"
 			values="0 0; 0 -10; 0 0; 0 -6; 0 0; 0 -4; 0 0; 0 -2; 0 0; 0 -1; 0 0; 0 0"
 			repeatCount="indefinite"
 			calcMode="paced"
+		/>
+		<animate attributeName="fill-opacity" attributeType="CSS"
+			begin="0s" dur="4s" fill="freeze" repeatCount="indefinite"
+			values="0; 0; 1; 1; 1; 1; 1; 1; 1; 1; 0; 0"
 		/>
 	</g>
 	<g id="bug" transform="translate(-5 -35.314)">
 		<path id="패스_1155" class="st38" d="M950.7,250.2l130.8,74.7c0,0-46,60.3-103.5,22.3S950.7,250.2,950.7,250.2z"/>
 		<polygon class="st39" points="1069.9,265.4 1052.6,252.1 1034,265.4 1016.3,252.1 998.4,265.4 979.2,251.4 980.9,249 998.3,261.6 
 			1016.3,248.3 1034,261.6 1052.7,248.4 1070,261.6 1088.7,248.3 1105.7,261.6 1125.3,248.4 1143.8,262.3 1142,264.7 1125.2,252.1 
-			1105.5,265.4 1088.6,252.1 		"/>
+			1105.5,265.4 1088.6,252.1 		">
+			<animate attributeName="fill-opacity" attributeType="CSS"
+				begin="0s" dur="6.5s" fill="freeze" repeatCount="indefinite"
+				values="0; 0; 1; 1; 1; 1; 1; 1; 1; 1; 1; 0"
+			/>
+		</polygon>
 		<polygon class="st39" points="1069.9,284.4 1052.6,271.1 1034,284.4 1016.3,271.1 998.4,284.4 979.2,270.4 980.9,268 998.3,280.6 
 			1016.3,267.3 1034,280.6 1052.7,267.4 1070,280.6 1088.7,267.3 1105.7,280.6 1125.3,267.4 1143.8,281.3 1142,283.7 1125.2,271.1 
-			1105.5,284.4 1088.6,271.1 		"/>
+			1105.5,284.4 1088.6,271.1 		">
+			<animate attributeName="fill-opacity" attributeType="CSS"
+				begin="0s" dur="6.5s" fill="freeze" repeatCount="indefinite"
+				values="0; 0; 0; 0; 0; 1; 1; 1; 1; 1; 1; 0"
+			/>
+		</polygon>
 		<polygon class="st39" points="1069.9,302.4 1052.6,289.1 1034,302.4 1016.3,289.1 998.4,302.4 979.2,288.4 980.9,286 998.3,298.6 
 			1016.3,285.3 1034,298.6 1052.7,285.4 1070,298.6 1088.7,285.3 1105.7,298.6 1125.3,285.4 1143.8,299.3 1142,301.7 1125.2,289.1 
-			1105.5,302.4 1088.6,289.1 		"/>
+			1105.5,302.4 1088.6,289.1 		">
+			<animate attributeName="fill-opacity" attributeType="CSS"
+				begin="0s" dur="6.5s" fill="freeze" repeatCount="indefinite"
+				values="0; 0; 0; 0; 0; 0; 0; 0; 1; 1; 1; 0"
+			/>
+		</polygon>
 	</g>
 </g>
 </svg>

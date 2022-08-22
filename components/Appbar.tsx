@@ -242,13 +242,13 @@ const Appbar = () => {
                       duration={500}
                     >
                       <Button sx={{ my: 2, color: "black", display: "block" }}>
-                        Portfolio
+                        Works
                       </Button>
                     </Link2>
                   ) : (
                     <Link key={"portfolio"} href={"/"}>
                       <Button sx={{ my: 2, color: "black", display: "block" }}>
-                        Portfolio
+                        Works
                       </Button>
                     </Link>
                   )}
