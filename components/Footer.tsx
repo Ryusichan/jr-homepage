@@ -16,15 +16,18 @@ const Footer = () => {
       <Box sx={{ bgcolor: "#3F3059", p: 4 }}>
         <Container maxWidth="lg">
           <Stack
-            sx={{ color: "white", width: "100%" }}
+            sx={{
+              color: "white",
+              width: "100%",
+              flexDirection: { xs: "column", sm: "row" },
+            }}
             direction="row"
             justifyContent={"space-between"}
           >
-            <ConpanyContainer spacing={4}>
+            <ConpanyContainer spacing={4} sx={{ mb: { xs: 4, sm: 0 } }}>
               <Stack direction={"row"}>
                 <AdbIcon
                   sx={{
-                    display: { xs: "none", md: "flex" },
                     mr: 1,
                   }}
                 />
@@ -34,7 +37,6 @@ const Footer = () => {
                   component="a"
                   sx={{
                     mr: 2,
-                    display: { xs: "none", md: "flex" },
                     fontFamily: "monospace",
                     fontWeight: 700,
                     letterSpacing: ".3rem",

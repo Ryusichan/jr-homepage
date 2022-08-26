@@ -54,7 +54,9 @@ const Mainpage = () => {
           sx={{
             width: "210px",
             minHeight: "48px",
-            margin: { xs: "0 auto", md: "0" },
+            "@media (max-width: 900px)": {
+              margin: "32px auto 0 auto!important",
+            },
           }}
           variant="contained"
         >

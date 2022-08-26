@@ -54,6 +54,10 @@ const ImageList = styled.div`
       transform: scale(1.1);
     }
   }
+  @media (max-width: 600px) {
+    width: 120px;
+    height: 120px;
+  }
 `;
 
 const tabArray = [
@@ -129,9 +133,11 @@ const MainResponsiveGallery = () => {
               minWidth: { xs: "auto", md: "180px" },
               "& .MuiTabs-indicator": {
                 transform: "scaleY(0.2)",
+                display: { xs: "none", md: "block" },
               },
               "& .MuiTabs-flexContainer": {
-                flexDirection: { xs: "column", md: "row" },
+                flexDirection: { xs: "row", md: "column" },
+                justifyContent: { xs: "space-around", md: "center" },
               },
             }}
           >
@@ -151,13 +157,14 @@ const MainResponsiveGallery = () => {
                   }`,
                   minHeight: "62px",
                   borderRadius: "12px",
-                  marginRight: "1rem",
-                  marginBottom: "1rem",
+                  marginRight: { xs: "0", md: "1rem" },
+                  marginBottom: { xs: "0", md: "1rem" },
                   justifyContent: "flex-start",
-                  padding: "12px 28px",
+                  padding: { xs: "18px", md: "12px 28px" },
                   "& > svg": {
-                    marginRight: "1rem!important",
+                    margin: "4px!important",
                   },
+                  flexDirection: { xs: "column", md: "row" },
                 }}
               />
             ))}
@@ -174,13 +181,7 @@ const MainResponsiveGallery = () => {
                     handleSelectImg({ name, image });
                   }}
                 >
-                  <Image
-                    src={image}
-                    width={180}
-                    height={180}
-                    alt={name}
-                    loading="lazy"
-                  />
+                  <Image src={image} layout="fill" alt={name} loading="lazy" />
                   <Search sx={{ color: "#fff" }} />
                 </ImageList>
               );
