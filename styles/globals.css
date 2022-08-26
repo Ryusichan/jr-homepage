@@ -87,3 +87,12 @@ a {
 * {
   box-sizing: border-box;
 }
+
+/* 아이폰 이미지 저장 방지 */
+body {
+  -webkit-touch-callout: none;
+}
+/* PC에서 이미지 다운로드 방지하기 */
+img {
+  pointer-events: none;
+}
