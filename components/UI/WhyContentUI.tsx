@@ -11,7 +11,7 @@ import {
   Settings,
   Timeline,
 } from "@mui/icons-material";
-import { Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
@@ -23,6 +23,13 @@ const WhyContainer = styled(Stack)`
   > div:nth-child(1) {
     flex: 1;
     margin: 0 4rem;
+  }
+  @media (max-width: 900px) {
+    margin: 6rem 0;
+    flex-direction: column-reverse;
+    > div:nth-child(1) {
+      margin: 0;
+    }
   }
 `;
 const WhyTextContent = styled(Stack)`
@@ -50,6 +57,18 @@ const WhyInnerItem = styled(Stack)`
   }
   > :nth-child(2) {
     font-size: 14px;
+  }
+`;
+
+const ImageBox = styled(Box)`
+  width: 500px;
+  height: 450px;
+  overflow: hidden;
+  position: relative;
+  margin: 1rem;
+  @media (max-width: 900px) {
+    width: 300px;
+    height: 272px;
   }
 `;
 
@@ -146,13 +165,9 @@ const WhyContentUI = ({
           </WhyItem>
         )}
       </WhyTextContent>
-      <Image
-        src={whyImage}
-        alt="why"
-        width={500}
-        height={450}
-        layout={"intrinsic"}
-      />
+      <ImageBox>
+        <Image src={whyImage} alt="why" layout={"fill"} />
+      </ImageBox>
     </WhyContainer>
   );
 };

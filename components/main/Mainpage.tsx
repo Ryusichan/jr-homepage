@@ -26,6 +26,10 @@ const Homebg = styled.span`
   height: 700px;
   background-size: cover;
   z-index: -1;
+  @media (max-width: 900px) {
+    width: 400px;
+    height: 400px;
+  }
 `;
 
 const Mainpage = () => {
