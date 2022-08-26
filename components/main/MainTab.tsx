@@ -145,6 +145,8 @@ const MainTab = () => {
         component="h3"
         align="center"
         sx={{ mt: 4, mb: 8 }}
+        data-aos="zoom-out"
+        data-aos-delay="200"
       >
         서비스 제공절차
       </Typography>
