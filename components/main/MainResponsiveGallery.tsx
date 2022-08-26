@@ -1,4 +1,12 @@
-import { Box, Dialog, Modal, Stack, Tab, Tabs, Typography } from "@mui/material";
+import {
+  Box,
+  Dialog,
+  Modal,
+  Stack,
+  Tab,
+  Tabs,
+  Typography,
+} from "@mui/material";
 import React from "react";
 import SwipeableViews from "react-swipeable-views";
 import Menu from "../library/menu";
@@ -74,7 +82,7 @@ const MainResponsiveGallery = () => {
 
   const handleClose = () => {
     setOpenmodal(false);
-  }
+  };
 
   const handleChange = (event: React.ChangeEvent<{}>, newValue: string) => {
     setValue(newValue);
@@ -102,80 +110,90 @@ const MainResponsiveGallery = () => {
 
   return (
     <>
-    <Stack id="portfolio" sx={{ minHeight: "40rem" }}>
-      <Typography
-        variant="h3"
-        component="h3"
-        align="center"
-        sx={{ mt: 4, mb: 8 }}
-      >
-        With Pluton
-      </Typography>
-      <Stack direction={"row"} spacing={4}>
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          // variant="fullWidth"
-          orientation="vertical"
-          sx={{
-            minWidth: "180px",
-            "& .MuiTabs-indicator": {
-              transform: "scaleY(0.2)",
-            },
-          }}
+      <Stack id="portfolio" sx={{ minHeight: "40rem" }}>
+        <Typography
+          variant="h3"
+          component="h3"
+          align="center"
+          sx={{ mt: 4, mb: 8 }}
         >
-          {tabArray.map((tab: any, index) => (
-            <Tab
-              key={index}
-              label={tab.label}
-              icon={tab.icon}
-              iconPosition="start"
-              value={tab.value}
-              sx={{
-                backgroundColor: `${
-                  tab.value === value ? "#7162D7" : undefined
-                }`,
-                color: `${tab.value === value ? "#fff!important" : undefined}`,
-                minHeight: "62px",
-                borderRadius: "12px",
-                marginRight: "1rem",
-                marginBottom: "1rem",
-                justifyContent: "flex-start",
-                padding: "12px 28px",
-                "& > svg": {
-                  marginRight: "1rem!important",
-                },
-              }}
-            />
-          ))}
-        </Tabs>
-        <ImageContainer direction={"row"}>
-          {items.map((elem: any) => {
-            const { id, name, image } = elem;
-
-            return (
-              <ImageList
-                key={`${name}_${id}`}
-                id={id}
-                onClick={() => {
-                  handleSelectImg({ name, image });
+          With Pluton
+        </Typography>
+        <Stack direction={{ xs: "column", md: "row" }} spacing={4}>
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            // variant="fullWidth"
+            orientation={"vertical"}
+            sx={{
+              minWidth: { xs: "auto", md: "180px" },
+              "& .MuiTabs-indicator": {
+                transform: "scaleY(0.2)",
+              },
+              "& .MuiTabs-flexContainer": {
+                flexDirection: { xs: "column", md: "row" },
+              },
+            }}
+          >
+            {tabArray.map((tab: any, index) => (
+              <Tab
+                key={index}
+                label={tab.label}
+                icon={tab.icon}
+                iconPosition="start"
+                value={tab.value}
+                sx={{
+                  backgroundColor: `${
+                    tab.value === value ? "#7162D7" : undefined
+                  }`,
+                  color: `${
+                    tab.value === value ? "#fff!important" : undefined
+                  }`,
+                  minHeight: "62px",
+                  borderRadius: "12px",
+                  marginRight: "1rem",
+                  marginBottom: "1rem",
+                  justifyContent: "flex-start",
+                  padding: "12px 28px",
+                  "& > svg": {
+                    marginRight: "1rem!important",
+                  },
                 }}
-              >
-                <Image
-                  src={image}
-                  width={180}
-                  height={180}
-                  alt={name}
-                  loading="lazy"
-                />
-                <Search sx={{ color: "#fff" }} />
-              </ImageList>
-            );
-          })}
-        </ImageContainer>
+              />
+            ))}
+          </Tabs>
+          <ImageContainer direction={"row"}>
+            {items.map((elem: any) => {
+              const { id, name, image } = elem;
+
+              return (
+                <ImageList
+                  key={`${name}_${id}`}
+                  id={id}
+                  onClick={() => {
+                    handleSelectImg({ name, image });
+                  }}
+                >
+                  <Image
+                    src={image}
+                    width={180}
+                    height={180}
+                    alt={name}
+                    loading="lazy"
+                  />
+                  <Search sx={{ color: "#fff" }} />
+                </ImageList>
+              );
+            })}
+          </ImageContainer>
+        </Stack>
       </Stack>
-    </Stack>
-    <DialogModal openModal={openModal} imageSrc={imageSrc} name={name} handleClose={handleClose}/>
+      <DialogModal
+        openModal={openModal}
+        imageSrc={imageSrc}
+        name={name}
+        handleClose={handleClose}
+      />
     </>
   );
 };

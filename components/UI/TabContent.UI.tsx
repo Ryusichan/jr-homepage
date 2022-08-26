@@ -17,11 +17,27 @@ const ContainerBox = styled(Stack)`
   }
 `;
 
+const ImageBox = styled(Box)`
+  width: 450px;
+  height: 450px;
+  overflow: hidden;
+  position: relative;
+  @media (max-width: 600px) {
+    width: 300px;
+    height: 300px;
+  }
+`;
+
 const ComponentUI = ({ innerText, imgUrl }: Props) => {
   return (
-    <ContainerBox direction={"row"} alignItems="center">
+    <ContainerBox
+      direction={{ xs: "column-reverse", sm: "row" }}
+      alignItems="center"
+    >
       <Box>{innerText}</Box>
-      <Image src={imgUrl} width={450} height={450} alt="name" />
+      <ImageBox sx={{ margin: { xs: "2rem 0", sm: "0" } }}>
+        <Image src={imgUrl} layout="fill" alt="name" />
+      </ImageBox>
     </ContainerBox>
   );
 };

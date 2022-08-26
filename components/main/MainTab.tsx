@@ -116,6 +116,8 @@ const TabContainer = () => {
               maxWidth: "156px",
               "& > span": {
                 marginBottom: "1rem!important",
+                width: { xs: "40px!important", sm: "initial!important" },
+                height: { xs: "40px!important", sm: "initial!important" },
               },
             }}
           />

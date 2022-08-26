@@ -6,8 +6,15 @@ import Image from "next/image";
 const TextComponent = styled(Stack)``;
 const ImgComponent = styled(Stack)`
   position: relative;
+  width: 100%;
   flex: 1.5;
   min-height: 440px;
+`;
+
+const HideImgComponent = styled(Stack)`
+  position: relative;
+  width: 100%;
+  min-height: 300px;
 `;
 
 const Homebg = styled.span`
@@ -29,18 +36,32 @@ const Mainpage = () => {
           당신의 시작을 함께 <span style={{ color: "#7162D7" }}>Design</span>{" "}
           하겠습니다.
         </Typography>
+        <HideImgComponent sx={{ display: { xs: "block", md: "none" } }}>
+          <Image
+            src="/images/svg-image/img_mainimg.svg"
+            // width={500}
+            // height={397}
+            layout="fill"
+            objectFit="contain"
+            alt="name"
+          />
+        </HideImgComponent>
         <Typography variant="body1" component="h6">
           고객의 맞춤형 웹사이트를 기획부터 디자인, 제작, 배포까지 고객과 함께
           제작해 드립니다.
         </Typography>
         <Button
-          style={{ maxWidth: "210px", minHeight: "48px" }}
+          sx={{
+            width: "210px",
+            minHeight: "48px",
+            margin: { xs: "0 auto", md: "0" },
+          }}
           variant="contained"
         >
           Contact Us
         </Button>
       </TextComponent>
-      <ImgComponent>
+      <ImgComponent sx={{ display: { xs: "none", md: "block" } }}>
         <Image
           src="/images/svg-image/img_mainimg.svg"
           // width={500}

@@ -9,6 +9,10 @@ interface Props {
 const ContainerBox = styled(Container)`
   margin-top: 10rem;
   margin-bottom: 10rem;
+  @media (max-width: 900px) {
+    margin-top: 8rem;
+    margin-bottom: 8rem;
+  }
 `;
 
 const ComponentUI = ({ children }: Props) => {
