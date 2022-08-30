@@ -33,7 +33,7 @@ const whyContentArray: ArrayProps[] = [
       content:
         "고객님과의 상담내용을 바탕으로 설계를 하는 작업입니다. WEB을 제작할때 고객님과의 소통을 할수 있는 공간입니다.",
     },
-    whyImage: "/images/image-res/whycontent01.png",
+    whyImage: "/images/image-res/whycontent01.jpg",
     direction: "left",
   },
   {
@@ -58,7 +58,7 @@ const whyContentArray: ArrayProps[] = [
       content:
         "저희 기업이 가지고있는 노하우로 WEB에 올라가는 이미지를 같은 해상도를 유지하며 80% 절감된 Data로 만듭니다. 이는 Web을 열거나 페이지 넘기는 속도를 향상시킵니다.",
     },
-    whyImage: "/images/image-res/whycontent02.png",
+    whyImage: "/images/image-res/whycontent02.jpg",
     direction: "right",
   },
   {
@@ -89,7 +89,7 @@ const whyContentArray: ArrayProps[] = [
       content:
         "모든 요소를 각 Component화 시켜서 각각의 요소를 세분화 시키고 필요할때 불러오는 구조로 구성하여 최적화된 Data를 가져올수있습니다.",
     },
-    whyImage: "/images/image-res/whycontent03.png",
+    whyImage: "/images/image-res/whycontent03.jpg",
     direction: "left",
   },
   {
@@ -114,7 +114,7 @@ const whyContentArray: ArrayProps[] = [
       content:
         "저희는 SSR방식을 사용하여 문서를 구조화합니다 그럼으로 문서를 불러들이는데 큰 데이터 소모가 들지 않고 빠르게 웹사이트를 소비자화면으로 보여질수 있습니다.",
     },
-    whyImage: "/images/image-res/whycontent04.png",
+    whyImage: "/images/image-res/whycontent04.jpg",
     direction: "right",
   },
 ];
