@@ -87,8 +87,9 @@ const typography: TypographyOptions = {
   },
   caption: {
     lineHeight: 1.5,
-    fontSize: pxToRem(12),
-    color: "#969696",
+    fontSize: "11px",
+    color: "#787878",
+    fontWeight: 400,
   },
   overline: {
     fontWeight: 600,

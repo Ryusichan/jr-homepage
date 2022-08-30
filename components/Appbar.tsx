@@ -63,6 +63,10 @@ const Appbar = () => {
     setAnchorElNav(null);
   };
 
+  const logo = (
+    <Box component="img" src="/logo.svg" sx={{ width: 40, height: 40 }} />
+  );
+
   const { asPath } = useRouter();
 
   return (
@@ -83,7 +87,17 @@ const Appbar = () => {
         >
           <Container maxWidth="xl">
             <Toolbar disableGutters>
-              <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+              {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
+              <Box
+                component="img"
+                src="/logo.svg"
+                sx={{
+                  width: 40,
+                  height: 40,
+                  display: { xs: "none", md: "flex" },
+                  mr: 1,
+                }}
+              />
               <Link href="/">
                 <a>
                   <Typography
@@ -191,8 +205,15 @@ const Appbar = () => {
                   ))}
                 </Menu>
               </Box>
-              <Box sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}>
-                <AdbIcon />
+              <Box
+                sx={{
+                  display: { xs: "flex", md: "none" },
+                  mr: 1,
+                  alignItems: "center",
+                }}
+              >
+                {/* <AdbIcon /> */}
+                {logo}
                 <Typography
                   variant="h5"
                   noWrap

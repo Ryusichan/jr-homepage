@@ -32,6 +32,7 @@ const ImageList = styled.div`
   overflow: hidden;
   cursor: pointer;
   position: relative;
+  background-color: #f5f5f5;
   > svg {
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
@@ -43,15 +44,19 @@ const ImageList = styled.div`
     transform: translate(-50%, -50%);
   }
   img {
-    transition: transform 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
   :hover {
     > svg {
       opacity: 1;
     }
     img {
-      opacity: 0.5;
+      filter: brightness(0.85);
       transform: scale(1.1);
+    }
+    > div {
+      background-color: #7162d7;
+      color: #fff;
     }
   }
   @media (max-width: 600px) {
@@ -171,17 +176,39 @@ const MainResponsiveGallery = () => {
           </Tabs>
           <ImageContainer direction={"row"}>
             {items.map((elem: any) => {
-              const { id, name, image } = elem;
+              const { id, name, image, url, description } = elem;
 
               return (
                 <ImageList
                   key={`${name}_${id}`}
                   id={id}
                   onClick={() => {
-                    handleSelectImg({ name, image });
+                    // handleSelectImg({ name, image });
+                    window.open(url, "_blank");
                   }}
                 >
                   <Image src={image} layout="fill" alt={name} loading="lazy" />
+                  <Box
+                    sx={{
+                      position: "absolute",
+                      width: "100%",
+                      bottom: 0,
+                      left: 0,
+                      padding: "12px",
+                      boxShadow: "0px 0px 24px rgb(150 150 150 / 50%)",
+                      backgroundColor: "#f3f5fb",
+                      borderTopLeftRadius: "36px",
+                      fontSize: "12px",
+                      color: "#505050",
+                      fontWeight: 500,
+                      wordBreak: "keep-all",
+                      transition: "all 0.3s ease-in-out",
+                      boxSizing: "border-box",
+                      minHeight: "78px",
+                    }}
+                  >
+                    <span>{description}</span>
+                  </Box>
                   <Search sx={{ color: "#fff" }} />
                 </ImageList>
               );
