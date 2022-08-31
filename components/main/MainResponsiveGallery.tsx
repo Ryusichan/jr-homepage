@@ -194,8 +194,8 @@ const MainResponsiveGallery = () => {
                     // handleSelectImg({ name, image });
                     window.open(url, "_blank");
                   }}
-                  // data-aos="zoom-up"
-                  // data-aos-delay={`${index}200`}
+                  data-aos="zoom-out-up"
+                  data-aos-delay={`${index}00`}
                 >
                   <Image src={image} layout="fill" alt={name} loading="lazy" />
                   <Box

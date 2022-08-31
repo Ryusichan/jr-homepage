@@ -136,14 +136,14 @@ const WhyContentUI = ({
       >
         <Typography>{title}</Typography>
         <Typography>{subTitle}</Typography>
-        <WhyItem>
+        <WhyItem data-aos="zoom-out-up" data-aos-delay="400">
           <IconAvatar>{iconFinder(firstContent.icon)}</IconAvatar>
           <WhyInnerItem>
             <Typography>{firstContent.title}</Typography>
             <Typography>{firstContent.content}</Typography>
           </WhyInnerItem>
         </WhyItem>
-        <WhyItem>
+        <WhyItem data-aos="zoom-out-up" data-aos-delay="600">
           <IconAvatar>{iconFinder(secondContent.icon)}</IconAvatar>
           <WhyInnerItem>
             <Typography>{secondContent.title}</Typography>
@@ -151,7 +151,7 @@ const WhyContentUI = ({
           </WhyInnerItem>
         </WhyItem>
         {thirdContent && (
-          <WhyItem>
+          <WhyItem data-aos="zoom-out-up" data-aos-delay="800">
             <IconAvatar>{iconFinder(thirdContent.icon)}</IconAvatar>
             <WhyInnerItem>
               <Typography>{thirdContent.title}</Typography>
@@ -160,7 +160,7 @@ const WhyContentUI = ({
           </WhyItem>
         )}
         {forthContent && (
-          <WhyItem>
+          <WhyItem data-aos="zoom-out-up" data-aos-delay="1000">
             <IconAvatar>{iconFinder(forthContent.icon)}</IconAvatar>
             <WhyInnerItem>
               <Typography>{forthContent.title}</Typography>

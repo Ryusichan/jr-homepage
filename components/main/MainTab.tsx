@@ -129,6 +129,8 @@ const TabContainer = () => {
                 height: { xs: "40px!important", sm: "initial!important" },
               },
             }}
+            data-aos="zoom-out-up"
+            data-aos-delay={`${index * 2}00`}
           />
         ))}
       </Tabs>
