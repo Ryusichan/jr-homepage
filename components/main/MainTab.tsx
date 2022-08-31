@@ -1,5 +1,5 @@
 import React from "react";
-import SwipeableViews from "react-swipeable-views";
+// import SwipeableViews from "react-swipeable-views";
 import { Box, Stack, SvgIcon, Tab, Tabs, Typography } from "@mui/material";
 import Image from "next/image";
 import TabContentUI from "../UI/TabContent.UI";
@@ -102,8 +102,12 @@ const TabContainer = () => {
         aria-label="icon label tabs example"
         variant="fullWidth"
         sx={{
+          width: "100%",
+          maxWidth: "800px",
+          margin: "0 auto",
           "& > div > div": {
             justifyContent: "space-between",
+            marginBottom: "1rem",
           },
         }}
       >
@@ -128,27 +132,27 @@ const TabContainer = () => {
           />
         ))}
       </Tabs>
-      <SwipeableViews
+      {/* <SwipeableViews
         axis="x"
         index={value}
         onChangeIndex={handleChangeIndex}
         style={{ maxWidth: "1030px", margin: "0 auto" }}
-      >
-        {tabContentArray.map((tabContent, index) => {
-          const { innerTitle, innerText, imgUrl } = tabContent;
-          let chgInnerText = innerText.replace(/\r\n/gi, "<br>");
+      > */}
+      {tabContentArray.map((tabContent, index) => {
+        const { innerTitle, innerText, imgUrl } = tabContent;
+        let chgInnerText = innerText.replace(/\r\n/gi, "<br>");
 
-          return (
-            <TabPanel key={index} value={value} index={index}>
-              <TabContentUI
-                innerTitle={innerTitle}
-                innerText={chgInnerText}
-                imgUrl={imgUrl}
-              />
-            </TabPanel>
-          );
-        })}
-      </SwipeableViews>
+        return (
+          <TabPanel key={index} value={value} index={index}>
+            <TabContentUI
+              innerTitle={innerTitle}
+              innerText={chgInnerText}
+              imgUrl={imgUrl}
+            />
+          </TabPanel>
+        );
+      })}
+      {/* </SwipeableViews> */}
     </Stack>
   );
 };

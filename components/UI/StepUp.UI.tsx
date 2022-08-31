@@ -17,10 +17,20 @@ const StepUpUI = ({ primary, secondary, third }: Props) => {
     <Stack sx={{ backgroundColor: "#E5F2FF" }}>
       <ContainerBox maxWidth="lg">
         <Stack alignItems={"center"} spacing={2} sx={{ textAlign: "center" }}>
-          <Typography variant="h3" component="h4">
+          <Typography
+            variant="h3"
+            component="h4"
+            data-aos="zoom-out"
+            data-aos-delay="200"
+          >
             {primary}
           </Typography>
-          <Typography variant="body2" component="h6">
+          <Typography
+            variant="body2"
+            component="h6"
+            data-aos="zoom-out"
+            data-aos-delay="400"
+          >
             {secondary}
             <br />
             {third}

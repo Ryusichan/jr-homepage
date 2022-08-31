@@ -125,6 +125,8 @@ const MainResponsiveGallery = () => {
           component="h3"
           align="center"
           sx={{ mt: 4, mb: 8 }}
+          data-aos="zoom-out"
+          data-aos-delay="200"
         >
           With Pluton
         </Typography>
@@ -145,6 +147,8 @@ const MainResponsiveGallery = () => {
                 justifyContent: { xs: "space-around", md: "center" },
               },
             }}
+            data-aos="fade-right"
+            data-aos-delay="200"
           >
             {tabArray.map((tab: any, index) => (
               <Tab
@@ -174,8 +178,12 @@ const MainResponsiveGallery = () => {
               />
             ))}
           </Tabs>
-          <ImageContainer direction={"row"}>
-            {items.map((elem: any) => {
+          <ImageContainer
+            direction={"row"}
+            data-aos="fade-left"
+            data-aos-delay="200"
+          >
+            {items.map((elem: any, index: number) => {
               const { id, name, image, url, description } = elem;
 
               return (
@@ -186,6 +194,8 @@ const MainResponsiveGallery = () => {
                     // handleSelectImg({ name, image });
                     window.open(url, "_blank");
                   }}
+                  // data-aos="zoom-up"
+                  // data-aos-delay={`${index}200`}
                 >
                   <Image src={image} layout="fill" alt={name} loading="lazy" />
                   <Box

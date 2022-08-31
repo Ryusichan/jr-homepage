@@ -129,7 +129,11 @@ const WhyContentUI = ({
 
   return (
     <WhyContainer direction={directionProps}>
-      <WhyTextContent spacing={4}>
+      <WhyTextContent
+        spacing={4}
+        data-aos={direction == "left" ? "fade-right" : "fade-left"}
+        data-aos-delay="200"
+      >
         <Typography>{title}</Typography>
         <Typography>{subTitle}</Typography>
         <WhyItem>
@@ -165,7 +169,10 @@ const WhyContentUI = ({
           </WhyItem>
         )}
       </WhyTextContent>
-      <ImageBox>
+      <ImageBox
+        data-aos={direction == "left" ? "fade-left" : "fade-right"}
+        data-aos-delay="200"
+      >
         <Image src={whyImage} alt="why" layout={"fill"} />
       </ImageBox>
     </WhyContainer>

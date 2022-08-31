@@ -35,7 +35,7 @@ const ComponentUI = ({ innerTitle, innerText, imgUrl }: Props) => {
       direction={{ xs: "column-reverse", sm: "row" }}
       alignItems="center"
     >
-      <Box>
+      <Box data-aos="fade-right" data-aos-delay="200">
         <Typography variant="h4" component="h2" sx={{ mb: 2 }}>
           {innerTitle}
         </Typography>
@@ -43,7 +43,11 @@ const ComponentUI = ({ innerTitle, innerText, imgUrl }: Props) => {
           {innerText}
         </Typography>
       </Box>
-      <ImageBox sx={{ margin: { xs: "2rem 0", sm: "0" } }}>
+      <ImageBox
+        sx={{ margin: { xs: "2rem 0", sm: "0" } }}
+        data-aos="fade-left"
+        data-aos-delay="200"
+      >
         <Image src={imgUrl} layout="fill" alt="name" />
       </ImageBox>
     </ContainerBox>

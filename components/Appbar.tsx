@@ -82,7 +82,7 @@ const Appbar = () => {
             borderRadius: { xs: "0px", md: "12px" },
             left: { xs: "0px", md: "24px" },
             boxShadow:
-              "0px 2px 4px -1px rgb(0 0 0 / 10%), 0px 4px 5px 6px rgb(0 0 0 / 3%), 0px 1px 10px 8px rgb(0 0 0 / 4%)",
+              "0px 2px 4px -1px rgb(0 0 0 / 4%), 0px 4px 5px 6px rgb(0 0 0 / 1%), 0px 1px 10px 8px rgb(0 0 0 / 2%)",
           }}
         >
           <Container maxWidth="xl">
