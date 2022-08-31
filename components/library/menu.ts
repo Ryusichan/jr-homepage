@@ -17,6 +17,23 @@ const Menu: any = [
     description: "React, Typescript 활용 Videohelp.me 상품홍보 사이트 입니다.",
   },
   {
+    id: 10,
+    image: "/images/image-res/gallery10.jpg",
+    name: "10",
+    category: "web",
+    url: "https://nimble-salmiakki-6eb51c.netlify.app",
+    description: "react로 제작된 onepage 모바일App 홍보페이지입니다.",
+  },
+  {
+    id: 9,
+    image: "/images/image-res/gallery09.jpg",
+    name: "9",
+    category: "web",
+    url: "https://grand-halva-ee4c41.netlify.app/",
+    description:
+      "모바일 다운로드 상품Page 입니다 bootstrap 기반 ui 제작진행하였습니다.",
+  },
+  {
     id: 3,
     image: "/images/image-res/gallery03.jpg",
     name: "3",
