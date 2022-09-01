@@ -30,6 +30,10 @@ const Homebg = styled.span`
     width: 400px;
     height: 400px;
   }
+  @media (max-width: 415px) {
+    width: 350px;
+    height: 350px;
+  }
 `;
 
 const Mainpage = () => {

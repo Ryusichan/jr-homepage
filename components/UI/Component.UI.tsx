@@ -6,7 +6,14 @@ interface Props {
   children: React.ReactNode;
 }
 
+const ContainerOutterBox = styled.div`
+  position: relative;
+  display: flex;
+  overflow: hidden;
+`;
+
 const ContainerBox = styled(Container)`
+  overflow: hidden;
   margin-top: 10rem;
   margin-bottom: 10rem;
   @media (max-width: 900px) {
@@ -16,7 +23,11 @@ const ContainerBox = styled(Container)`
 `;
 
 const ComponentUI = ({ children }: Props) => {
-  return <ContainerBox maxWidth="lg">{children}</ContainerBox>;
+  return (
+    <ContainerOutterBox>
+      <ContainerBox maxWidth="lg">{children}</ContainerBox>
+    </ContainerOutterBox>
+  );
 };
 
 export default ComponentUI;

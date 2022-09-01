@@ -64,8 +64,32 @@ const ImageList = styled.div`
     height: 120px;
   }
   @media (max-width: 415px) {
-    width: 106px;
-    height: 106px;
+    height: unset;
+    width: 31%;
+    padding-bottom: 31%;
+  }
+`;
+
+const GalleryContentbg = styled.span`
+  background: url("/images/svg-image/right-bg-decor.svg");
+  position: absolute;
+  right: -12rem;
+  top: 7rem;
+  width: 460px;
+  height: 881px;
+  background-size: cover;
+  z-index: -1;
+  @media (max-width: 900px) {
+    width: 400px;
+    height: 766px;
+    right: -14rem;
+    top: -6rem;
+  }
+  @media (max-width: 415px) {
+    width: 200px;
+    height: 383px;
+    right: -5rem;
+    top: 3rem;
   }
 `;
 
@@ -132,6 +156,7 @@ const MainResponsiveGallery = () => {
   return (
     <>
       <Stack id="portfolio" sx={{ minHeight: "40rem" }}>
+        <GalleryContentbg />
         <Typography
           variant="h3"
           component="h3"
@@ -190,53 +215,60 @@ const MainResponsiveGallery = () => {
               />
             ))}
           </Tabs>
-          <ImageContainer
-            direction={"row"}
-            data-aos="fade-left"
-            data-aos-delay="200"
-          >
-            {items.map((elem: any, index: number) => {
-              const { id, name, image, url, description } = elem;
+          <Stack sx={{ margin: "0 auto" }}>
+            <ImageContainer
+              direction={"row"}
+              data-aos="fade-left"
+              data-aos-delay="200"
+            >
+              {items.map((elem: any, index: number) => {
+                const { id, name, image, url, description } = elem;
 
-              return (
-                <ImageList
-                  key={`${name}_${id}`}
-                  id={id}
-                  onClick={() => {
-                    // handleSelectImg({ name, image });
-                    window.open(url, "_blank");
-                  }}
-                  data-aos="zoom-out-up"
-                  data-aos-delay={`${index}00`}
-                  style={{ position: "relative" }}
-                >
-                  <Image src={image} layout="fill" alt={name} loading="lazy" />
-                  <Box
-                    sx={{
-                      position: "absolute",
-                      width: "100%",
-                      bottom: 0,
-                      left: 0,
-                      padding: "12px",
-                      boxShadow: "0px 0px 24px rgb(150 150 150 / 50%)",
-                      backgroundColor: "#f3f5fb",
-                      borderTopLeftRadius: "36px",
-                      fontSize: { xs: "10px", sm: "12px" },
-                      color: "#505050",
-                      fontWeight: 500,
-                      wordBreak: "keep-all",
-                      transition: "all 0.3s ease-in-out",
-                      boxSizing: "border-box",
-                      minHeight: { xs: "70px", sm: "78px" },
+                return (
+                  <ImageList
+                    key={`${name}_${id}`}
+                    id={id}
+                    onClick={() => {
+                      // handleSelectImg({ name, image });
+                      window.open(url, "_blank");
                     }}
+                    data-aos="zoom-out-up"
+                    data-aos-delay={`${index}00`}
+                    style={{ position: "relative" }}
                   >
-                    <InnerText>{description}</InnerText>
-                  </Box>
-                  <Search sx={{ color: "#fff" }} />
-                </ImageList>
-              );
-            })}
-          </ImageContainer>
+                    <Image
+                      src={image}
+                      layout="fill"
+                      alt={name}
+                      loading="lazy"
+                    />
+                    <Box
+                      sx={{
+                        position: "absolute",
+                        width: "100%",
+                        bottom: 0,
+                        left: 0,
+                        padding: "12px",
+                        boxShadow: "0px 0px 24px rgb(150 150 150 / 50%)",
+                        backgroundColor: "#f3f5fb",
+                        borderTopLeftRadius: "36px",
+                        fontSize: { xs: "10px", sm: "12px" },
+                        color: "#505050",
+                        fontWeight: 500,
+                        wordBreak: "keep-all",
+                        transition: "all 0.3s ease-in-out",
+                        boxSizing: "border-box",
+                        minHeight: { xs: "70px", sm: "78px" },
+                      }}
+                    >
+                      <InnerText>{description}</InnerText>
+                    </Box>
+                    <Search sx={{ color: "#fff" }} />
+                  </ImageList>
+                );
+              })}
+            </ImageContainer>
+          </Stack>
         </Stack>
       </Stack>
       <DialogModal

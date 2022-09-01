@@ -3,7 +3,30 @@ import React from "react";
 import { Box, Stack, SvgIcon, Tab, Tabs, Typography } from "@mui/material";
 import Image from "next/image";
 import TabContentUI from "../UI/TabContent.UI";
+import styled from "styled-components";
 
+const TabContentbg = styled.span`
+  background: url("/images/svg-image/left-bg-decor.svg");
+  position: absolute;
+  left: -9rem;
+  top: 6rem;
+  width: 466px;
+  height: 991px;
+  background-size: cover;
+  z-index: -1;
+  @media (max-width: 900px) {
+    width: 400px;
+    height: 850px;
+    left: -16rem;
+    top: -6rem;
+  }
+  @media (max-width: 415px) {
+    width: 200px;
+    height: 425px;
+    left: -3rem;
+    top: 4rem;
+  }
+`;
 interface TabPanelProps {
   children?: React.ReactNode;
   dir?: string;
@@ -163,6 +186,7 @@ const TabContainer = () => {
 const MainTab = () => {
   return (
     <Stack id="progress">
+      <TabContentbg />
       <Typography
         variant="h3"
         component="h3"
