@@ -122,9 +122,10 @@ const TabContainer = () => {
               color: `${index === value ? "#fff!important" : undefined}`,
               borderRadius: "18px",
               padding: { xs: "8px", lg: "24px" },
+              minWidth: { xs: "68px", lg: "auto" },
               maxWidth: "128px",
               "& > span": {
-                marginBottom: "1rem!important",
+                marginBottom: "12px!important",
                 width: { xs: "40px!important", sm: "initial!important" },
                 height: { xs: "40px!important", sm: "initial!important" },
               },

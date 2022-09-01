@@ -63,6 +63,18 @@ const ImageList = styled.div`
     width: 120px;
     height: 120px;
   }
+  @media (max-width: 415px) {
+    width: 106px;
+    height: 106px;
+  }
+`;
+
+const InnerText = styled.span`
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 const tabArray = [
@@ -196,6 +208,7 @@ const MainResponsiveGallery = () => {
                   }}
                   data-aos="zoom-out-up"
                   data-aos-delay={`${index}00`}
+                  style={{ position: "relative" }}
                 >
                   <Image src={image} layout="fill" alt={name} loading="lazy" />
                   <Box
@@ -208,16 +221,16 @@ const MainResponsiveGallery = () => {
                       boxShadow: "0px 0px 24px rgb(150 150 150 / 50%)",
                       backgroundColor: "#f3f5fb",
                       borderTopLeftRadius: "36px",
-                      fontSize: "12px",
+                      fontSize: { xs: "10px", sm: "12px" },
                       color: "#505050",
                       fontWeight: 500,
                       wordBreak: "keep-all",
                       transition: "all 0.3s ease-in-out",
                       boxSizing: "border-box",
-                      minHeight: "78px",
+                      minHeight: { xs: "70px", sm: "78px" },
                     }}
                   >
-                    <span>{description}</span>
+                    <InnerText>{description}</InnerText>
                   </Box>
                   <Search sx={{ color: "#fff" }} />
                 </ImageList>
