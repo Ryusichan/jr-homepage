@@ -19,7 +19,7 @@ import {
 } from "@mui/icons-material";
 import styled from "styled-components";
 import Image from "next/image";
-import DialogModal from "../DialogModal";
+// import DialogModal from "../DialogModal";
 
 const ImageContainer = styled(Stack)`
   flex-wrap: wrap;
@@ -112,9 +112,9 @@ const MainResponsiveGallery = () => {
   const [value, setValue] = React.useState("full");
   const [items, setItems] = React.useState(Menu);
   const [active, setActive] = React.useState(false);
-  const [openModal, setOpenmodal] = React.useState(false);
-  const [name, setName] = React.useState("");
-  const [imageSrc, setImageSrc] = React.useState("");
+  // const [openModal, setOpenmodal] = React.useState(false);
+  // const [name, setName] = React.useState("");
+  // const [imageSrc, setImageSrc] = React.useState("");
 
   const filterItem = (categItem: string) => {
     const updateItems = Menu.filter((curElem: any) => {
@@ -125,9 +125,9 @@ const MainResponsiveGallery = () => {
     setActive(true);
   };
 
-  const handleClose = () => {
-    setOpenmodal(false);
-  };
+  // const handleClose = () => {
+  //   setOpenmodal(false);
+  // };
 
   const handleChange = (event: React.ChangeEvent<{}>, newValue: string) => {
     setValue(newValue);
@@ -141,17 +141,17 @@ const MainResponsiveGallery = () => {
     }
   };
 
-  const handleSelectImg = ({ name, image }: any) => {
-    setOpenmodal(true);
-    setName(name);
-    setImageSrc(image);
+  // const handleSelectImg = ({ name, image }: any) => {
+  //   setOpenmodal(true);
+  //   setName(name);
+  //   setImageSrc(image);
 
-    console.log(name, image, "openModal:", openModal);
-  };
+  //   console.log(name, image, "openModal:", openModal);
+  // };
 
-  const handleChangeIndex = (newValue: string) => {
-    setValue(newValue);
-  };
+  // const handleChangeIndex = (newValue: string) => {
+  //   setValue(newValue);
+  // };
 
   return (
     <>
@@ -271,12 +271,12 @@ const MainResponsiveGallery = () => {
           </Stack>
         </Stack>
       </Stack>
-      <DialogModal
+      {/* <DialogModal
         openModal={openModal}
         imageSrc={imageSrc}
         name={name}
         handleClose={handleClose}
-      />
+      /> */}
     </>
   );
 };
