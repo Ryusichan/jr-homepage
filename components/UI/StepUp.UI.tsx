@@ -9,7 +9,8 @@ interface Props {
 }
 
 const ContainerBox = styled(Container)`
-  padding: 2rem 0;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 `;
 
 const StepUpUI = ({ primary, secondary, third }: Props) => {
