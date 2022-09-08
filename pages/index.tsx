@@ -1,10 +1,5 @@
 import type { NextPage } from "next";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
-import { Container, Typography } from "@mui/material";
-import Footer from "../components/Footer";
 import Seo from "../components/Seo";
-import { Link } from "react-scroll";
 import Mainpage from "../components/main/Mainpage";
 import ComponentUI from "../components/UI/Component.UI";
 import StepUpUI from "../components/UI/StepUp.UI";

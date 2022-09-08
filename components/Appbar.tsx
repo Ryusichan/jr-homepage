@@ -12,18 +12,15 @@ import {
   Slide,
   Stack,
   Toolbar,
-  Tooltip,
   Typography,
   useScrollTrigger,
 } from "@mui/material";
-import AdbIcon from "@mui/icons-material/Adb";
 import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
 import { Link as Link2 } from "react-scroll";
 import { useRouter } from "next/router";
 
 const pages = ["why Pluton?", "Pricing"];
-const settings = ["Profile", "Settings", "Logout"];
 
 interface Props {
   /**

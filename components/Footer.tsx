@@ -13,7 +13,7 @@ const CTContent = styled(Stack)``;
 const Footer = () => {
   return (
     <React.Fragment>
-      <Box sx={{ bgcolor: "#3F3059", p: 4 }}>
+      <Box sx={{ bgcolor: "#3F3059", p: { xs: 2, sm: 4 } }}>
         <Container maxWidth="lg">
           <Stack
             sx={{
