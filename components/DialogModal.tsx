@@ -22,6 +22,18 @@ const style = {
 const ImageBox = styled(Box)`
   width: 800px;
   height: 569px;
+  @media (max-width: 1000px) {
+    width: 600px;
+    height: 427px;
+  }
+  @media (max-width: 600px) {
+    width: 400px;
+    height: 284px;
+  }
+  @media (max-width: 415px) {
+    width: 300px;
+    height: 213px;
+  }
 `;
 
 const DialogModal = ({ openModal, handleClose, name, imageSrc }: Props) => {
