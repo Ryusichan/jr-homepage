@@ -1,30 +1,30 @@
-import React from 'react'
-import { Box, Dialog, Modal } from '@mui/material'
-import Image from 'next/image'
+import React from "react";
+import { Box, Dialog, Modal } from "@mui/material";
+import Image from "next/image";
+import styled from "styled-components";
 
-interface Props{
-    openModal: boolean
-    handleClose: () => void
-    name: string
-    imageSrc: string
+interface Props {
+  openModal: boolean;
+  handleClose: () => void;
+  name: string;
+  imageSrc: string;
 }
 
 const style = {
-    position: 'absolute' as 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 400,
-    bgcolor: 'background.paper',
-    boxShadow: 24,
-  };
+  position: "absolute" as "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  bgcolor: "background.paper",
+  boxShadow: 24,
+};
 
-const DialogModal = ({
-    openModal,
-    handleClose,
-    name,
-    imageSrc,
-}:Props) => {
+const ImageBox = styled(Box)`
+  width: 800px;
+  height: 569px;
+`;
+
+const DialogModal = ({ openModal, handleClose, name, imageSrc }: Props) => {
   return (
     <Modal
       open={openModal}
@@ -33,17 +33,21 @@ const DialogModal = ({
       aria-describedby="modal-modal-description"
     >
       <Box sx={style}>
-        <Image
-          src={imageSrc}
-          width={400}
-          height={400}
-          alt={name}
-          // srcSet={`${image}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-          loading="lazy"
-        />
+        <ImageBox>
+          <Image
+            src={imageSrc}
+            // width={400}
+            // height={400}
+            layout="fill"
+            alt={name}
+            objectFit="contain"
+            // srcSet={`${image}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+            loading="lazy"
+          />
+        </ImageBox>
       </Box>
     </Modal>
-  )
-}
+  );
+};
 
-export default DialogModal
+export default DialogModal;

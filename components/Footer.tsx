@@ -73,7 +73,7 @@ const Footer = () => {
                     component="h6"
                     sx={{ color: "inherit" }}
                   >
-                    031.123.4567
+                    010.123.4567
                   </Typography>
                 </CTContent>
                 <CTContent direction={"row"} spacing={2}>
@@ -83,7 +83,7 @@ const Footer = () => {
                     component="h6"
                     sx={{ color: "inherit" }}
                   >
-                    godtheenell@naver.com
+                    godtheenell@gmail.com
                   </Typography>
                 </CTContent>
               </Stack>

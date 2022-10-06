@@ -16,9 +16,11 @@ import {
   MoreHoriz,
   Brush,
   Search,
+  PageviewOutlined,
 } from "@mui/icons-material";
 import styled from "styled-components";
 import Image from "next/image";
+import DialogModal from "../DialogModal";
 // import DialogModal from "../DialogModal";
 
 const ImageContainer = styled(Stack)`
@@ -112,9 +114,9 @@ const MainResponsiveGallery = () => {
   const [value, setValue] = React.useState("full");
   const [items, setItems] = React.useState(Menu);
   const [active, setActive] = React.useState(false);
-  // const [openModal, setOpenmodal] = React.useState(false);
-  // const [name, setName] = React.useState("");
-  // const [imageSrc, setImageSrc] = React.useState("");
+  const [openModal, setOpenmodal] = React.useState(false);
+  const [name, setName] = React.useState("");
+  const [imageSrc, setImageSrc] = React.useState("");
 
   const filterItem = (categItem: string) => {
     const updateItems = Menu.filter((curElem: any) => {
@@ -125,9 +127,9 @@ const MainResponsiveGallery = () => {
     setActive(true);
   };
 
-  // const handleClose = () => {
-  //   setOpenmodal(false);
-  // };
+  const handleClose = () => {
+    setOpenmodal(false);
+  };
 
   const handleChange = (event: React.ChangeEvent<{}>, newValue: string) => {
     setValue(newValue);
@@ -141,17 +143,20 @@ const MainResponsiveGallery = () => {
     }
   };
 
-  // const handleSelectImg = ({ name, image }: any) => {
-  //   setOpenmodal(true);
-  //   setName(name);
-  //   setImageSrc(image);
+  const handleSelectImg = ({ name, image }: any) => {
+    setOpenmodal(true);
+    setName(name);
+    setImageSrc(image);
 
-  //   console.log(name, image, "openModal:", openModal);
-  // };
+    console.log(name, image, "openModal:", openModal);
+  };
 
   // const handleChangeIndex = (newValue: string) => {
   //   setValue(newValue);
   // };
+  const modalOpen = ({ url }: any) => {
+    console.log(url);
+  };
 
   return (
     <>
@@ -173,6 +178,8 @@ const MainResponsiveGallery = () => {
             onChange={handleChange}
             // variant="fullWidth"
             orientation={"vertical"}
+            variant="scrollable"
+            scrollButtons="auto"
             sx={{
               minWidth: { xs: "auto", md: "180px" },
               "& .MuiTabs-indicator": {
@@ -222,22 +229,24 @@ const MainResponsiveGallery = () => {
               data-aos-delay="200"
             >
               {items.map((elem: any, index: number) => {
-                const { id, name, image, url, description } = elem;
+                const { id, thumnail, name, image, url, description, modal } =
+                  elem;
 
                 return (
                   <ImageList
                     key={`${name}_${id}`}
                     id={id}
                     onClick={() => {
-                      // handleSelectImg({ name, image });
-                      window.open(url, "_blank");
+                      modal
+                        ? handleSelectImg({ name, image })
+                        : window.open(url, "_blank");
                     }}
                     data-aos="zoom-out-up"
                     data-aos-delay={`${index}00`}
                     style={{ position: "relative" }}
                   >
                     <Image
-                      src={image}
+                      src={thumnail}
                       layout="fill"
                       alt={name}
                       loading="lazy"
@@ -271,12 +280,12 @@ const MainResponsiveGallery = () => {
           </Stack>
         </Stack>
       </Stack>
-      {/* <DialogModal
+      <DialogModal
         openModal={openModal}
         imageSrc={imageSrc}
         name={name}
         handleClose={handleClose}
-      /> */}
+      />
     </>
   );
 };
