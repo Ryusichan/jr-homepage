@@ -67,8 +67,8 @@ const ImageList = styled.div`
   }
   @media (max-width: 415px) {
     height: unset;
-    width: 31%;
-    padding-bottom: 31%;
+    width: 30%;
+    padding-bottom: 30%;
   }
 `;
 
