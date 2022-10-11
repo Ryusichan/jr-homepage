@@ -75,7 +75,7 @@ const Appbar = () => {
             backgroundColor: "#fff",
             color: "black",
             width: { xs: "100%", md: "calc(100% - 48px)" },
-            top: { xs: "0px", md: "26px" },
+            top: { xs: "0px", md: "16px" },
             borderRadius: { xs: "0px", md: "12px" },
             left: { xs: "0px", md: "24px" },
             boxShadow:
