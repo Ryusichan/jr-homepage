@@ -61,12 +61,12 @@ const WhyInnerItem = styled(Stack)`
 `;
 
 const ImageBox = styled(Box)`
-  width: 500px;
-  height: 450px;
+  width: 450px;
+  height: 405px;
   overflow: hidden;
   position: relative;
   margin: 1rem;
-  @media (max-width: 900px) {
+  @media (max-width: 1000px) {
     width: 300px;
     height: 272px;
   }
