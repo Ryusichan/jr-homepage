@@ -94,6 +94,21 @@ body {
   flex-direction: column;
 }
 
+::-webkit-scrollbar {
+  width: 8px; /* 스크롤바의 너비 */
+}
+
+::-webkit-scrollbar-thumb {
+  height: 30%; /* 스크롤바의 길이 */
+  background: #a5d1ff; /* 스크롤바의 색상 */
+
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(147 193 255 / 10%); /*스크롤바 뒷 배경 색상*/
+}
+
 /* 아이폰 이미지 저장 방지 */
 body {
   -webkit-touch-callout: none;

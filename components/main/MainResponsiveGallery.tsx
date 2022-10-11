@@ -148,7 +148,7 @@ const MainResponsiveGallery = () => {
     setName(name);
     setImageSrc(image);
 
-    console.log(name, image, "openModal:", openModal);
+    // console.log(name, image, "openModal:", openModal);
   };
 
   // const handleChangeIndex = (newValue: string) => {
@@ -222,7 +222,7 @@ const MainResponsiveGallery = () => {
               />
             ))}
           </Tabs>
-          <Stack sx={{ margin: "0 auto" }}>
+          <Stack sx={{ maxHeight: "600px", overflowY: "auto" }}>
             <ImageContainer
               direction={"row"}
               data-aos="fade-left"

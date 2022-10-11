@@ -17,22 +17,19 @@ const style = {
   transform: "translate(-50%, -50%)",
   bgcolor: "background.paper",
   boxShadow: 24,
+  width: "calc(100% - 120px)",
+  maxWidth: "1000px",
 };
 
 const ImageBox = styled(Box)`
-  width: 800px;
-  height: 569px;
-  @media (max-width: 1000px) {
-    width: 600px;
-    height: 427px;
-  }
-  @media (max-width: 600px) {
-    width: 400px;
-    height: 284px;
-  }
-  @media (max-width: 415px) {
-    width: 300px;
-    height: 213px;
+  width: 100%;
+  position: relative;
+  & > span {
+    position: unset !important;
+    img {
+      height: auto !important;
+      position: relative !important;
+    }
   }
 `;
 
@@ -52,7 +49,7 @@ const DialogModal = ({ openModal, handleClose, name, imageSrc }: Props) => {
             // height={400}
             layout="fill"
             alt={name}
-            objectFit="contain"
+            // objectFit="contain"
             // srcSet={`${image}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
             loading="lazy"
           />
