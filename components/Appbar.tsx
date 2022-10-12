@@ -85,33 +85,31 @@ const Appbar = () => {
           <Container maxWidth="xl">
             <Toolbar disableGutters>
               {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
-              <Box
-                component="img"
-                src="/logo.svg"
-                sx={{
-                  width: 40,
-                  height: 40,
-                  display: { xs: "none", md: "flex" },
-                  mr: 1,
-                }}
-              />
               <Link href="/">
                 <a>
-                  <Typography
-                    variant="h6"
-                    noWrap
+                  <Box
                     sx={{
-                      mr: 2,
                       display: { xs: "none", md: "flex" },
-                      fontFamily: "monospace",
-                      fontWeight: 700,
-                      letterSpacing: ".3rem",
-                      color: "inherit",
-                      textDecoration: "none",
+                      mr: 1,
+                      alignItems: "center",
                     }}
                   >
-                    Pluton
-                  </Typography>
+                    {logo}
+                    <Typography
+                      variant="h6"
+                      noWrap
+                      sx={{
+                        mr: 2,
+                        fontFamily: "monospace",
+                        fontWeight: 700,
+                        letterSpacing: ".3rem",
+                        color: "inherit",
+                        textDecoration: "none",
+                      }}
+                    >
+                      Pluton
+                    </Typography>
+                  </Box>
                 </a>
               </Link>
 
@@ -201,32 +199,35 @@ const Appbar = () => {
                   ))}
                 </Menu>
               </Box>
-              <Box
-                sx={{
-                  display: { xs: "flex", md: "none" },
-                  mr: 1,
-                  alignItems: "center",
-                }}
-              >
-                {/* <AdbIcon /> */}
-                {logo}
-                <Typography
-                  variant="h5"
-                  noWrap
-                  component="a"
-                  sx={{
-                    mr: 2,
-                    flexGrow: 1,
-                    fontFamily: "monospace",
-                    fontWeight: 700,
-                    letterSpacing: ".3rem",
-                    color: "inherit",
-                    textDecoration: "none",
-                  }}
-                >
-                  Pluton
-                </Typography>
-              </Box>
+              <Link href="/">
+                <a>
+                  <Box
+                    sx={{
+                      display: { xs: "flex", md: "none" },
+                      mr: 1,
+                      alignItems: "center",
+                    }}
+                  >
+                    {/* <AdbIcon /> */}
+                    {logo}
+                    <Typography
+                      variant="h5"
+                      noWrap
+                      sx={{
+                        mr: 2,
+                        flexGrow: 1,
+                        fontFamily: "monospace",
+                        fontWeight: 700,
+                        letterSpacing: ".3rem",
+                        color: "inherit",
+                        textDecoration: "none",
+                      }}
+                    >
+                      Pluton
+                    </Typography>
+                  </Box>
+                </a>
+              </Link>
 
               <Box sx={{ flex: 1 }} />
 
