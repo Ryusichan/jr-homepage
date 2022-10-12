@@ -60,8 +60,8 @@ const Mainpage = () => {
           data-aos="zoom-out"
           data-aos-delay="200"
         >
-          고객의 맞춤형 웹사이트를 기획부터 디자인, 제작, 배포까지 고객과 함께
-          제작해 드립니다.
+          고객 맞춤형 웹사이트를 기획부터 디자인, 제작, 배포까지 함께해
+          드립니다.
         </Typography>
         <Button
           sx={{

@@ -75,33 +75,34 @@ const tabArray = [
 
 const tabContentArray = [
   {
-    innerTitle: "고객님과의 상담이 진행됩니다.",
-    innerText: `고객님과의 상담이 진행됩니다 프로젝트 크기를 협의하여 기간 비용등을 계산하여 알려드립니다.
-      현업에서 10년넘게 종사중인 프로젝트 매니저가 고객님의 맞춤형 상담으로 고객님이 원하시는 Web 을 찾아드립니다.`,
+    innerTitle: "고객과의 상담이 진행됩니다.",
+    innerText: `프로젝트 크기를 협의하여 기간, 비용 등을 계산하여 알려드립니다. 
+    현업에서 10년 넘게 종사 중인 프로젝트 매니저가 
+    맞춤형 상담으로 원하시는 웹을 정확히 찾아드립니다.`,
     imgUrl: "/images/svg-image/img_tabcontent01.svg",
   },
   {
-    innerTitle: "상담한 내용을 기획합니다.",
+    innerTitle: "상담 내용을 시각화합니다.",
     innerText:
-      "상담한 내용을 바탕으로 웹 구조화를 wire-frame으로 받아볼수 있습니다. 받은 내용을 바탕으로 고객님과 소통하며 Design 방향성을 결정합니다.",
+      "상담한 내용을 바탕으로 제작된 웹 구조화를 wire-frame으로 받아 보실 수 있습니다. 이후 지속적인 소통을 통해 디자인의 방향성을 결정합니다.",
     imgUrl: "/images/svg-image/img_tabcontent02.svg",
   },
   {
-    innerTitle: "고객님의 웹을 디자인합니다.",
+    innerTitle: "웹을 디자인합니다.",
     innerText:
-      "협의한 wire-frame 을 바탕으로 현업에서 10년 넘게 종사중인 전문 디자이너의 디자인이 진행됩니다.",
+      "협의된 wire-frame을 기반으로 현업에서 10년 이상 종사 중인 전문 디자이너의 디자인이 진행됩니다.",
     imgUrl: "/images/svg-image/img_tabcontent03.svg",
   },
   {
     innerTitle: "디자인된 작업을 코드화 합니다.",
     innerText:
-      "디자인을 바탕으로 UI Enginire 가 웹 최적화를 위한 React, Typescript, Node js, Material UI 를 이용하여 최적화된 web 을 제작해 드립니다.",
+      "UI Engineer가 웹 최적화를 위한 다양한 프로그래밍 언어(React, TypeScript, Node.js, Material UI)를 이용하여 최적화된 웹을 제작해 드립니다.",
     imgUrl: "/images/svg-image/img_tabcontent04.svg",
   },
   {
-    innerTitle: "제작완료된 제품을 WEB에 배포합니다.",
+    innerTitle: "제작 완료된 제품을 Web에 배포합니다",
     innerText:
-      "최적화된 web을 바탕으로 web에 build하는 작업입니다. 고객님의 web에 맞춤형 서버를 제공합니다. 10MB까진 무료로 제공됩니다. web 로딩속도가 타 제작업체에 400% 빠르게 build되는걸 확인할수 있습니다.",
+      "지금까지의 작업에 맞는 서버를 제공해 웹에 업로드하는 작업입니다. 10MB까지 무료로 제공됩니다. 최적화된 웹이 제공되며 로딩 속도가 타 제작 업체에 비해 400% 빠르게 진행되는 것을 확인하실 수 있습니다.",
     imgUrl: "/images/svg-image/img_tabcontent05.svg",
   },
 ];
