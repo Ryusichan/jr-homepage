@@ -59,7 +59,7 @@ const OptimizePluton = () => {
 
       <Stack direction={"row"} spacing={8} justifyContent={"space-around"}>
         {componentArray.map((item, index) => (
-          <Stack sx={{ flex: 1, maxWidth: 450 }} id={`index_${item.title}`}>
+          <Stack sx={{ flex: 1, maxWidth: 450 }} key={`${item.title}`}>
             <Typography
               variant="h4"
               component="h4"
