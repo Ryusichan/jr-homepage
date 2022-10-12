@@ -96,13 +96,13 @@ const tabContentArray = [
   {
     innerTitle: "디자인된 작업을 코드화 합니다.",
     innerText:
-      "UI Engineer가 웹 최적화를 위한 다양한 프로그래밍 언어(React, TypeScript, Node.js, Material UI)를 이용하여 최적화된 웹을 제작해 드립니다.",
+      "UI Engineer가 다양한 프로그래밍 언어(React, TypeScript, Node.js, Material UI)를 이용하여 최적화된 웹을 제작해 드립니다.",
     imgUrl: "/images/svg-image/img_tabcontent04.svg",
   },
   {
-    innerTitle: "제작 완료된 제품을 Web에 배포합니다",
+    innerTitle: "제작 완료된 제품을 Web에 배포합니다.",
     innerText:
-      "지금까지의 작업에 맞는 서버를 제공해 웹에 업로드하는 작업입니다. 10MB까지 무료로 제공됩니다. 최적화된 웹이 제공되며 로딩 속도가 타 제작 업체에 비해 400% 빠르게 진행되는 것을 확인하실 수 있습니다.",
+      "지금까지의 작업에 맞는 서버를 제공해 웹에 업로드하는 작업입니다. 10MB까지 무료로 제공됩니다. 최적화된 웹이 제공되며 로딩 속도가 다른 제작 업체에 비해 400% 빠르게 진행되는 것을 확인하실 수 있습니다.",
     imgUrl: "/images/svg-image/img_tabcontent05.svg",
   },
 ];

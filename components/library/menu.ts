@@ -227,7 +227,7 @@ const Menu: any = [
     category: "subPage",
     url: "https://tranquil-taiyaki-aa5a83.netlify.app/login",
     modal: false,
-    description: "svg animation을 적용한 로그인 페이지.",
+    description: "svg animation을 적용한 로그인 페이지",
   },
   {
     id: 24,
@@ -267,7 +267,7 @@ const Menu: any = [
     category: "subPage",
     url: "https://tranquil-taiyaki-aa5a83.netlify.app/register",
     modal: false,
-    description: "svg animation을 적용한 회원가입 페이지.",
+    description: "svg animation을 적용한 회원가입 페이지",
   },
 ];
 
