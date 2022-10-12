@@ -16,6 +16,10 @@ const ContainerBox = styled(Stack)`
     flex: 1;
     margin-right: 2rem;
   }
+  @media (max-width: 415px) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 `;
 
 const ImageBox = styled(Box)`
