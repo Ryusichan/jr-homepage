@@ -267,7 +267,7 @@ const Menu: any = [
     category: "subPage",
     url: "https://tranquil-taiyaki-aa5a83.netlify.app/register",
     modal: false,
-    description: "회원가입 Design page 입니다.",
+    description: "svg animation을 적용한 회원가입 페이지.",
   },
 ];
 
