@@ -6,7 +6,10 @@ const nextConfig = {
     styledComponents: true,
   },
   images: {
-    domains: ["source.unsplash.com"],
+    domains: [
+      "source.unsplash.com",
+      "pluton-imageres.s3.ap-northeast-2.amazonaws.com",
+    ],
   },
 };
 
