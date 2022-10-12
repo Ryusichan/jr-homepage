@@ -24,11 +24,15 @@ const ImageContainer = styled.div<{ bgColor: string }>`
       scale: 1.1;
     }
   }
+  @media (max-width: 415px) {
+    padding: 8px;
+    border-radius: 8px;
+  }
 `;
 
 const componentArray = [
   {
-    title: "다른업체 제작 사이트",
+    title: "타업체 제작 사이트",
     text: "다른업체의 제작 사이트는 하나의 요소를 클릭할때마다 사이트 전체를 새로고침 합니다.",
     imgRes: "component-js.gif",
     bgColor: "#d9d9d9",
@@ -57,12 +61,12 @@ const OptimizePluton = () => {
         플루톤의 웹사이트 최적화
       </Typography>
 
-      <Stack direction={"row"} spacing={8} justifyContent={"space-around"}>
+      <Stack direction={"row"} spacing={4} justifyContent={"space-around"}>
         {componentArray.map((item, index) => (
           <Stack sx={{ flex: 1, maxWidth: 450 }} key={`${item.title}`}>
             <Typography
-              variant="h4"
-              component="h4"
+              variant="h5"
+              component="h5"
               align="center"
               sx={{ mb: 2 }}
               data-aos={`fade-${item.anchor}`}
@@ -77,6 +81,8 @@ const OptimizePluton = () => {
             >
               <Image
                 layout="fill"
+                priority // 빠르게 로딩
+                alt={item.imgRes}
                 src={`/images/image-res/component_react/${item.imgRes}`}
               />
             </ImageContainer>
