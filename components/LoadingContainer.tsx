@@ -12,10 +12,11 @@ const LoadingContainer = () => {
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
+        fontSize: "1.2rem",
       }}
     >
-      <CircularProgress sx={{ mb: 2 }} />
-      Loading...
+      <CircularProgress sx={{ mb: 3, width: "48px", height: "48px" }} />
+      접속중입니다...
     </Box>
   );
 };
