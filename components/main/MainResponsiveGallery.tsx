@@ -105,7 +105,8 @@ const InnerText = styled.span`
 
 const tabArray = [
   { label: "전체", icon: <Apps />, value: "full" },
-  { label: "WEB", icon: <DesktopWindows />, value: "web" },
+  { label: "Service", icon: <DesktopWindows />, value: "service" },
+  { label: "Design", icon: <DesktopWindows />, value: "Design" },
   { label: "Sub Page", icon: <MoreHoriz />, value: "subPage" },
   { label: "Art Work", icon: <Brush />, value: "artWork" },
 ];
@@ -170,7 +171,7 @@ const MainResponsiveGallery = () => {
           data-aos="zoom-out"
           data-aos-delay="200"
         >
-          With Pluton
+          PORTFOLIO
         </Typography>
         <Stack direction={{ xs: "column", md: "row" }} spacing={4}>
           <Tabs

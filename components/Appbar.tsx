@@ -20,7 +20,7 @@ import Link from "next/link";
 import { Link as Link2 } from "react-scroll";
 import { useRouter } from "next/router";
 
-const pages = ["why Pluton?", "Pricing"];
+// const pages = ["why Pluton?", "Pricing"];
 
 interface Props {
   /**
@@ -104,7 +104,7 @@ const Appbar = () => {
                         // fontWeight: 700,
                         // letterSpacing: ".3rem",
                         fontWeight: 800,
-                        fontSize: "2rem!important",
+                        fontSize: "1.8rem!important",
                         letterSpacing: ".2rem",
                         color: "inherit",
                         textDecoration: "none",
@@ -147,48 +147,38 @@ const Appbar = () => {
                   }}
                 >
                   {asPath === "/" ? (
-                    <Link2
-                      to="progress"
-                      spy={true}
-                      smooth={true}
-                      duration={500}
-                    >
+                    <Link2 to="intro" spy={true} smooth={true} duration={500}>
                       <MenuItem onClick={handleCloseNavMenu}>
                         <Typography variant="body2" component="h6">
-                          Progress
+                          intro
                         </Typography>
                       </MenuItem>
                     </Link2>
                   ) : (
-                    <Link key={"progress"} href={"/"}>
-                      <MenuItem key={"progress"} onClick={handleCloseNavMenu}>
-                        <Typography textAlign="center">progress</Typography>
+                    <Link key={"intro"} href={"/"}>
+                      <MenuItem key={"intro"} onClick={handleCloseNavMenu}>
+                        <Typography textAlign="center">myinfo</Typography>
                       </MenuItem>
                     </Link>
                   )}
 
                   {asPath === "/" ? (
-                    <Link2
-                      to="portfolio"
-                      spy={true}
-                      smooth={true}
-                      duration={500}
-                    >
+                    <Link2 to="myinfo" spy={true} smooth={true} duration={500}>
                       <MenuItem onClick={handleCloseNavMenu}>
                         <Typography variant="body2" component="h6">
-                          Portfolio
+                          myinfo
                         </Typography>
                       </MenuItem>
                     </Link2>
                   ) : (
-                    <Link key={"portfolio"} href={"/"}>
+                    <Link key={"myinfo"} href={"/"}>
                       <MenuItem onClick={handleCloseNavMenu}>
-                        <Typography textAlign="center">portfolio</Typography>
+                        <Typography textAlign="center">myinfo</Typography>
                       </MenuItem>
                     </Link>
                   )}
 
-                  {pages.map((page) => (
+                  {/* {pages.map((page) => (
                     <Link
                       key={page}
                       href={`/${page
@@ -200,7 +190,7 @@ const Appbar = () => {
                         <Typography textAlign="center">{page}</Typography>
                       </MenuItem>
                     </Link>
-                  ))}
+                  ))} */}
                 </Menu>
               </Box>
               <Link href="/">
@@ -241,44 +231,40 @@ const Appbar = () => {
               <Box sx={{ display: { xs: "none", md: "flex" } }}>
                 <Stack spacing={4} direction={"row"} alignItems={"center"}>
                   {asPath === "/" ? (
-                    <Link2
-                      to="progress"
-                      spy={true}
-                      smooth={true}
-                      duration={500}
-                    >
+                    <Link2 to="myinfo" spy={true} smooth={true} duration={500}>
                       <Button sx={{ my: 2, color: "black", display: "block" }}>
-                        Progress
+                        ADVANTAGE
                       </Button>
                     </Link2>
                   ) : (
-                    <Link key={"progress"} href={"/"}>
+                    <Link key={"myinfo"} href={"/"}>
                       <Button sx={{ my: 2, color: "black", display: "block" }}>
-                        Progress
+                        ADVANTAGE
                       </Button>
                     </Link>
                   )}
 
                   {asPath === "/" ? (
-                    <Link2
-                      to="portfolio"
-                      spy={true}
-                      smooth={true}
-                      duration={500}
-                    >
+                    <Link2 to="project" spy={true} smooth={true} duration={500}>
                       <Button sx={{ my: 2, color: "black", display: "block" }}>
-                        Works
+                        PROJECT
                       </Button>
                     </Link2>
                   ) : (
-                    <Link key={"portfolio"} href={"/"}>
+                    <Link key={"project"} href={"/"}>
                       <Button sx={{ my: 2, color: "black", display: "block" }}>
-                        Works
+                        PROJECT
                       </Button>
                     </Link>
                   )}
 
-                  {pages.map((page) => (
+                  <Link2 to="portfolio" spy={true} smooth={true} duration={500}>
+                    <Button sx={{ my: 2, color: "black", display: "block" }}>
+                      PORTFOLIO
+                    </Button>
+                  </Link2>
+
+                  {/* {pages.map((page) => (
                     <Link
                       key={page}
                       href={`/${page
@@ -293,9 +279,9 @@ const Appbar = () => {
                         {page}
                       </Button>
                     </Link>
-                  ))}
+                  ))} */}
                   <Button variant="contained" sx={{ height: "48px" }}>
-                    Contact Us
+                    Contact
                   </Button>
                 </Stack>
               </Box>

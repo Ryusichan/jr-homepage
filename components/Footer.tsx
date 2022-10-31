@@ -1,8 +1,9 @@
 import React from "react";
-import { Mail, Phone } from "@mui/icons-material";
+import { Mail, Phone, RateReview } from "@mui/icons-material";
 import { Box, Container, Stack, Typography } from "@mui/material";
 import AdbIcon from "@mui/icons-material/Adb";
 import styled from "styled-components";
+import Link from "next/link";
 
 const ConpanyContainer = styled(Stack)``;
 
@@ -26,11 +27,11 @@ const Footer = () => {
           >
             <ConpanyContainer spacing={4} sx={{ mb: { xs: 4, sm: 0 } }}>
               <Stack direction={"row"}>
-                <AdbIcon
+                {/* <AdbIcon
                   sx={{
                     mr: 1,
                   }}
-                />
+                /> */}
                 <Typography
                   variant="h6"
                   noWrap
@@ -44,7 +45,7 @@ const Footer = () => {
                     textDecoration: "none",
                   }}
                 >
-                  Pluton
+                  RYU
                 </Typography>
               </Stack>
 
@@ -53,7 +54,7 @@ const Footer = () => {
                 component="h6"
                 sx={{ color: "inherit" }}
               >
-                당신에게 최고의 서비스를 제공해드립니다.
+                최적의 서비스를 제작하기 위해 노력합니다.
               </Typography>
             </ConpanyContainer>
 
@@ -66,16 +67,20 @@ const Footer = () => {
                 Contact
               </Typography>
               <Stack spacing={2}>
-                <CTContent direction={"row"} spacing={2}>
-                  <Phone />
-                  <Typography
-                    variant="body2"
-                    component="h6"
-                    sx={{ color: "inherit" }}
-                  >
-                    010.123.4567
-                  </Typography>
-                </CTContent>
+                <Link href={"https://velog.io/@godtheenell"}>
+                  <a target="_blank">
+                    <CTContent direction={"row"} spacing={2}>
+                      <RateReview />
+                      <Typography
+                        variant="body2"
+                        component="h6"
+                        sx={{ color: "inherit" }}
+                      >
+                        Velog
+                      </Typography>
+                    </CTContent>
+                  </a>
+                </Link>
                 <CTContent direction={"row"} spacing={2}>
                   <Mail />
                   <Typography
