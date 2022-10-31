@@ -283,7 +283,7 @@ const TabContainer = () => {
           <Typography variant="body1" component="p" sx={{ mb: 2 }}>
             - 은하계 각 행성간 크기와 거리를 비교하여 표현
           </Typography>
-          <Link href={"https://ryusichan.github.io/three-galaxy/"}>
+          <Link href={"https://three-galaxy-lake.vercel.app/"}>
             <a target="_blank">
               <CustomButton variant="contained">서비스 바로가기</CustomButton>
             </a>
