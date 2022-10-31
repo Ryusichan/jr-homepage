@@ -167,6 +167,117 @@ const TabContainer = () => {
           </Link>
         </Box>
       </ContainerBox>
+
+      <ContainerBox
+        direction={{ xs: "column-reverse", sm: "row" }}
+        alignItems="center"
+        spacing={2}
+        sx={{ flex: 1 }}
+      >
+        <Box data-aos="fade-right" data-aos-delay="200" sx={{ flex: 1 }}>
+          <Typography variant="h4" component="h2" sx={{ mb: 2 }}>
+            Developer Ranking - 개인 프로젝트
+          </Typography>
+          <Typography variant="body1" component="p" sx={{ mb: 1 }}>
+            - 개발자들의 Github 정보를 기반으로 랭킹을 제공하는 서비스
+          </Typography>
+          <Typography variant="body1" component="p" sx={{ mb: 1 }}>
+            - 랭킹을 기반으로 개발언어의 트랜드를 보고 앞으로 어떤 언어를
+            공부해야할지 판단할 수 있도록 도와주는 서비스
+          </Typography>
+          <Link href={"https://ryusichan.github.io/develop-ranking/"}>
+            <a target="_blank">
+              <Button variant="contained">서비스 바로가기</Button>
+            </a>
+          </Link>
+        </Box>
+
+        <ImageBox
+          sx={{ margin: { xs: "2rem 0", sm: "0" } }}
+          data-aos="fade-left"
+          data-aos-delay="200"
+        >
+          <Image
+            src="/images/image-res/ranking.png"
+            alt="name"
+            width={450}
+            height={360}
+          />
+        </ImageBox>
+      </ContainerBox>
+
+      <ContainerBox
+        direction={{ xs: "column-reverse", sm: "row" }}
+        alignItems="center"
+        spacing={2}
+        sx={{ flex: 1 }}
+      >
+        <ImageBox
+          sx={{ margin: { xs: "2rem 0", sm: "0" } }}
+          data-aos="fade-left"
+          data-aos-delay="200"
+        >
+          <Image
+            src="/images/image-res/gallaxy.png"
+            alt="name"
+            width={450}
+            height={360}
+          />
+        </ImageBox>
+
+        <Box data-aos="fade-right" data-aos-delay="200" sx={{ flex: 1 }}>
+          <Typography variant="h4" component="h2" sx={{ mb: 2 }}>
+            Galaxy - 개인 프로젝트
+          </Typography>
+          <Typography variant="body1" component="p" sx={{ mb: 1 }}>
+            - Three JS 기반의 3D Galaxy 모델링
+          </Typography>
+          <Typography variant="body1" component="p" sx={{ mb: 1 }}>
+            - React Three Fiber를 활용한 3D Galaxy 모델링
+          </Typography>
+          <Link href={"https://ryusichan.github.io/three-galaxy/"}>
+            <a target="_blank">
+              <Button variant="contained">서비스 바로가기</Button>
+            </a>
+          </Link>
+        </Box>
+      </ContainerBox>
+
+      <ContainerBox
+        direction={{ xs: "column-reverse", sm: "row" }}
+        alignItems="center"
+        spacing={2}
+        sx={{ flex: 1 }}
+      >
+        <Box data-aos="fade-right" data-aos-delay="200" sx={{ flex: 1 }}>
+          <Typography variant="h4" component="h2" sx={{ mb: 2 }}>
+            Room - 클론 코딩
+          </Typography>
+          <Typography variant="body1" component="p" sx={{ mb: 1 }}>
+            - Three JS, GSAP, React Three Fiber를 활용한 3D Room 모델링
+          </Typography>
+          <Typography variant="body1" component="p" sx={{ mb: 1 }}>
+            - React Three Fiber를 활용한 3D Galaxy 모델링
+          </Typography>
+          <Link href={"https://ryusichan.github.io/myhome-portfolio/"}>
+            <a target="_blank">
+              <Button variant="contained">서비스 바로가기</Button>
+            </a>
+          </Link>
+        </Box>
+        <ImageBox
+          sx={{ margin: { xs: "2rem 0", sm: "0" } }}
+          data-aos="fade-left"
+          data-aos-delay="200"
+        >
+          <Image
+            src="/images/image-res/room.png"
+            alt="name"
+            width={450}
+            height={360}
+          />
+        </ImageBox>
+      </ContainerBox>
     </>
   );
 };
