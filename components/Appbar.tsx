@@ -101,13 +101,17 @@ const Appbar = () => {
                       sx={{
                         mr: 2,
                         fontFamily: "monospace",
-                        fontWeight: 700,
-                        letterSpacing: ".3rem",
+                        // fontWeight: 700,
+                        // letterSpacing: ".3rem",
+                        fontWeight: 800,
+                        fontSize: "2rem!important",
+                        letterSpacing: ".2rem",
                         color: "inherit",
                         textDecoration: "none",
                       }}
                     >
-                      Pluton
+                      {/* Pluton */}
+                      RYU
                     </Typography>
                   </Box>
                 </a>
@@ -211,19 +215,22 @@ const Appbar = () => {
                     {/* <AdbIcon /> */}
                     {logo}
                     <Typography
-                      variant="h5"
+                      variant="h6"
                       noWrap
                       sx={{
                         mr: 2,
-                        flexGrow: 1,
                         fontFamily: "monospace",
-                        fontWeight: 700,
-                        letterSpacing: ".3rem",
+                        // fontWeight: 700,
+                        // letterSpacing: ".3rem",
+                        fontWeight: 800,
+                        fontSize: "1.8rem!important",
+                        letterSpacing: ".2rem",
                         color: "inherit",
                         textDecoration: "none",
                       }}
                     >
-                      Pluton
+                      {/* Pluton */}
+                      RYU
                     </Typography>
                   </Box>
                 </a>

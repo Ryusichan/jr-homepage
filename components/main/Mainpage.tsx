@@ -41,8 +41,10 @@ const Mainpage = () => {
     <Stack direction={"row"} spacing={6} alignItems="center">
       <TextComponent spacing={4} sx={{ flex: 1 }}>
         <Typography variant="h2" component="h1" sx={{ wordBreak: "keep-all" }}>
-          당신의 시작을 함께 <span style={{ color: "#7162D7" }}>Design</span>{" "}
-          하겠습니다.
+          {/* 당신의 시작을 함께 <span style={{ color: "#7162D7" }}>Design</span>{" "}
+          하겠습니다. */}
+          안녕하세요 <br />
+          <span style={{ color: "#7162D7" }}>Web Developer</span> 류시찬 입니다.
         </Typography>
         <HideImgComponent sx={{ display: { xs: "block", md: "none" } }}>
           <Image
@@ -60,10 +62,12 @@ const Mainpage = () => {
           data-aos="zoom-out"
           data-aos-delay="200"
         >
-          고객 맞춤형 웹사이트를 기획부터 디자인, 제작, 배포까지 함께해
-          드립니다.
+          {/* 고객 맞춤형 웹사이트를 기획부터 디자인, 제작, 배포까지 함께해
+          드립니다. */}
+          Frount End <br />
+          UX | UI Designer
         </Typography>
-        <Button
+        {/* <Button
           sx={{
             width: "210px",
             minHeight: "48px",
@@ -74,7 +78,7 @@ const Mainpage = () => {
           variant="contained"
         >
           Contact Us
-        </Button>
+        </Button> */}
       </TextComponent>
       <ImgComponent sx={{ display: { xs: "none", md: "block" } }}>
         <Image
