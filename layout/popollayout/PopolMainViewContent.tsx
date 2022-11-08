@@ -7,6 +7,11 @@ const MainContainer = styled.div`
   max-width: 1400px;
   margin: 160px auto;
   padding: 160px 0;
+  @media (max-width: 768px) {
+    margin: 10% 0 17%;
+    padding: 8% 5% 95px;
+    overflow: hidden;
+  }
 `;
 
 const PcContent = styled.div`
@@ -27,7 +32,16 @@ const PcContent = styled.div`
     bottom: -167px;
     left: 50%;
     margin-left: -266px;
-    background: url("/images/image-res/project-video-pc.png") no-repeat;
+    background: url("/images/image-res/project-video-pc.png") no-repeat center
+      center;
+    @media (max-width: 768px) {
+      height: 90px;
+      bottom: -90px;
+      background-size: auto 100%;
+    }
+  }
+  @media (max-width: 768px) {
+    padding: 25px 25px;
   }
 `;
 
@@ -46,6 +60,9 @@ const BgContent = styled.div`
   left: 0;
   background: #d5ccbd no-repeat center center;
   background-size: cover;
+  @media (max-width: 768px) {
+    height: 65%;
+  }
 `;
 
 const PopolMainViewContent = () => {
