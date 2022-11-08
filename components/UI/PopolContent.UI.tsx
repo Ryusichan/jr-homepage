@@ -14,11 +14,11 @@ const ContainerOutterBox = styled.div`
 
 const ContainerBox = styled(Container)`
   overflow: hidden;
-  margin-top: 10rem;
-  margin-bottom: 10rem;
+  margin-top: 8rem;
+  margin-bottom: 8rem;
   @media (max-width: 900px) {
-    margin-top: 8rem;
-    margin-bottom: 8rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
   }
 `;
 
