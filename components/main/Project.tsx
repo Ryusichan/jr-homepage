@@ -44,6 +44,9 @@ const CustomBox = styled(Stack)`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 600px) {
+    padding: 12px;
+  }
 `;
 
 const ImageBox = styled(Box)`
@@ -71,6 +74,9 @@ const CustomButton = styled(Button)`
   }
   @media (max-width: 600px) {
     width: 100%;
+    padding: 0.5rem 2rem;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
   }
 `;
 
@@ -105,6 +111,14 @@ const MainTitle = styled.div`
   transition: 0.3s;
   @media (max-width: 600px) {
     font-size: 1.5rem;
+  }
+`;
+
+const ContentBox = styled(Stack)`
+  @media (max-width: 600px) {
+    & > p {
+      font-size: 0.8rem;
+    }
   }
 `;
 
@@ -190,11 +204,11 @@ const TabContainer = () => {
         {PopolArray.map((item, index) => (
           <ContainerBox alignItems="center" key={`${index}_container`}>
             <Contentbg bgUrl={item.url} />
-            <CustomBox spacing={8}>
+            <CustomBox spacing={{ xs: 2, md: 8 }}>
               <Typography variant="h3" component="h2">
                 {item.title}
               </Typography>
-              <Stack>
+              <ContentBox>
                 <Typography variant="body1" component="p">
                   - {item.subcontent01}
                 </Typography>
@@ -204,7 +218,7 @@ const TabContainer = () => {
                 <Typography variant="body1" component="p">
                   - {item.subcontent03}
                 </Typography>
-              </Stack>
+              </ContentBox>
               <Link href={item.link}>
                 <a target="_blank">
                   <CustomButton variant="contained">
