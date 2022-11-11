@@ -171,7 +171,7 @@ const MainResponsiveGallery = () => {
           data-aos="zoom-out"
           data-aos-delay="200"
         >
-          PORTFOLIO
+          more PROJECT
         </Typography>
         <Stack direction={{ xs: "column", md: "row" }} spacing={4}>
           <Tabs

@@ -15,26 +15,35 @@ import styled from "styled-components";
 import Link from "next/link";
 
 const ContainerBox = styled(Stack)`
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  > div:nth-child(1) {
-    flex: 1;
-  }
-  @media (max-width: 415px) {
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-top: 4rem;
-    margin-bottom: 4rem;
+  width: 50%;
+  padding-top: 50%;
+  position: relative;
+  overflow: hidden;
+  float: left;
+  :hover {
+    & > div:nth-child(2) {
+      opacity: 1;
+      background-color: rgba(11, 33, 238, 0.85);
+    }
+    & > div:nth-child(3) {
+      opacity: 0.15;
+    }
   }
 `;
 
-const CustomBox = styled(Box)`
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  @media (max-width: 600px) {
-    order: 2 !important;
-    width: 100%;
-  }
+const CustomBox = styled(Stack)`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 2rem;
+  color: #ffffff;
+  opacity: 0;
+  transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const ImageBox = styled(Box)`
@@ -49,259 +58,165 @@ const ImageBox = styled(Box)`
 `;
 
 const CustomButton = styled(Button)`
+  width: 100%;
+  background-color: unset;
+  border-top: 4px solid #fff;
+  border-bottom: 4px solid #fff;
+  border-radius: 0px;
+  padding: 1rem 4rem;
+  transition: 0.32s;
+  :hover {
+    background-color: unset;
+    transform: scale(1.1);
+  }
   @media (max-width: 600px) {
     width: 100%;
   }
 `;
 
+const Contentbg = styled.span<any>`
+  background: url(${(props) => props.bgUrl});
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  z-index: -1;
+  @media (max-width: 900px) {
+    width: 400px;
+    height: 400px;
+  }
+  @media (max-width: 415px) {
+    width: 350px;
+    height: 350px;
+  }
+`;
+
+const MainTitle = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+  transition: 0.3s;
+  @media (max-width: 600px) {
+    font-size: 1.5rem;
+  }
+`;
+
+const PopolArray = [
+  {
+    url: "/images/popol-bg/content00.png",
+    main: "LYFT",
+    title: "LYFT 관리자 화면",
+    subcontent01: "LYFT 쇼핑몰 서비스관리자 화면",
+    subcontent02: "CLOUD형 관리자 화면",
+    subcontent03: "AWS EC2, RDS, S3, CloudFront, Route53",
+    link: "https://admin-dashboard-eta-five.vercel.app/",
+  },
+  {
+    url: "/images/popol-bg/content01.png",
+    main: "제이웍",
+    title: "제이웍 관리자 화면",
+    subcontent01: "CLOUD형 관리자 화면",
+    subcontent02: "AWS EC2, RDS, S3, CloudFront, Route53",
+    subcontent03: "디자인 시스템적용",
+    link: "https://tranquil-taiyaki-aa5a83.netlify.app/dashboard/app",
+  },
+  {
+    url: "/images/popol-bg/content02.png",
+    main: "GOTALK",
+    title: "Gotalk",
+    subcontent01: "WEB RTC 기반 대화형 영상 플랫폼",
+    subcontent02: "AWS 클라우드형 서버 구축",
+    subcontent03: "Redux 를 활용한 State 관리",
+    link: "https://www.gotalk.to",
+  },
+  {
+    url: "/images/popol-bg/content03.png",
+    main: "Videohelp.me",
+    title: "Videohelpme",
+    subcontent01: "WEB RTC 기반 대화형 영상 플랫폼",
+    subcontent02: "AWS 클라우드형 서버 구축",
+    subcontent03: "디자인 시스템적용",
+    link: "https://www.videohelp.me",
+  },
+  {
+    url: "/images/popol-bg/content04.png",
+    main: "DEVELOPER RANKING",
+    title: "Developer Ranking",
+    subcontent01: "개발자들의 Github 정보를 기반으로 랭킹을 제공하는 서비스",
+    subcontent02: "랭킹을 기반으로 개발언어의 트랜드를 이해",
+    subcontent03: "stackoverflow에서 데이터 송신 차트로 변환",
+    link: "https://develop-ranking.vercel.app/",
+  },
+  {
+    url: "/images/popol-bg/content05.png",
+    main: "RYU",
+    title: "THREE.JS 기반 3D 모델링",
+    subcontent01: "Three JS, web GL 학습을 위한 클론코딩",
+    subcontent02: "GSAP와 scrolltrigger의 사용으로 scroll Three에 적용하기",
+    subcontent03: "Vite를 사용하여 빠른 제작환경 구성",
+    link: "https://myhome-portfolio.vercel.app/",
+  },
+  {
+    url: "/images/popol-bg/content06.png",
+    main: "GALAXY",
+    title: "Galaxy 프로젝트",
+    subcontent01: "Three JS 기반의 3D Galaxy 모델링",
+    subcontent02: "은하계 각 행성간 크기와 거리를 비교하여 표현",
+    subcontent03: "Vite를 사용하여 빠른 제작환경 구성",
+    link: "https://three-galaxy-lake.vercel.app/",
+  },
+  {
+    url: "/images/popol-bg/content07.png",
+    main: "MENTOR",
+    title: "멘토 관리자 화면",
+    subcontent01: "멘토 회사판매관리자 화면",
+    subcontent02: "CLOUD형 관리자 화면",
+    subcontent03: "AWS EC2, RDS, S3, CloudFront, Route53",
+    link: "https://mentor-dashboard-navy.vercel.app/",
+  },
+];
+
 const TabContainer = () => {
   return (
     <>
-      <ContainerBox
-        direction={{ xs: "column", sm: "row" }}
-        alignItems="center"
-        spacing={2}
-        sx={{ flex: 1 }}
-      >
-        <ImageBox
-          sx={{ margin: { xs: "2rem 0", sm: "0" } }}
-          data-aos="fade-right"
-          data-aos-delay="200"
-        >
-          <Image
-            src="/images/image-res/gotalk.png"
-            alt="name"
-            width={450}
-            height={360}
-          />
-        </ImageBox>
-        <CustomBox data-aos="fade-left" data-aos-delay="200" sx={{ flex: 1 }}>
-          <Typography variant="h4" component="h2" sx={{ mb: 2 }}>
-            Gotalk - WEB RTC 기반 대화형 영상 플랫폼
-          </Typography>
-          <Typography variant="body1" component="p" sx={{ mb: 1 }}>
-            - Material UI 프로젝트 적용
-          </Typography>
-          <Typography variant="body1" component="p" sx={{ mb: 1 }}>
-            - Material Theme를 활용한 디자인 Form 구축
-          </Typography>
-          <Typography variant="body1" component="p" sx={{ mb: 1 }}>
-            - Redux 를 활용한 State 관리
-          </Typography>
-          <Typography variant="body1" component="p" sx={{ mb: 2 }}>
-            - SVG Animation
-          </Typography>
-          <Link href={"https://www.gotalk.to"}>
-            <a target="_blank">
-              <CustomButton variant="contained">서비스 바로가기</CustomButton>
-            </a>
-          </Link>
-        </CustomBox>
-      </ContainerBox>
-
-      <ContainerBox
-        direction={{ xs: "column", sm: "row" }}
-        alignItems="center"
-        spacing={2}
-        sx={{ flex: 1 }}
-      >
-        <CustomBox data-aos="fade-right" data-aos-delay="200" sx={{ flex: 1 }}>
-          <Typography variant="h4" component="h2" sx={{ mb: 2 }}>
-            Videohelpme - WEB RTC 기반 영상 상담서비스
-          </Typography>
-          <Typography variant="body1" component="p" sx={{ mb: 1 }}>
-            - Recoil, React Querry 를 활용한 State 관리
-          </Typography>
-          <Typography variant="body1" component="p" sx={{ mb: 1 }}>
-            - Figma Design Kit 제작 참여
-          </Typography>
-          <Typography variant="body1" component="p" sx={{ mb: 1 }}>
-            - components 기반의 문서구조 서비스 제작(Atomic Design)
-          </Typography>
-          <Typography variant="body1" component="p" sx={{ mb: 2 }}>
-            - Vite를 적용한 FE 환경 개선
-          </Typography>
-          <Link href={"https://www.videohelp.me"}>
-            <a target="_blank">
-              <CustomButton variant="contained">서비스 바로가기</CustomButton>
-            </a>
-          </Link>
-        </CustomBox>
-
-        <ImageBox
-          sx={{ margin: { xs: "2rem 0", sm: "0" } }}
-          data-aos="fade-left"
-          data-aos-delay="200"
-        >
-          <Image
-            src="/images/image-res/vhm.png"
-            alt="name"
-            width={450}
-            height={360}
-          />
-        </ImageBox>
-      </ContainerBox>
-
-      <ContainerBox
-        direction={{ xs: "column", sm: "row" }}
-        alignItems="center"
-        spacing={2}
-        sx={{ flex: 1 }}
-      >
-        <ImageBox
-          sx={{ margin: { xs: "2rem 0", sm: "0" } }}
-          data-aos="fade-right"
-          data-aos-delay="200"
-        >
-          <Image
-            src="/images/image-res/dashboard.png"
-            alt="name"
-            width={450}
-            height={360}
-          />
-        </ImageBox>
-
-        <CustomBox data-aos="fade-left" data-aos-delay="200" sx={{ flex: 1 }}>
-          <Typography variant="h4" component="h2" sx={{ mb: 2 }}>
-            Material Dashboard - Material UI 기반 Admin Dashboard
-          </Typography>
-          <Typography variant="body1" component="p" sx={{ mb: 1 }}>
-            - Material Theme를 활용한 Design System
-          </Typography>
-          <Typography variant="body1" component="p" sx={{ mb: 1 }}>
-            - Card형, Table material Design 학습
-          </Typography>
-          <Typography variant="body1" component="p" sx={{ mb: 2 }}>
-            - components 기반의 문서구조 서비스 제작(Atomic Design)
-          </Typography>
-          <Link
-            href={"https://tranquil-taiyaki-aa5a83.netlify.app/dashboard/app"}
-          >
-            <a target="_blank">
-              <CustomButton variant="contained">서비스 바로가기</CustomButton>
-            </a>
-          </Link>
-        </CustomBox>
-      </ContainerBox>
-
-      <ContainerBox
-        direction={{ xs: "column", sm: "row" }}
-        alignItems="center"
-        spacing={2}
-        sx={{ flex: 1 }}
-      >
-        <CustomBox data-aos="fade-right" data-aos-delay="200" sx={{ flex: 1 }}>
-          <Typography variant="h4" component="h2" sx={{ mb: 2 }}>
-            Developer Ranking - 개인 프로젝트
-          </Typography>
-          <Typography variant="body1" component="p" sx={{ mb: 1 }}>
-            - 개발자들의 Github 정보를 기반으로 랭킹을 제공하는 서비스
-          </Typography>
-          <Typography variant="body1" component="p" sx={{ mb: 1 }}>
-            - 랭킹을 기반으로 개발언어의 트랜드를 보고 앞으로 어떤 언어를
-            공부해야할지 판단할 수 있도록 도와주는 서비스
-          </Typography>
-          <Typography variant="body1" component="p" sx={{ mb: 1 }}>
-            - stackoverflow에서 데이터 송신 차트로 변환
-          </Typography>
-          <Typography variant="body1" component="p" sx={{ mb: 2 }}>
-            - autocomplate 검색창에서 정보 보여주는 기능 학습
-          </Typography>
-          <Link href={"https://develop-ranking.vercel.app/"}>
-            <a target="_blank">
-              <CustomButton variant="contained">서비스 바로가기</CustomButton>
-            </a>
-          </Link>
-        </CustomBox>
-
-        <ImageBox
-          sx={{ margin: { xs: "2rem 0", sm: "0" } }}
-          data-aos="fade-left"
-          data-aos-delay="200"
-        >
-          <Image
-            src="/images/image-res/ranking.png"
-            alt="name"
-            width={450}
-            height={360}
-          />
-        </ImageBox>
-      </ContainerBox>
-
-      <ContainerBox
-        direction={{ xs: "column", sm: "row" }}
-        alignItems="center"
-        spacing={2}
-        sx={{ flex: 1 }}
-      >
-        <ImageBox
-          sx={{ margin: { xs: "2rem 0", sm: "0" } }}
-          data-aos="fade-right"
-          data-aos-delay="200"
-        >
-          <Image
-            src="/images/image-res/room.png"
-            alt="name"
-            width={450}
-            height={360}
-          />
-        </ImageBox>
-        <CustomBox data-aos="fade-left" data-aos-delay="200" sx={{ flex: 1 }}>
-          <Typography variant="h4" component="h2" sx={{ mb: 2 }}>
-            bokoko33 - 클론 코딩
-          </Typography>
-          <Typography variant="body1" component="p" sx={{ mb: 1 }}>
-            - Three JS, web GL 학습을 위한 클론코딩
-          </Typography>
-          <Typography variant="body1" component="p" sx={{ mb: 1 }}>
-            - GSAP와 scrolltrigger의 사용으로 scroll Three에 적용하기
-          </Typography>
-          <Typography variant="body1" component="p" sx={{ mb: 2 }}>
-            - Vite를 사용하여 빠른 제작환경 구성
-          </Typography>
-          <Link href={"https://myhome-portfolio.vercel.app/"}>
-            <a target="_blank">
-              <CustomButton variant="contained">서비스 바로가기</CustomButton>
-            </a>
-          </Link>
-        </CustomBox>
-      </ContainerBox>
-
-      <ContainerBox
-        direction={{ xs: "column", sm: "row" }}
-        alignItems="center"
-        spacing={2}
-        sx={{ flex: 1 }}
-      >
-        <CustomBox data-aos="fade-right" data-aos-delay="200" sx={{ flex: 1 }}>
-          <Typography variant="h4" component="h2" sx={{ mb: 2 }}>
-            Galaxy - 개인 프로젝트
-          </Typography>
-          <Typography variant="body1" component="p" sx={{ mb: 1 }}>
-            - Three JS 기반의 3D Galaxy 모델링
-          </Typography>
-          <Typography variant="body1" component="p" sx={{ mb: 2 }}>
-            - 은하계 각 행성간 크기와 거리를 비교하여 표현
-          </Typography>
-          <Link href={"https://three-galaxy-lake.vercel.app/"}>
-            <a target="_blank">
-              <CustomButton variant="contained">서비스 바로가기</CustomButton>
-            </a>
-          </Link>
-        </CustomBox>
-        <ImageBox
-          sx={{ margin: { xs: "2rem 0", sm: "0" } }}
-          data-aos="fade-left"
-          data-aos-delay="200"
-        >
-          <Image
-            src="/images/image-res/gallaxy.png"
-            alt="name"
-            width={450}
-            height={360}
-          />
-        </ImageBox>
-      </ContainerBox>
+      <div>
+        {PopolArray.map((item, index) => (
+          <ContainerBox alignItems="center" key={`${index}_container`}>
+            <Contentbg bgUrl={item.url} />
+            <CustomBox spacing={8}>
+              <Typography variant="h3" component="h2">
+                {item.title}
+              </Typography>
+              <Stack>
+                <Typography variant="body1" component="p">
+                  - {item.subcontent01}
+                </Typography>
+                <Typography variant="body1" component="p">
+                  - {item.subcontent02}
+                </Typography>
+                <Typography variant="body1" component="p">
+                  - {item.subcontent03}
+                </Typography>
+              </Stack>
+              <Link href={item.link}>
+                <a target="_blank">
+                  <CustomButton variant="contained">
+                    서비스 바로가기
+                  </CustomButton>
+                </a>
+              </Link>
+            </CustomBox>
+            <MainTitle>{item.main}</MainTitle>
+          </ContainerBox>
+        ))}
+      </div>
     </>
   );
 };
@@ -310,7 +225,7 @@ const Project = () => {
   return (
     // <Stack id="progress">
     <Stack id="project">
-      <Typography
+      {/* <Typography
         variant="h3"
         component="h3"
         align="center"
@@ -319,7 +234,7 @@ const Project = () => {
         data-aos-delay="200"
       >
         Project
-      </Typography>
+      </Typography> */}
 
       {TabContainer()}
     </Stack>

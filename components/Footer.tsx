@@ -45,7 +45,7 @@ const Footer = () => {
                     textDecoration: "none",
                   }}
                 >
-                  RYU
+                  PLUTON
                 </Typography>
               </Stack>
 

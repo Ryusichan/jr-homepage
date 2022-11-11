@@ -102,16 +102,16 @@ const Appbar = () => {
                         mr: 2,
                         fontFamily: "monospace",
                         // fontWeight: 700,
-                        // letterSpacing: ".3rem",
-                        fontWeight: 800,
+                        letterSpacing: ".3rem",
                         fontSize: "1.8rem!important",
-                        letterSpacing: ".2rem",
+                        fontWeight: 800,
+                        // letterSpacing: ".2rem",
                         color: "inherit",
                         textDecoration: "none",
                       }}
                     >
-                      {/* Pluton */}
-                      RYU
+                      Pluton
+                      {/* RYU */}
                     </Typography>
                   </Box>
                 </a>
@@ -146,37 +146,27 @@ const Appbar = () => {
                     display: { xs: "block", md: "none" },
                   }}
                 >
-                  {asPath === "/" ? (
-                    <Link2 to="intro" spy={true} smooth={true} duration={500}>
-                      <MenuItem onClick={handleCloseNavMenu}>
-                        <Typography variant="body2" component="h6">
-                          intro
-                        </Typography>
-                      </MenuItem>
-                    </Link2>
-                  ) : (
-                    <Link key={"intro"} href={"/"}>
-                      <MenuItem key={"intro"} onClick={handleCloseNavMenu}>
-                        <Typography textAlign="center">myinfo</Typography>
-                      </MenuItem>
-                    </Link>
-                  )}
-
-                  {asPath === "/" ? (
-                    <Link2 to="myinfo" spy={true} smooth={true} duration={500}>
-                      <MenuItem onClick={handleCloseNavMenu}>
-                        <Typography variant="body2" component="h6">
-                          myinfo
-                        </Typography>
-                      </MenuItem>
-                    </Link2>
-                  ) : (
-                    <Link key={"myinfo"} href={"/"}>
-                      <MenuItem onClick={handleCloseNavMenu}>
-                        <Typography textAlign="center">myinfo</Typography>
-                      </MenuItem>
-                    </Link>
-                  )}
+                  <Link2 to="project" spy={true} smooth={true} duration={500}>
+                    <MenuItem onClick={handleCloseNavMenu}>
+                      <Typography variant="body2" component="h6">
+                        프로젝트
+                      </Typography>
+                    </MenuItem>
+                  </Link2>
+                  <Link2 to="portfolio" spy={true} smooth={true} duration={500}>
+                    <MenuItem onClick={handleCloseNavMenu}>
+                      <Typography variant="body2" component="h6">
+                        포트폴리오
+                      </Typography>
+                    </MenuItem>
+                  </Link2>
+                  <Link2 to="progress" spy={true} smooth={true} duration={500}>
+                    <MenuItem onClick={handleCloseNavMenu}>
+                      <Typography variant="body2" component="h6">
+                        진행과정
+                      </Typography>
+                    </MenuItem>
+                  </Link2>
 
                   {/* {pages.map((page) => (
                     <Link
@@ -210,17 +200,17 @@ const Appbar = () => {
                       sx={{
                         mr: 2,
                         fontFamily: "monospace",
-                        // fontWeight: 700,
-                        // letterSpacing: ".3rem",
-                        fontWeight: 800,
-                        fontSize: "1.8rem!important",
-                        letterSpacing: ".2rem",
+                        fontWeight: 700,
+                        letterSpacing: ".3rem",
+                        // fontWeight: 800,
+                        // fontSize: "1.8rem!important",
+                        // letterSpacing: ".2rem",
                         color: "inherit",
                         textDecoration: "none",
                       }}
                     >
-                      {/* Pluton */}
-                      RYU
+                      Pluton
+                      {/* RYU */}
                     </Typography>
                   </Box>
                 </a>
@@ -231,38 +221,43 @@ const Appbar = () => {
               <Box sx={{ display: { xs: "none", md: "flex" } }}>
                 <Stack spacing={4} direction={"row"} alignItems={"center"}>
                   {asPath === "/" ? (
-                    <Link2 to="myinfo" spy={true} smooth={true} duration={500}>
-                      <Button sx={{ my: 2, color: "black", display: "block" }}>
-                        ADVANTAGE
-                      </Button>
-                    </Link2>
-                  ) : (
-                    <Link key={"myinfo"} href={"/"}>
-                      <Button sx={{ my: 2, color: "black", display: "block" }}>
-                        ADVANTAGE
-                      </Button>
-                    </Link>
-                  )}
-
-                  {asPath === "/" ? (
                     <Link2 to="project" spy={true} smooth={true} duration={500}>
                       <Button sx={{ my: 2, color: "black", display: "block" }}>
-                        PROJECT
+                        프로젝트
                       </Button>
                     </Link2>
                   ) : (
                     <Link key={"project"} href={"/"}>
                       <Button sx={{ my: 2, color: "black", display: "block" }}>
-                        PROJECT
+                        프로젝트
                       </Button>
                     </Link>
                   )}
 
                   <Link2 to="portfolio" spy={true} smooth={true} duration={500}>
                     <Button sx={{ my: 2, color: "black", display: "block" }}>
-                      PORTFOLIO
+                      포트폴리오
                     </Button>
                   </Link2>
+
+                  {asPath === "/" ? (
+                    <Link2
+                      to="progress"
+                      spy={true}
+                      smooth={true}
+                      duration={500}
+                    >
+                      <Button sx={{ my: 2, color: "black", display: "block" }}>
+                        진행과정
+                      </Button>
+                    </Link2>
+                  ) : (
+                    <Link key={"progress"} href={"/"}>
+                      <Button sx={{ my: 2, color: "black", display: "block" }}>
+                        진행과정
+                      </Button>
+                    </Link>
+                  )}
 
                   {/* {pages.map((page) => (
                     <Link

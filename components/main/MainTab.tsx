@@ -66,44 +66,45 @@ const ImportTabIcon = (icon: string) => {
 };
 
 const tabArray = [
-  { label: "대화", icon: ImportTabIcon("counsel") },
-  { label: "아이디어", icon: ImportTabIcon("planning") },
-  { label: "코드 최적화", icon: ImportTabIcon("develop") },
-  { label: "시스템화", icon: ImportTabIcon("deploy") },
-  // { label: "배포", icon: ImportTabIcon("deploy") },
+  { label: "상담", icon: ImportTabIcon("counsel") },
+  { label: "기획", icon: ImportTabIcon("planning") },
+  { label: "디자인", icon: ImportTabIcon("design") },
+  { label: "제작", icon: ImportTabIcon("develop") },
+  { label: "배포", icon: ImportTabIcon("deploy") },
 ];
 
 const tabContentArray = [
   {
-    innerTitle: "다양한 팀원과 대화를 나누며 아이디어를 공유할 수 있습니다.",
-    innerText: `IT서비스에 종사해오며 고객, 기획자, 디자이너, 개발자, 프로젝트매니저 등 다양한 직군의 사람들과 대화하며
-    최적의 서비스를 만들어 나가는데 최선을 다해왔습니다.`,
+    innerTitle: "고객과의 상담이 진행됩니다.",
+    innerText: `프로젝트 크기를 협의하여 기간, 비용 등을 계산하여 알려드립니다. 
+    현업에서 10년 넘게 종사 중인 프로젝트 매니저가 
+    맞춤형 상담으로 원하시는 웹을 정확히 찾아드립니다.`,
     imgUrl: "/images/svg-image/img_tabcontent01.svg",
   },
   {
-    innerTitle: "제품의 시각적 완성도를 위한 아이디어를 가지고 있습니다.",
+    innerTitle: "상담 내용을 시각화합니다.",
     innerText:
-      "6년간 일해온 디자이너의 경험을 바탕으로 고객이 원하는 요소를 정확히 파악하고, 디자이너와 협의하여 좋은 완섬품을 만들 수 있습니다.",
+      "상담한 내용을 바탕으로 제작된 서비스 구조화를 wire-frame으로 받아 보실 수 있습니다. 이후 지속적인 소통을 통해 디자인의 방향성을 결정합니다.",
     imgUrl: "/images/svg-image/img_tabcontent02.svg",
   },
   {
-    innerTitle: "코드를 최적화 하여 서비스를 가볍게만듭니다.",
+    innerTitle: "서비스을 디자인합니다.",
     innerText:
-      "코드 작업시에 처음 접근하는 사람이더라도 이해하기 쉬운 코드를 만드려고 노력하여왔습니다. 또한 아토믹 디자인을 지향하며 재사용 가능한 컴포넌트, 하나의 역할을 수행하는 컴포넌트를 위해 노력하여왔습니다.",
+      "협의된 wire-frame을 기반으로 현업에서 10년 이상 종사 중인 전문 디자이너의 디자인이 진행됩니다.",
+    imgUrl: "/images/svg-image/img_tabcontent03.svg",
+  },
+  {
+    innerTitle: "디자인된 작업을 코드화 합니다.",
+    innerText:
+      "UI Engineer가 다양한 프로그래밍 언어(React, TypeScript, Node.js, Material UI)를 이용하여 최적화된 웹을 제작해 드립니다.",
     imgUrl: "/images/svg-image/img_tabcontent04.svg",
   },
   {
-    innerTitle: "디자인 시스템 제작",
+    innerTitle: "제작 완료된 제품을 Web에 배포합니다.",
     innerText:
-      "작업 진행시 작업한 내용을 시스템화 시켜서 다른 팀원들과 공유하고, 재사용성을 높이기 위해 노력하였습니다.",
+      "지금까지의 작업에 맞는 서버를 제공해 웹에 업로드하는 작업입니다. 10MB까지 무료로 제공됩니다. 최적화된 웹이 제공되며 로딩 속도가 다른 제작 업체에 비해 400% 빠르게 진행되는 것을 확인하실 수 있습니다.",
     imgUrl: "/images/svg-image/img_tabcontent05.svg",
   },
-  // {
-  //   innerTitle: "제작 완료된 제품을 Web에 배포합니다.",
-  //   innerText:
-  //     "지금까지의 작업에 맞는 서버를 제공해 웹에 업로드하는 작업입니다. 10MB까지 무료로 제공됩니다. 최적화된 웹이 제공되며 로딩 속도가 다른 제작 업체에 비해 400% 빠르게 진행되는 것을 확인하실 수 있습니다.",
-  //   imgUrl: "/images/svg-image/img_tabcontent05.svg",
-  // },
 ];
 
 const TabContainer = () => {
@@ -186,7 +187,7 @@ const TabContainer = () => {
 const MainTab = () => {
   return (
     // <Stack id="progress">
-    <Stack id="myinfo">
+    <Stack id="progress">
       <TabContentbg />
       <Typography
         variant="h3"
@@ -196,7 +197,7 @@ const MainTab = () => {
         data-aos="zoom-out"
         data-aos-delay="200"
       >
-        ADVANTAGE
+        진행과정
       </Typography>
 
       {TabContainer()}

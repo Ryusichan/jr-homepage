@@ -117,7 +117,7 @@ const Menu: any = [
     category: "artWork",
     url: "https://nimble-salmiakki-6eb51c.netlify.app",
     modal: true,
-    description: "web 메인, 상세페이지 디자인1",
+    description: "web 메인, 상세페이지",
   },
   {
     id: 13,
@@ -127,7 +127,7 @@ const Menu: any = [
     category: "artWork",
     url: "https://nimble-salmiakki-6eb51c.netlify.app",
     modal: true,
-    description: "web 메인, 상세페이지 디자인2",
+    description: "web 메인, 상세페이지",
   },
   {
     id: 14,
@@ -137,7 +137,7 @@ const Menu: any = [
     category: "artWork",
     url: "https://nimble-salmiakki-6eb51c.netlify.app",
     modal: true,
-    description: "web 메인, 상세페이지 디자인3",
+    description: "web 메인, 상세페이지",
   },
   {
     id: 15,
@@ -147,7 +147,7 @@ const Menu: any = [
     category: "artWork",
     url: "https://nimble-salmiakki-6eb51c.netlify.app",
     modal: true,
-    description: "web 메인, 상세페이지 디자인4",
+    description: "web 메인, 상세페이지",
   },
   {
     id: 16,
@@ -157,7 +157,7 @@ const Menu: any = [
     category: "artWork",
     url: "https://nimble-salmiakki-6eb51c.netlify.app",
     modal: true,
-    description: "web 메인, 상세페이지 디자인5",
+    description: "web 메인, 상세페이지",
   },
   {
     id: 17,
@@ -167,7 +167,7 @@ const Menu: any = [
     category: "artWork",
     url: "https://nimble-salmiakki-6eb51c.netlify.app",
     modal: true,
-    description: "web 메인, 상세페이지 디자인6",
+    description: "web 메인, 상세페이지",
   },
   {
     id: 18,
@@ -177,7 +177,7 @@ const Menu: any = [
     category: "artWork",
     url: "https://nimble-salmiakki-6eb51c.netlify.app",
     modal: true,
-    description: "web 메인, 상세페이지 디자인7",
+    description: "web 메인, 상세페이지",
   },
   {
     id: 19,
@@ -187,7 +187,7 @@ const Menu: any = [
     category: "artWork",
     url: "https://nimble-salmiakki-6eb51c.netlify.app",
     modal: true,
-    description: "web 메인, 상세페이지 디자인8",
+    description: "web 메인, 상세페이지",
   },
   {
     id: 20,

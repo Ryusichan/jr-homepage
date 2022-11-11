@@ -14,12 +14,12 @@ const ContainerOutterBox = styled.div`
 
 const ContainerBox = styled(Container)`
   overflow: hidden;
-  margin-top: 8rem;
-  margin-bottom: 8rem;
-  @media (max-width: 900px) {
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-  }
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  /* @media (max-width: 900px) {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  } */
 `;
 
 const PopolContent = ({ children }: Props) => {
