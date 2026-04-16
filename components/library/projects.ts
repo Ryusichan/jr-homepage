@@ -34,6 +34,24 @@ const projects: ProjectData[] = [
     link: "https://www.lv-ps.com/ko",
   },
   {
+    id: "videohelp",
+    title: "Videohelp.me",
+    subtitle: "WEB RTC 기반 영상 상담 플랫폼",
+    category: "Service Platform",
+    date: "2022",
+    client: "Videohelp.me",
+    description:
+      "WebRTC 기반의 대화형 영상 플랫폼으로, AWS 클라우드형 서버 구축과 디자인 시스템을 적용하여 전문적인 영상 상담 서비스를 제공합니다.",
+    techStack: ["React", "TypeScript", "WebRTC", "AWS"],
+    thumbnail: "/images/vhm/vhm_main.webp",
+    images: [
+      "/images/vhm/vhm_main.webp",
+      "/images/vhm/vhm_home.webp",
+      "/images/vhm/vhm_landing.webp",
+    ],
+    link: "https://www.videohelp.me",
+  },
+  {
     id: "waka",
     title: "WAKA 랜딩페이지",
     subtitle: "WAKA 서비스 소개 랜딩페이지",
@@ -116,20 +134,6 @@ const projects: ProjectData[] = [
     thumbnail: "/images/popol-bg/content02.webp",
     images: ["/images/popol-bg/content02.webp"],
     link: "https://www.gotalk.to",
-  },
-  {
-    id: "videohelp",
-    title: "Videohelp.me",
-    subtitle: "WEB RTC 기반 영상 상담 플랫폼",
-    category: "Service Platform",
-    date: "2022",
-    client: "Videohelp.me",
-    description:
-      "WebRTC 기반의 대화형 영상 플랫폼으로, AWS 클라우드형 서버 구축과 디자인 시스템을 적용하여 전문적인 영상 상담 서비스를 제공합니다.",
-    techStack: ["React", "TypeScript", "WebRTC", "AWS"],
-    thumbnail: "/images/popol-bg/content03.webp",
-    images: ["/images/popol-bg/content03.webp"],
-    link: "https://www.videohelp.me",
   },
   {
     id: "dev-ranking",
