@@ -26,7 +26,9 @@ const projects: ProjectData[] = [
     thumbnail: "/images/lv/lv_main.webp",
     images: [
       "/images/lv/lv_main.webp",
+      "/images/lv/LV_home.webp",
       "/images/lv/LV_content01.webp",
+      "/images/lv/LV_ask.webp",
       "/images/lv/LV_admin.webp",
     ],
     link: "https://www.lv-ps.com/ko",
