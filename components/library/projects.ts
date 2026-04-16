@@ -23,9 +23,9 @@ const projects: ProjectData[] = [
     description:
       "LV 성형외과의 랜딩페이지와 관리자 페이지를 제작한 프로젝트입니다. 다국어(한/영) 지원 랜딩페이지를 통해 해외 고객 유치를 돕고, 관리자 시스템으로 콘텐츠와 예약을 효율적으로 관리할 수 있도록 구현했습니다.",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "AWS"],
-    thumbnail: "/images/lv/LV_main.webp",
+    thumbnail: "/images/lv/lv_main.webp",
     images: [
-      "/images/lv/LV_main.webp",
+      "/images/lv/lv_main.webp",
       "/images/lv/LV_content01.webp",
       "/images/lv/LV_admin.webp",
     ],
