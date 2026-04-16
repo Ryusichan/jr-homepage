@@ -35,16 +35,20 @@ const projects: ProjectData[] = [
   },
   {
     id: "lyft",
-    title: "LYFT 관리자 화면",
-    subtitle: "LYFT 쇼핑몰 서비스 관리자 대시보드",
-    category: "Web Application",
+    title: "LYFT 랜딩 & 관리자",
+    subtitle: "LYFT 쇼핑몰 랜딩페이지 및 관리자 시스템",
+    category: "Landing & Admin",
     date: "2022",
     client: "LYFT",
     description:
-      "LYFT 쇼핑몰의 서비스 운영을 위한 CLOUD형 관리자 대시보드입니다. AWS EC2, RDS, S3, CloudFront, Route53을 활용하여 안정적인 인프라를 구축하였으며, 실시간 데이터 모니터링과 효율적인 상품 관리 기능을 제공합니다.",
+      "LYFT 쇼핑몰의 랜딩페이지와 관리자 시스템을 제작한 프로젝트입니다. 랜딩페이지를 통해 서비스를 소개하고, CLOUD형 관리자 대시보드로 상품 및 서비스를 효율적으로 관리할 수 있도록 구현했습니다. AWS EC2, RDS, S3, CloudFront, Route53을 활용하여 안정적인 인프라를 구축했습니다.",
     techStack: ["React", "TypeScript", "Material UI", "AWS"],
-    thumbnail: "/images/popol-bg/content00.webp",
-    images: ["/images/popol-bg/content00.webp"],
+    thumbnail: "/images/lyft/lyft_main.webp",
+    images: [
+      "/images/lyft/lyft_main.webp",
+      "/images/lyft/lyft_landing.webp",
+      "/images/lyft/lyft_admin.webp",
+    ],
     link: "https://admin-dashboard-eta-five.vercel.app/",
   },
   {
