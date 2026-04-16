@@ -254,7 +254,8 @@ const ActiveUrl = styled.a`
 `;
 
 const Home: NextPage = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [scrollIndex, setScrollIndex] = useState(0); // 트랙 위치용
+  const [bgIndex, setBgIndex] = useState(0); // 배경 이미지용
   const isAnimating = useRef(false);
   const touchStartX = useRef(0);
   const itemRefs = useRef<(HTMLAnchorElement | null)[]>([]);
@@ -264,27 +265,25 @@ const Home: NextPage = () => {
   const goTo = useCallback(
     (idx: number) => {
       const clamped = Math.max(0, Math.min(count - 1, idx));
-      if (clamped === activeIndex && idx === activeIndex) return;
+      if (clamped === scrollIndex) return;
       if (isAnimating.current) return;
       isAnimating.current = true;
-      setActiveIndex(clamped);
+      setScrollIndex(clamped);
+      setBgIndex(clamped);
       setTimeout(() => {
         isAnimating.current = false;
       }, 750);
     },
-    [activeIndex, count]
+    [scrollIndex, count]
   );
 
-  // 아이템 위치 기반 오프셋 계산
+  // 스크롤 인덱스 기반 트랙 오프셋 계산
   useEffect(() => {
-    const el = itemRefs.current[activeIndex];
-    if (!el) return;
-    // 아이템의 중앙이 아닌, 아이템의 시작점을 15vw 위치에 맞춤
     const itemOffset = Array.from(itemRefs.current)
-      .slice(0, activeIndex)
+      .slice(0, scrollIndex)
       .reduce((sum, ref) => sum + (ref?.offsetWidth || 0), 0);
     setOffset(-itemOffset);
-  }, [activeIndex]);
+  }, [scrollIndex]);
 
   // 휠 이벤트
   useEffect(() => {
@@ -293,19 +292,19 @@ const Home: NextPage = () => {
       if (isAnimating.current) return;
 
       if (e.deltaY > 20 || e.deltaX > 20) {
-        goTo(activeIndex + 1);
+        goTo(scrollIndex + 1);
       } else if (e.deltaY < -20 || e.deltaX < -20) {
-        goTo(activeIndex - 1);
+        goTo(scrollIndex - 1);
       }
     };
 
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "ArrowRight" || e.key === "ArrowDown") {
         e.preventDefault();
-        goTo(activeIndex + 1);
+        goTo(scrollIndex + 1);
       } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
         e.preventDefault();
-        goTo(activeIndex - 1);
+        goTo(scrollIndex - 1);
       }
     };
 
@@ -316,8 +315,8 @@ const Home: NextPage = () => {
     const handleTouchEnd = (e: TouchEvent) => {
       const diff = touchStartX.current - e.changedTouches[0].clientX;
       if (Math.abs(diff) > 50) {
-        if (diff > 0) goTo(activeIndex + 1);
-        else goTo(activeIndex - 1);
+        if (diff > 0) goTo(scrollIndex + 1);
+        else goTo(scrollIndex - 1);
       }
     };
 
@@ -332,20 +331,20 @@ const Home: NextPage = () => {
       window.removeEventListener("touchstart", handleTouchStart);
       window.removeEventListener("touchend", handleTouchEnd);
     };
-  }, [activeIndex, goTo]);
+  }, [scrollIndex, goTo]);
 
-  const progress = ((activeIndex + 1) / count) * 100;
-  const active = projects[activeIndex];
+  const progress = ((bgIndex + 1) / count) * 100;
+  const active = projects[bgIndex];
 
   return (
     <>
       <Seo title="Pluton | Digital Experience Studio" />
 
       <PageWrapper>
-        {/* 배경 이미지 */}
+        {/* 배경 이미지 - bgIndex 기반 */}
         <BgLayer>
           {projects.map((project, idx) => (
-            <BgImage key={project.id} active={idx === activeIndex}>
+            <BgImage key={project.id} active={idx === bgIndex}>
               <Image
                 src={project.thumbnail}
                 layout="fill"
@@ -358,22 +357,24 @@ const Home: NextPage = () => {
           ))}
         </BgLayer>
 
-        {/* 가로 텍스트 트랙 - 스크롤 시 이동 */}
+        {/* 가로 텍스트 트랙 - 스크롤로 이동, 호버로 배경만 변경 */}
         <TrackArea>
           <Track offset={offset}>
             {projects.map((project, idx) => (
               <Link key={project.id} href={`/portfolio/${project.id}`}>
                 <ProjectItem
-                  active={idx === activeIndex}
+                  active={idx === scrollIndex}
                   ref={(el) => {
                     itemRefs.current[idx] = el;
                   }}
+                  onMouseEnter={() => setBgIndex(idx)}
+                  onMouseLeave={() => setBgIndex(scrollIndex)}
                 >
                   <ItemCategory>CASE STUDY</ItemCategory>
-                  <ItemClient active={idx === activeIndex}>
+                  <ItemClient active={idx === bgIndex}>
                     {project.client}
                   </ItemClient>
-                  <ItemType active={idx === activeIndex}>
+                  <ItemType active={idx === bgIndex}>
                     {project.category}
                   </ItemType>
                 </ProjectItem>
@@ -403,7 +404,7 @@ const Home: NextPage = () => {
         <BottomBar>
           <MoreLink>더 많은 프로젝트 →</MoreLink>
           <PageIndicator>
-            <span>{String(activeIndex + 1).padStart(2, "0")}</span>
+            <span>{String(bgIndex + 1).padStart(2, "0")}</span>
             {" / "}
             {String(count).padStart(2, "0")}
           </PageIndicator>
