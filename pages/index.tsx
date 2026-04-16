@@ -63,12 +63,12 @@ const ProjectItem = styled.a<{ showBorder: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 40px 44px;
+  padding: 48px 53px;
   cursor: pointer;
   text-decoration: none;
   position: relative;
-  width: 260px;
-  height: 260px;
+  width: 312px;
+  height: 312px;
   transition: none;
 
   /* 보더가 그려지는 효과 */
@@ -110,9 +110,9 @@ const ProjectItem = styled.a<{ showBorder: boolean }>`
   }
 
   @media (max-width: 768px) {
-    padding: 28px 32px;
-    width: 200px;
-    height: 200px;
+    padding: 34px 38px;
+    width: 240px;
+    height: 240px;
   }
 `;
 
