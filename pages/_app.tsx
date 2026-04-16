@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import Appbar from "../components/Appbar";
 import ThemeConfig from "../theme";
 import Footer from "../components/Footer";
+import PageTransition from "../components/PageTransition";
 import Head from "next/head";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -11,6 +12,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
+      <PageTransition />
       <Appbar />
       <Component {...pageProps} />
       <Footer />
