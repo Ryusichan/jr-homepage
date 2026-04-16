@@ -65,6 +65,23 @@ const projects: ProjectData[] = [
       "/images/gotalk/gotalk_landing.webp",
     ],
     link: "https://www.gotalk.to",
+    bgWhite: true,
+  },
+  {
+    id: "gooddoctor",
+    title: "굿닥터 랜딩페이지",
+    subtitle: "굿닥터 서비스 소개 랜딩페이지",
+    category: "Landing Page",
+    date: "2024",
+    client: "굿닥터",
+    description:
+      "굿닥터 서비스의 랜딩페이지를 제작한 프로젝트입니다. 의료 서비스 소개와 상담 안내를 효과적으로 전달할 수 있도록 깔끔한 UI로 구현했습니다.",
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
+    thumbnail: "/images/gooddoctor/gd_main.webp",
+    images: [
+      "/images/gooddoctor/gd_landing.webp",
+    ],
+    link: "",
   },
   {
     id: "waka",
