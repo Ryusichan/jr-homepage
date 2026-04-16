@@ -174,9 +174,13 @@ const ImageSection = styled.div`
   margin-bottom: 48px;
   border-radius: 8px;
   overflow: hidden;
-  position: relative;
-  aspect-ratio: 16 / 10;
   background: #111;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
 `;
 
 const VisitButton = styled.a`
@@ -266,11 +270,11 @@ const PortfolioDetail = ({ project }: Props) => {
         <SectionHeading>Preview</SectionHeading>
         {project.images.map((img, idx) => (
           <ImageSection key={idx}>
-            <Image
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src={img}
-              layout="fill"
-              objectFit="cover"
               alt={`${project.title} preview ${idx + 1}`}
+              loading="lazy"
             />
           </ImageSection>
         ))}
