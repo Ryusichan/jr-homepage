@@ -267,17 +267,21 @@ const PortfolioDetail = ({ project }: Props) => {
           ))}
         </TechList>
 
-        <SectionHeading>Preview</SectionHeading>
-        {project.images.map((img, idx) => (
-          <ImageSection key={idx}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={img}
-              alt={`${project.title} preview ${idx + 1}`}
-              loading="lazy"
-            />
-          </ImageSection>
-        ))}
+        {project.images.length > 0 && (
+          <>
+            <SectionHeading>Preview</SectionHeading>
+            {project.images.map((img, idx) => (
+              <ImageSection key={idx}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={img}
+                  alt={`${project.title} preview ${idx + 1}`}
+                  loading="lazy"
+                />
+              </ImageSection>
+            ))}
+          </>
+        )}
 
         <Divider />
 

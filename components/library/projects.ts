@@ -25,7 +25,6 @@ const projects: ProjectData[] = [
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "AWS"],
     thumbnail: "/images/lv/lv_main.webp",
     images: [
-      "/images/lv/lv_main.webp",
       "/images/lv/LV_home.webp",
       "/images/lv/LV_content01.webp",
       "/images/lv/LV_ask.webp",
@@ -45,11 +44,26 @@ const projects: ProjectData[] = [
     techStack: ["React", "TypeScript", "WebRTC", "AWS"],
     thumbnail: "/images/vhm/vhm_main.webp",
     images: [
-      "/images/vhm/vhm_main.webp",
       "/images/vhm/vhm_home.webp",
       "/images/vhm/vhm_landing.webp",
     ],
     link: "https://www.videohelp.me",
+  },
+  {
+    id: "gotalk",
+    title: "Gotalk",
+    subtitle: "WEB RTC 기반 대화형 영상 플랫폼",
+    category: "Service Platform",
+    date: "2022",
+    client: "GOTALK",
+    description:
+      "WebRTC 기술을 기반으로 제작된 실시간 영상 대화 플랫폼입니다. AWS 클라우드형 서버를 구축하여 안정적인 영상 통신 환경을 제공하며, Redux를 활용한 체계적인 State 관리를 통해 최적화된 사용자 경험을 구현했습니다.",
+    techStack: ["React", "TypeScript", "WebRTC", "Redux", "AWS"],
+    thumbnail: "/images/gotalk/gotalk_main.webp",
+    images: [
+      "/images/gotalk/gotalk_landing.webp",
+    ],
+    link: "https://www.gotalk.to",
   },
   {
     id: "waka",
@@ -63,7 +77,6 @@ const projects: ProjectData[] = [
     techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
     thumbnail: "/images/wakawaka/waka_main.webp",
     images: [
-      "/images/wakawaka/waka_main.webp",
       "/images/wakawaka/waka_landing.webp",
       "/images/wakawaka/waka_dark.webp",
       "/images/wakawaka/waka_price.webp",
@@ -83,7 +96,6 @@ const projects: ProjectData[] = [
     techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
     thumbnail: "/images/truelove/tl_main.webp",
     images: [
-      "/images/truelove/tl_main.webp",
       "/images/truelove/tl_landing.webp",
     ],
     link: "",
@@ -100,7 +112,6 @@ const projects: ProjectData[] = [
     techStack: ["React", "TypeScript", "Material UI", "AWS"],
     thumbnail: "/images/lyft/lyft_main.webp",
     images: [
-      "/images/lyft/lyft_main.webp",
       "/images/lyft/lyft_landing.webp",
       "/images/lyft/lyft_admin.webp",
     ],
@@ -118,7 +129,6 @@ const projects: ProjectData[] = [
     techStack: ["Three.js", "WebGL", "GSAP", "Vite"],
     thumbnail: "/images/g63/g63_main.webp",
     images: [
-      "/images/g63/g63_main.webp",
       "/images/g63/g63_inner.webp",
       "/images/g63/g63_color.webp",
     ],
@@ -135,22 +145,8 @@ const projects: ProjectData[] = [
       "CLOUD형 관리자 화면으로 디자인 시스템을 적용하여 일관된 UI/UX를 제공합니다. AWS EC2, RDS, S3, CloudFront, Route53 기반의 안정적인 서버 환경에서 운영됩니다.",
     techStack: ["React", "TypeScript", "Material UI", "AWS"],
     thumbnail: "/images/popol-bg/content01.webp",
-    images: ["/images/popol-bg/content01.webp"],
+    images: [],
     link: "https://tranquil-taiyaki-aa5a83.netlify.app/dashboard/app",
-  },
-  {
-    id: "gotalk",
-    title: "Gotalk",
-    subtitle: "WEB RTC 기반 대화형 영상 플랫폼",
-    category: "Service Platform",
-    date: "2022",
-    client: "GOTALK",
-    description:
-      "WebRTC 기술을 기반으로 제작된 실시간 영상 대화 플랫폼입니다. AWS 클라우드형 서버를 구축하여 안정적인 영상 통신 환경을 제공하며, Redux를 활용한 체계적인 State 관리를 통해 최적화된 사용자 경험을 구현했습니다.",
-    techStack: ["React", "TypeScript", "WebRTC", "Redux", "AWS"],
-    thumbnail: "/images/popol-bg/content02.webp",
-    images: ["/images/popol-bg/content02.webp"],
-    link: "https://www.gotalk.to",
   },
   {
     id: "dev-ranking",
@@ -163,7 +159,7 @@ const projects: ProjectData[] = [
       "개발자들의 Github 정보를 기반으로 랭킹을 제공하는 서비스입니다. 랭킹 데이터를 통해 개발 언어의 트렌드를 파악할 수 있으며, StackOverflow 데이터를 차트로 시각화하여 제공합니다.",
     techStack: ["React", "TypeScript", "Chart.js", "GitHub API"],
     thumbnail: "/images/popol-bg/content04.webp",
-    images: ["/images/popol-bg/content04.webp"],
+    images: [],
     link: "https://develop-ranking.vercel.app/",
   },
   {
@@ -177,7 +173,7 @@ const projects: ProjectData[] = [
       "Three.js와 WebGL을 활용한 3D 모델링 프로젝트입니다. GSAP와 ScrollTrigger를 사용하여 스크롤 기반의 인터랙티브한 3D 경험을 제공하며, Vite를 사용하여 빠른 빌드 환경을 구성했습니다.",
     techStack: ["Three.js", "WebGL", "GSAP", "Vite"],
     thumbnail: "/images/popol-bg/content05.webp",
-    images: ["/images/popol-bg/content05.webp"],
+    images: [],
     link: "https://myhome-portfolio.vercel.app/",
   },
   {
@@ -191,7 +187,7 @@ const projects: ProjectData[] = [
       "Three.js 기반의 3D Galaxy 모델링 프로젝트입니다. 은하계 각 행성 간 크기와 거리를 비교하여 사실적으로 표현했으며, Vite를 사용하여 빠른 제작 환경을 구성했습니다.",
     techStack: ["Three.js", "WebGL", "Vite"],
     thumbnail: "/images/popol-bg/content06.webp",
-    images: ["/images/popol-bg/content06.webp"],
+    images: [],
     link: "https://three-galaxy-lake.vercel.app/",
   },
   {
@@ -205,7 +201,7 @@ const projects: ProjectData[] = [
       "멘토 회사의 판매 관리를 위한 CLOUD형 관리자 화면입니다. AWS EC2, RDS, S3, CloudFront, Route53을 활용한 안정적인 인프라 환경에서 운영됩니다.",
     techStack: ["React", "TypeScript", "Material UI", "AWS"],
     thumbnail: "/images/popol-bg/content07.webp",
-    images: ["/images/popol-bg/content07.webp"],
+    images: [],
     link: "https://mentor-dashboard-navy.vercel.app/",
   },
 ];
