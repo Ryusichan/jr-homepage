@@ -124,7 +124,7 @@ const ContentBox = styled(Stack)`
 
 const PopolArray = [
   {
-    url: "/images/popol-bg/content00.png",
+    url: "/images/popol-bg/content00.webp",
     main: "LYFT",
     title: "LYFT 관리자 화면",
     subcontent01: "LYFT 쇼핑몰 서비스관리자 화면",
@@ -133,7 +133,7 @@ const PopolArray = [
     link: "https://admin-dashboard-eta-five.vercel.app/",
   },
   {
-    url: "/images/popol-bg/content01.png",
+    url: "/images/popol-bg/content01.webp",
     main: "제이웍",
     title: "제이웍 관리자 화면",
     subcontent01: "CLOUD형 관리자 화면",
@@ -142,7 +142,7 @@ const PopolArray = [
     link: "https://tranquil-taiyaki-aa5a83.netlify.app/dashboard/app",
   },
   {
-    url: "/images/popol-bg/content02.png",
+    url: "/images/popol-bg/content02.webp",
     main: "GOTALK",
     title: "Gotalk",
     subcontent01: "WEB RTC 기반 대화형 영상 플랫폼",
@@ -151,7 +151,7 @@ const PopolArray = [
     link: "https://www.gotalk.to",
   },
   {
-    url: "/images/popol-bg/content03.png",
+    url: "/images/popol-bg/content03.webp",
     main: "Videohelp.me",
     title: "Videohelpme",
     subcontent01: "WEB RTC 기반 대화형 영상 플랫폼",
@@ -160,7 +160,7 @@ const PopolArray = [
     link: "https://www.videohelp.me",
   },
   {
-    url: "/images/popol-bg/content04.png",
+    url: "/images/popol-bg/content04.webp",
     main: "DEVELOPER RANKING",
     title: "Developer Ranking",
     subcontent01: "개발자들의 Github 정보를 기반으로 랭킹을 제공하는 서비스",
@@ -169,7 +169,7 @@ const PopolArray = [
     link: "https://develop-ranking.vercel.app/",
   },
   {
-    url: "/images/popol-bg/content05.png",
+    url: "/images/popol-bg/content05.webp",
     main: "RYU",
     title: "THREE.JS 기반 3D 모델링",
     subcontent01: "Three JS, web GL 학습을 위한 클론코딩",
@@ -178,7 +178,7 @@ const PopolArray = [
     link: "https://myhome-portfolio.vercel.app/",
   },
   {
-    url: "/images/popol-bg/content06.png",
+    url: "/images/popol-bg/content06.webp",
     main: "GALAXY",
     title: "Galaxy 프로젝트",
     subcontent01: "Three JS 기반의 3D Galaxy 모델링",
@@ -187,7 +187,7 @@ const PopolArray = [
     link: "https://three-galaxy-lake.vercel.app/",
   },
   {
-    url: "/images/popol-bg/content07.png",
+    url: "/images/popol-bg/content07.webp",
     main: "MENTOR",
     title: "멘토 관리자 화면",
     subcontent01: "멘토 회사판매관리자 화면",

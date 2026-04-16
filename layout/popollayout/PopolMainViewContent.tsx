@@ -32,7 +32,7 @@ const PcContent = styled.div`
     bottom: -167px;
     left: 50%;
     margin-left: -266px;
-    background: url("/images/image-res/project-video-pc.png") no-repeat center
+    background: url("/images/image-res/project-video-pc.webp") no-repeat center
       center;
     @media (max-width: 768px) {
       height: 90px;

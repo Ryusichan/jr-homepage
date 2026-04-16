@@ -4,7 +4,7 @@ import PopolStyleContent from "../../../components/UI/PopolStyleContent.UI";
 import PopolTitle from "../../../components/UI/PopolTitle.UI";
 import PopolContentLayout from "../../../layout/popollayout/PopolContentLayout";
 import PopolTitleLayout from "../../../layout/popollayout/PopolTitleContentLayout";
-import bgUrl from "images/portfolio/website/wizeschoolbg.jpg";
+import bgUrl from "images/portfolio/website/wizeschoolbg.webp";
 import PopolDateLayout from "../../../layout/popollayout/PopolDateLayout";
 import PopolMainViewContent from "../../../layout/popollayout/PopolMainViewContent";
 import PopolInsideContent from "../../../layout/popollayout/PopolInsideContent";
@@ -16,7 +16,7 @@ const wizeschool = () => {
     <>
       {/* 메인 bg이미지 첨부 */}
       <PopolTitle
-        bgUrl={"/images/image-res/popol-res/wizeschool/popolmain.jpg"}
+        bgUrl={"/images/image-res/popol-res/wizeschool/popolmain.webp"}
       >
         {/* 메인 타이틀 입력 */}
         <PopolTitleLayout
@@ -54,7 +54,7 @@ const wizeschool = () => {
 
       {/* 웹뷰 이미지 넣기 */}
       <PopolWebViewContent
-        bgImage={"/images/image-res/popol-res/wizeschool/wize-web.jpg"}
+        bgImage={"/images/image-res/popol-res/wizeschool/wize-web.webp"}
       />
 
       {/* 모바일뷰를 소개하는 컨텐스 */}
@@ -79,7 +79,7 @@ const wizeschool = () => {
       </PopolContent>
 
       <PopolStyleContent
-        bgImage={"/images/image-res/popol-res/wizeschool/wize-color.jpg"}
+        bgImage={"/images/image-res/popol-res/wizeschool/wize-color.webp"}
       />
     </>
   );
