@@ -55,11 +55,6 @@ const Track = styled.div<{ offset: number }>`
   transform: translateX(${({ offset }) => offset}px);
   transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
   will-change: transform;
-  padding-left: 15vw;
-
-  @media (max-width: 768px) {
-    padding-left: 6vw;
-  }
 `;
 
 /* ── 각 프로젝트 아이템 ── */
@@ -68,12 +63,12 @@ const ProjectItem = styled.a<{ showBorder: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 38px 62px;
+  padding: 40px 44px;
   cursor: pointer;
   text-decoration: none;
   position: relative;
-  min-width: 280px;
-  height: 180px;
+  width: 260px;
+  height: 260px;
   transition: none;
 
   /* 보더가 그려지는 효과 */
@@ -115,9 +110,9 @@ const ProjectItem = styled.a<{ showBorder: boolean }>`
   }
 
   @media (max-width: 768px) {
-    padding: 28px 38px;
-    min-width: 200px;
-    height: 150px;
+    padding: 28px 32px;
+    width: 200px;
+    height: 200px;
   }
 `;
 
@@ -153,6 +148,23 @@ const ItemType = styled.span<{ active: boolean }>`
   letter-spacing: 0.1em;
   margin-top: 8px;
   transition: color 0.4s ease;
+`;
+
+const ItemDesc = styled.span<{ active: boolean }>`
+  font-size: 0.7rem;
+  color: ${({ active }) => (active ? "rgba(255,255,255,0.4)" : "rgba(255,255,255,0.1)")};
+  margin-top: 14px;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: keep-all;
+  transition: color 0.4s ease;
+
+  ${ProjectItem}:hover & {
+    color: rgba(255, 255, 255, 0.35);
+  }
 `;
 
 /* ── 하단 바 ── */
@@ -278,12 +290,15 @@ const Home: NextPage = () => {
     [scrollIndex, count]
   );
 
-  // 스크롤 인덱스 기반 트랙 오프셋 계산
+  // 스크롤 인덱스 기반 트랙 오프셋 계산 (화면 가운데 정렬)
   useEffect(() => {
+    const el = itemRefs.current[scrollIndex];
+    if (!el) return;
     const itemOffset = Array.from(itemRefs.current)
       .slice(0, scrollIndex)
-      .reduce((sum, ref) => sum + (ref?.offsetWidth || 0), 0);
-    setOffset(-itemOffset);
+      .reduce((sum, ref) => sum + (ref?.offsetWidth || 0) + 24, 0); // 24 = gap
+    const centerOffset = (window.innerWidth - el.offsetWidth) / 2;
+    setOffset(-itemOffset + centerOffset);
   }, [scrollIndex]);
 
   // 휠 이벤트
@@ -380,6 +395,14 @@ const Home: NextPage = () => {
                     setHoveredIndex(null);
                     setBgIndex(scrollIndex);
                   }}
+                  onClick={(e) => {
+                    if (idx !== scrollIndex) {
+                      e.preventDefault();
+                      setScrollIndex(idx);
+                      setBgIndex(idx);
+                      setHoveredIndex(null);
+                    }
+                  }}
                 >
                   <ItemCategory>CASE STUDY</ItemCategory>
                   <ItemClient active={idx === bgIndex}>
@@ -388,6 +411,9 @@ const Home: NextPage = () => {
                   <ItemType active={idx === bgIndex}>
                     {project.category}
                   </ItemType>
+                  <ItemDesc active={idx === bgIndex}>
+                    {project.subtitle}
+                  </ItemDesc>
                 </ProjectItem>
               </Link>
             ))}
