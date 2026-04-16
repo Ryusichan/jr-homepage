@@ -65,7 +65,6 @@ const projects: ProjectData[] = [
       "/images/gotalk/gotalk_landing.webp",
     ],
     link: "https://www.gotalk.to",
-    bgWhite: true,
   },
   {
     id: "gooddoctor",
