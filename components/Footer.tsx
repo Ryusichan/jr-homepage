@@ -35,11 +35,11 @@ const Footer = () => {
           <Stack spacing={1}>
             <Typography
               sx={{
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".2rem",
+                fontWeight: 200,
+                letterSpacing: ".35em",
+                textTransform: "uppercase",
                 color: "#fff",
-                fontSize: "1.2rem",
+                fontSize: "1.1rem",
               }}
             >
               PLUTON

@@ -20,10 +20,10 @@ const Header = styled.header`
 `;
 
 const Logo = styled.a`
-  font-family: monospace;
-  font-weight: 800;
-  font-size: 1.5rem;
-  letter-spacing: 0.2rem;
+  font-weight: 200;
+  font-size: 1.4rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
   color: #fff;
   text-decoration: none;
   z-index: 110;
