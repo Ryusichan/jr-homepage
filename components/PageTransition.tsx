@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import styled, { keyframes } from "styled-components";
 
 const slideIn = keyframes`
@@ -12,7 +12,7 @@ const slideOut = keyframes`
   to { transform: translateY(-100%); }
 `;
 
-const Overlay = styled.div<{ phase: "enter" | "exit" | "idle" }>`
+const Overlay = styled.div<{ phase: "enter" | "hold" | "exit" | "idle" }>`
   position: fixed;
   inset: 0;
   z-index: 9999;
@@ -22,9 +22,13 @@ const Overlay = styled.div<{ phase: "enter" | "exit" | "idle" }>`
   justify-content: center;
   align-items: center;
   pointer-events: ${({ phase }) => (phase === "idle" ? "none" : "all")};
-  opacity: ${({ phase }) => (phase === "idle" ? 0 : 1)};
+  visibility: ${({ phase }) => (phase === "idle" ? "hidden" : "visible")};
   animation: ${({ phase }) =>
-      phase === "enter" ? slideIn : phase === "exit" ? slideOut : "none"}
+      phase === "enter"
+        ? slideIn
+        : phase === "exit"
+        ? slideOut
+        : "none"}
     0.5s cubic-bezier(0.65, 0, 0.35, 1) forwards;
 `;
 
@@ -51,20 +55,46 @@ const LoadingText = styled.span`
 
 const PageTransition = () => {
   const router = useRouter();
-  const [phase, setPhase] = useState<"enter" | "exit" | "idle">("idle");
+  const [phase, setPhase] = useState<"enter" | "hold" | "exit" | "idle">(
+    "idle"
+  );
+  const enterDone = useRef(false);
+  const routeDone = useRef(false);
 
   useEffect(() => {
+    const tryExit = () => {
+      // 슬라이드 인 애니메이션 완료 + 라우트 전환 완료 둘 다 되어야 exit
+      if (enterDone.current && routeDone.current) {
+        // 최소 로딩 표시 시간 보장 후 exit
+        setTimeout(() => {
+          setPhase("exit");
+          setTimeout(() => {
+            setPhase("idle");
+            enterDone.current = false;
+            routeDone.current = false;
+          }, 500);
+        }, 400);
+      }
+    };
+
     const handleStart = (url: string) => {
       if (url !== router.asPath) {
+        enterDone.current = false;
+        routeDone.current = false;
         setPhase("enter");
+
+        // 슬라이드 인 애니메이션 완료 (0.5s) 후 플래그
+        setTimeout(() => {
+          enterDone.current = true;
+          setPhase("hold");
+          tryExit();
+        }, 500);
       }
     };
 
     const handleComplete = () => {
-      setTimeout(() => {
-        setPhase("exit");
-        setTimeout(() => setPhase("idle"), 500);
-      }, 300);
+      routeDone.current = true;
+      tryExit();
     };
 
     router.events.on("routeChangeStart", handleStart);
