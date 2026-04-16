@@ -34,6 +34,26 @@ const projects: ProjectData[] = [
     link: "https://www.lv-ps.com/ko",
   },
   {
+    id: "wakawaka",
+    title: "WAKAWAKA 랜딩페이지",
+    subtitle: "WAKAWAKA 서비스 소개 랜딩페이지",
+    category: "Landing Page",
+    date: "2024",
+    client: "WAKAWAKA",
+    description:
+      "WAKAWAKA 서비스의 랜딩페이지를 제작한 프로젝트입니다. 라이트/다크 모드를 지원하며, 서비스 소개와 요금제 안내 페이지를 깔끔한 UI로 구현했습니다.",
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
+    thumbnail: "/images/wakawaka/waka_main.webp",
+    images: [
+      "/images/wakawaka/waka_main.webp",
+      "/images/wakawaka/waka_landing.webp",
+      "/images/wakawaka/waka_dark.webp",
+      "/images/wakawaka/waka_price.webp",
+      "/images/wakawaka/waka_price_dark.webp",
+    ],
+    link: "",
+  },
+  {
     id: "lyft",
     title: "LYFT 랜딩 & 관리자",
     subtitle: "LYFT 쇼핑몰 랜딩페이지 및 관리자 시스템",
