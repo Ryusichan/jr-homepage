@@ -72,6 +72,23 @@ const projects: ProjectData[] = [
     link: "",
   },
   {
+    id: "truelove",
+    title: "참사랑병원 랜딩페이지",
+    subtitle: "참사랑병원 서비스 소개 랜딩페이지",
+    category: "Landing Page",
+    date: "2024",
+    client: "참사랑병원",
+    description:
+      "참사랑병원의 랜딩페이지를 제작한 프로젝트입니다. 병원 소개와 진료 안내를 효과적으로 전달할 수 있도록 깔끔한 UI로 구현했습니다.",
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
+    thumbnail: "/images/truelove/tl_main.webp",
+    images: [
+      "/images/truelove/tl_main.webp",
+      "/images/truelove/tl_landing.webp",
+    ],
+    link: "",
+  },
+  {
     id: "lyft",
     title: "LYFT 랜딩 & 관리자",
     subtitle: "LYFT 쇼핑몰 랜딩페이지 및 관리자 시스템",
