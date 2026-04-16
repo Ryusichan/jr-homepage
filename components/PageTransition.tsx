@@ -59,6 +59,9 @@ const fadeIn = keyframes`
 `;
 
 const SpinnerWrap = styled.div<{ phase: string }>`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   animation: ${fadeIn} 0.3s ease 0.2s both;
 `;
 
