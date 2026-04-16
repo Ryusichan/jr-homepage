@@ -72,6 +72,24 @@ const projects: ProjectData[] = [
     link: "https://admin-dashboard-eta-five.vercel.app/",
   },
   {
+    id: "g63",
+    title: "G63 3D 인터랙티브",
+    subtitle: "Three.js 기반 Mercedes G63 3D 쇼케이스",
+    category: "3D Web",
+    date: "2024",
+    client: "G63 Project",
+    description:
+      "Three.js를 활용한 Mercedes G63 3D 인터랙티브 쇼케이스입니다. 실시간 3D 렌더링으로 차량의 외관과 내부를 자유롭게 탐색할 수 있으며, 컬러 커스터마이징 기능을 제공합니다.",
+    techStack: ["Three.js", "WebGL", "GSAP", "Vite"],
+    thumbnail: "/images/g63/g63_main.webp",
+    images: [
+      "/images/g63/g63_main.webp",
+      "/images/g63/g63_inner.webp",
+      "/images/g63/g63_color.webp",
+    ],
+    link: "",
+  },
+  {
     id: "jwork",
     title: "제이웍 관리자 화면",
     subtitle: "CLOUD형 관리자 대시보드 시스템",
