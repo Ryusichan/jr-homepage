@@ -2,7 +2,6 @@ import type { NextPage } from "next";
 import { useState, useEffect, useRef, useCallback } from "react";
 import Seo from "../components/Seo";
 import styled from "styled-components";
-import Image from "next/image";
 import Link from "next/link";
 import projects from "../components/library/projects";
 
@@ -326,20 +325,29 @@ const Home: NextPage = () => {
       <Seo title="Pluton | Digital Experience Studio" />
 
       <PageWrapper>
-        {/* 배경 이미지 - bgIndex 기반 */}
+        {/* 배경 이미지 - 현재/인접 항목만 렌더링 */}
         <BgLayer>
-          {projects.map((project, idx) => (
-            <BgImage key={project.id} active={idx === bgIndex} bgWhite={project.bgWhite}>
-              <Image
-                src={project.thumbnail}
-                layout="fill"
-                objectFit="cover"
-                alt=""
-                priority={idx < 2}
-                loading={idx < 2 ? undefined : "lazy"}
-              />
-            </BgImage>
-          ))}
+          {projects.map((project, idx) => {
+            const nearby = Math.abs(idx - bgIndex) <= 1
+              || Math.abs(idx - scrollIndex) <= 1;
+            if (!nearby) return null;
+            return (
+              <BgImage key={project.id} active={idx === bgIndex} bgWhite={project.bgWhite}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={project.thumbnail}
+                  alt=""
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                  }}
+                />
+              </BgImage>
+            );
+          })}
         </BgLayer>
 
         {/* 가로 텍스트 트랙 - 스크롤로 이동, 호버로 배경만 변경 */}

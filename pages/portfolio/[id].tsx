@@ -3,7 +3,6 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import Seo from "../../components/Seo";
 import projects, { ProjectData } from "../../components/library/projects";
 import styled from "styled-components";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowBack } from "@mui/icons-material";
 
@@ -218,12 +217,17 @@ const PortfolioDetail = ({ project }: Props) => {
       <Seo title={`${project.title} | Pluton`} />
 
       <HeroArea>
-        <Image
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src={project.thumbnail}
-          layout="fill"
-          objectFit="cover"
           alt={project.title}
-          priority
+          style={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+          }}
         />
         <HeroContent>
           <Link href="/">

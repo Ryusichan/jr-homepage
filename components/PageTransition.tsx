@@ -65,7 +65,6 @@ const PageTransition = () => {
     const tryExit = () => {
       // 슬라이드 인 애니메이션 완료 + 라우트 전환 완료 둘 다 되어야 exit
       if (enterDone.current && routeDone.current) {
-        // 최소 로딩 표시 시간 보장 후 exit
         setTimeout(() => {
           setPhase("exit");
           setTimeout(() => {
@@ -73,7 +72,7 @@ const PageTransition = () => {
             enterDone.current = false;
             routeDone.current = false;
           }, 500);
-        }, 400);
+        }, 200);
       }
     };
 
