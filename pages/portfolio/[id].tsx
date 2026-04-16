@@ -186,12 +186,11 @@ const VisitButton = styled.a`
   display: inline-block;
   background: #fff;
   color: #0a0a0a;
-  color: #fff;
   padding: 14px 40px;
   font-size: 0.95rem;
   font-weight: 600;
   text-decoration: none;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
   margin-top: 16px;
 
   &:hover {
