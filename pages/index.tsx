@@ -232,38 +232,6 @@ const ProgressFill = styled.div<{ progress: number }>`
   transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
 `;
 
-/* ── 좌측 프로젝트 정보 ── */
-const ActiveInfo = styled.div`
-  position: absolute;
-  bottom: 110px;
-  left: 48px;
-  z-index: 3;
-
-  @media (max-width: 768px) {
-    left: 24px;
-    bottom: 100px;
-  }
-`;
-
-const ActiveLabel = styled.div`
-  font-size: 0.65rem;
-  color: rgba(255, 255, 255, 0.3);
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  margin-bottom: 6px;
-`;
-
-const ActiveUrl = styled.a`
-  font-size: 0.7rem;
-  color: rgba(255, 255, 255, 0.45);
-  text-decoration: none;
-  letter-spacing: 0.02em;
-  transition: color 0.2s;
-
-  &:hover {
-    color: #fff;
-  }
-`;
 
 const Home: NextPage = () => {
   const [scrollIndex, setScrollIndex] = useState(0); // 트랙 위치용
@@ -350,7 +318,6 @@ const Home: NextPage = () => {
   }, [scrollIndex, goTo]);
 
   const progress = ((bgIndex + 1) / count) * 100;
-  const active = projects[bgIndex];
 
   return (
     <>
@@ -419,18 +386,6 @@ const Home: NextPage = () => {
             ))}
           </Track>
         </TrackArea>
-
-        {/* 좌측 하단 링크 */}
-        <ActiveInfo>
-          <ActiveLabel>Project Link</ActiveLabel>
-          <ActiveUrl
-            href={active.link}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {active.link}
-          </ActiveUrl>
-        </ActiveInfo>
 
         {/* 프로그레스 */}
         <ProgressWrap>
