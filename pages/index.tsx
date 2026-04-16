@@ -5,273 +5,179 @@ import Image from "next/image";
 import Link from "next/link";
 import projects from "../components/library/projects";
 
-const HeroSection = styled.section`
-  width: 100%;
-  min-height: 100vh;
+const PageWrapper = styled.main`
   background-color: #0a0a0a;
+  padding-top: 72px;
+
+  @media (max-width: 900px) {
+    padding-top: 64px;
+  }
+`;
+
+const ProjectList = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 120px 40px 80px;
-  text-align: center;
+`;
+
+const ProjectCard = styled.a`
   position: relative;
-  overflow: hidden;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(
-      ellipse at 50% 0%,
-      rgba(113, 98, 215, 0.08) 0%,
-      transparent 60%
-    );
-    pointer-events: none;
-  }
-
-  @media (max-width: 768px) {
-    padding: 100px 20px 60px;
-    min-height: 70vh;
-  }
-`;
-
-const HeroTitle = styled.h1`
-  font-size: 4.5rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 24px;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-
-  span {
-    color: #7162d7;
-  }
-
-  @media (max-width: 768px) {
-    font-size: 2.5rem;
-  }
-  @media (max-width: 480px) {
-    font-size: 2rem;
-  }
-`;
-
-const HeroSubtitle = styled.p`
-  font-size: 1.125rem;
-  color: #888888;
-  max-width: 600px;
-  line-height: 1.7;
-  margin-bottom: 40px;
-
-  @media (max-width: 768px) {
-    font-size: 0.95rem;
-  }
-`;
-
-const ProjectSection = styled.section`
   width: 100%;
-  background-color: #0a0a0a;
-  padding: 0;
-`;
-
-const SectionTitle = styled.h2`
-  font-size: 1rem;
-  font-weight: 500;
-  color: #666;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  padding: 60px 40px 30px;
-  max-width: 1400px;
-  margin: 0 auto;
-
-  @media (max-width: 768px) {
-    padding: 40px 20px 20px;
-  }
-`;
-
-const ProjectGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2px;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-const ProjectCard = styled.div`
-  position: relative;
-  aspect-ratio: 16 / 10;
+  height: 100vh;
+  min-height: 500px;
   overflow: hidden;
   cursor: pointer;
-  background-color: #111;
+  display: block;
 
   &::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-      to bottom,
-      transparent 40%,
-      rgba(0, 0, 0, 0.7) 100%
-    );
-    transition: opacity 0.4s ease;
+    background: rgba(0, 0, 0, 0.35);
+    transition: background 0.5s ease;
+    z-index: 1;
   }
 
   &:hover {
     &::after {
-      background: rgba(113, 98, 215, 0.85);
+      background: rgba(0, 0, 0, 0.15);
     }
 
     img {
-      transform: scale(1.05);
+      transform: scale(1.03);
     }
 
-    .card-overlay {
+    .go-link {
       opacity: 1;
       transform: translateY(0);
-    }
-
-    .card-info {
-      opacity: 0;
     }
   }
 
   img {
-    transition: transform 0.6s ease;
+    transition: transform 0.8s ease;
+  }
+
+  @media (max-width: 768px) {
+    height: 60vh;
+    min-height: 360px;
   }
 `;
 
-const CardInfo = styled.div`
+const CardContent = styled.div`
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 32px;
+  padding: 48px 60px;
   z-index: 2;
-  transition: opacity 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 
   @media (max-width: 768px) {
-    padding: 20px;
+    padding: 28px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
   }
 `;
+
+const CardTextGroup = styled.div``;
 
 const CardCategory = styled.span`
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.6);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
   display: block;
-  margin-bottom: 8px;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 10px;
 `;
 
-const CardTitle = styled.h3`
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #ffffff;
-  margin: 0;
-
-  @media (max-width: 768px) {
-    font-size: 1.2rem;
-  }
-`;
-
-const CardOverlay = styled.div`
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 3;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: all 0.4s ease;
-  padding: 32px;
-  text-align: center;
-`;
-
-const OverlayTitle = styled.h3`
-  font-size: 1.8rem;
+const CardTitle = styled.h2`
+  font-size: 2.8rem;
   font-weight: 700;
   color: #ffffff;
-  margin-bottom: 12px;
-
-  @media (max-width: 768px) {
-    font-size: 1.3rem;
-  }
-`;
-
-const OverlaySubtitle = styled.p`
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.85);
-  margin-bottom: 24px;
-  line-height: 1.5;
-`;
-
-const ViewButton = styled.span`
-  display: inline-block;
-  border: 2px solid #fff;
-  color: #fff;
-  padding: 12px 36px;
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  transition: all 0.3s ease;
-
-  &:hover {
-    background: #fff;
-    color: #7162d7;
-  }
-
-  @media (max-width: 768px) {
-    padding: 10px 28px;
-    font-size: 0.8rem;
-  }
-`;
-
-const ContactSection = styled.section`
-  width: 100%;
-  background-color: #0a0a0a;
-  padding: 120px 40px;
-  text-align: center;
-
-  @media (max-width: 768px) {
-    padding: 80px 20px;
-  }
-`;
-
-const ContactTitle = styled.h2`
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 20px;
+  margin: 0 0 6px 0;
+  line-height: 1.15;
 
   @media (max-width: 768px) {
     font-size: 1.8rem;
   }
 `;
 
-const ContactDesc = styled.p`
+const CardSubtitle = styled.p`
   font-size: 1rem;
-  color: #888;
-  margin-bottom: 40px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 0.85rem;
+  }
+`;
+
+const GoLink = styled.span`
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 12px 28px;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(8px);
+  flex-shrink: 0;
+
+  &:hover {
+    background: #fff;
+    color: #0a0a0a;
+    border-color: #fff;
+  }
+
+  @media (max-width: 768px) {
+    opacity: 1;
+    transform: translateY(0);
+    padding: 10px 22px;
+    font-size: 0.8rem;
+  }
+`;
+
+const ContactSection = styled.section`
+  background-color: #0a0a0a;
+  padding: 100px 40px;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+  @media (max-width: 768px) {
+    padding: 60px 20px;
+  }
+`;
+
+const ContactTitle = styled.h2`
+  font-size: 2rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 16px;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+`;
+
+const ContactDesc = styled.p`
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 36px;
 `;
 
 const ContactButton = styled.a`
   display: inline-block;
   background: #7162d7;
   color: #fff;
-  padding: 16px 48px;
-  font-size: 1rem;
+  padding: 14px 44px;
+  font-size: 0.95rem;
   font-weight: 600;
-  border: none;
-  cursor: pointer;
-  transition: background 0.3s ease;
   text-decoration: none;
+  transition: background 0.3s ease;
 
   &:hover {
     background: #5a4cc6;
@@ -281,60 +187,43 @@ const ContactButton = styled.a`
 const Home: NextPage = () => {
   return (
     <>
-      <Seo title="Pluton" />
+      <Seo title="Pluton | Digital Experience Studio" />
 
-      <HeroSection>
-        <HeroTitle>
-          We Create <span>Digital</span>
-          <br />
-          Experiences
-        </HeroTitle>
-        <HeroSubtitle>
-          기획부터 디자인, 개발, 배포까지.
-          <br />
-          고객 맞춤형 디지털 서비스를 제작합니다.
-        </HeroSubtitle>
-      </HeroSection>
-
-      <ProjectSection>
-        <SectionTitle>Selected Projects</SectionTitle>
-        <ProjectGrid>
+      <PageWrapper>
+        <ProjectList>
           {projects.map((project) => (
             <Link key={project.id} href={`/portfolio/${project.id}`}>
-              <a>
-                <ProjectCard>
-                  <Image
-                    src={project.thumbnail}
-                    layout="fill"
-                    objectFit="cover"
-                    alt={project.title}
-                    loading="lazy"
-                  />
-                  <CardInfo className="card-info">
+              <ProjectCard>
+                <Image
+                  src={project.thumbnail}
+                  layout="fill"
+                  objectFit="cover"
+                  alt={project.title}
+                  loading="lazy"
+                />
+                <CardContent>
+                  <CardTextGroup>
                     <CardCategory>{project.category}</CardCategory>
-                    <CardTitle>{project.title}</CardTitle>
-                  </CardInfo>
-                  <CardOverlay className="card-overlay">
-                    <OverlayTitle>{project.title}</OverlayTitle>
-                    <OverlaySubtitle>{project.subtitle}</OverlaySubtitle>
-                    <ViewButton>View Project</ViewButton>
-                  </CardOverlay>
-                </ProjectCard>
-              </a>
+                    <CardTitle>{project.client}</CardTitle>
+                    <CardSubtitle>{project.subtitle}</CardSubtitle>
+                  </CardTextGroup>
+                  <GoLink className="go-link">View Project →</GoLink>
+                </CardContent>
+              </ProjectCard>
             </Link>
           ))}
-        </ProjectGrid>
-      </ProjectSection>
+        </ProjectList>
 
-      <ContactSection>
-        <ContactTitle>프로젝트를 시작해보세요</ContactTitle>
-        <ContactDesc>
-          새로운 프로젝트에 대해 이야기 나눠보겠습니다.
-        </ContactDesc>
-        <ContactButton href="mailto:godtheenell@gmail.com">
-          Contact Us
-        </ContactButton>
-      </ContactSection>
+        <ContactSection>
+          <ContactTitle>프로젝트 문의</ContactTitle>
+          <ContactDesc>
+            새로운 프로젝트에 대해 이야기 나눠보겠습니다.
+          </ContactDesc>
+          <ContactButton href="mailto:godtheenell@gmail.com">
+            Contact Us
+          </ContactButton>
+        </ContactSection>
+      </PageWrapper>
     </>
   );
 };
