@@ -74,12 +74,44 @@ const ProjectItem = styled.a<{ active: boolean }>`
   position: relative;
   min-width: 280px;
   height: 160px;
-  border: 1px solid
-    ${({ active }) => (active ? "rgba(255,255,255,0.6)" : "transparent")};
-  transition: border-color 0.4s ease;
+  transition: none;
+
+  /* 보더가 그려지는 효과: 4개 변이 순차적으로 나타남 */
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  /* top + bottom 라인 */
+  &::before {
+    top: 0;
+    left: 0;
+    width: ${({ active }) => (active ? "100%" : "0")};
+    height: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.6);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  }
+
+  /* left + right 라인 */
+  &::after {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: ${({ active }) => (active ? "100%" : "0")};
+    border-left: 1px solid rgba(255, 255, 255, 0.6);
+    border-right: 1px solid rgba(255, 255, 255, 0.6);
+    transition-delay: 0.1s;
+  }
 
   &:hover {
-    border-color: rgba(255, 255, 255, 0.4);
+    &::before {
+      width: 100%;
+    }
+    &::after {
+      height: 100%;
+    }
   }
 
   @media (max-width: 768px) {
@@ -336,7 +368,6 @@ const Home: NextPage = () => {
                   ref={(el) => {
                     itemRefs.current[idx] = el;
                   }}
-                  onMouseEnter={() => setActiveIndex(idx)}
                 >
                   <ItemCategory>CASE STUDY</ItemCategory>
                   <ItemClient active={idx === activeIndex}>
