@@ -51,7 +51,7 @@ const TrackArea = styled.div`
 const Track = styled.div<{ offset: number }>`
   display: flex;
   align-items: center;
-  gap: 0;
+  gap: 24px;
   transform: translateX(${({ offset }) => offset}px);
   transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
   will-change: transform;
@@ -63,20 +63,20 @@ const Track = styled.div<{ offset: number }>`
 `;
 
 /* ── 각 프로젝트 아이템 ── */
-const ProjectItem = styled.a<{ active: boolean }>`
+const ProjectItem = styled.a<{ showBorder: boolean }>`
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 32px 52px;
+  padding: 38px 62px;
   cursor: pointer;
   text-decoration: none;
   position: relative;
   min-width: 280px;
-  height: 160px;
+  height: 180px;
   transition: none;
 
-  /* 보더가 그려지는 효과: 4개 변이 순차적으로 나타남 */
+  /* 보더가 그려지는 효과 */
   &::before,
   &::after {
     content: "";
@@ -88,7 +88,7 @@ const ProjectItem = styled.a<{ active: boolean }>`
   &::before {
     top: 0;
     left: 0;
-    width: ${({ active }) => (active ? "100%" : "0")};
+    width: ${({ showBorder }) => (showBorder ? "100%" : "0")};
     height: 100%;
     border-top: 1px solid rgba(255, 255, 255, 0.6);
     border-bottom: 1px solid rgba(255, 255, 255, 0.6);
@@ -99,7 +99,7 @@ const ProjectItem = styled.a<{ active: boolean }>`
     top: 0;
     left: 0;
     width: 100%;
-    height: ${({ active }) => (active ? "100%" : "0")};
+    height: ${({ showBorder }) => (showBorder ? "100%" : "0")};
     border-left: 1px solid rgba(255, 255, 255, 0.6);
     border-right: 1px solid rgba(255, 255, 255, 0.6);
     transition-delay: 0.1s;
@@ -115,9 +115,9 @@ const ProjectItem = styled.a<{ active: boolean }>`
   }
 
   @media (max-width: 768px) {
-    padding: 24px 32px;
+    padding: 28px 38px;
     min-width: 200px;
-    height: 130px;
+    height: 150px;
   }
 `;
 
@@ -256,6 +256,7 @@ const ActiveUrl = styled.a`
 const Home: NextPage = () => {
   const [scrollIndex, setScrollIndex] = useState(0); // 트랙 위치용
   const [bgIndex, setBgIndex] = useState(0); // 배경 이미지용
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null); // 호버 중인 항목
   const isAnimating = useRef(false);
   const touchStartX = useRef(0);
   const itemRefs = useRef<(HTMLAnchorElement | null)[]>([]);
@@ -363,12 +364,22 @@ const Home: NextPage = () => {
             {projects.map((project, idx) => (
               <Link key={project.id} href={`/portfolio/${project.id}`}>
                 <ProjectItem
-                  active={idx === scrollIndex}
+                  showBorder={
+                    hoveredIndex === null
+                      ? idx === scrollIndex
+                      : idx === hoveredIndex
+                  }
                   ref={(el) => {
                     itemRefs.current[idx] = el;
                   }}
-                  onMouseEnter={() => setBgIndex(idx)}
-                  onMouseLeave={() => setBgIndex(scrollIndex)}
+                  onMouseEnter={() => {
+                    setHoveredIndex(idx);
+                    setBgIndex(idx);
+                  }}
+                  onMouseLeave={() => {
+                    setHoveredIndex(null);
+                    setBgIndex(scrollIndex);
+                  }}
                 >
                   <ItemCategory>CASE STUDY</ItemCategory>
                   <ItemClient active={idx === bgIndex}>
