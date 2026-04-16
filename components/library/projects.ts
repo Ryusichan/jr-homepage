@@ -10,6 +10,7 @@ export interface ProjectData {
   thumbnail: string;
   images: string[];
   link: string;
+  bgWhite?: boolean;
 }
 
 const projects: ProjectData[] = [
@@ -147,6 +148,7 @@ const projects: ProjectData[] = [
     thumbnail: "/images/popol-bg/content01.webp",
     images: [],
     link: "https://tranquil-taiyaki-aa5a83.netlify.app/dashboard/app",
+    bgWhite: true,
   },
   {
     id: "dev-ranking",
@@ -161,6 +163,7 @@ const projects: ProjectData[] = [
     thumbnail: "/images/popol-bg/content04.webp",
     images: [],
     link: "https://develop-ranking.vercel.app/",
+    bgWhite: true,
   },
   {
     id: "three-room",
@@ -175,6 +178,7 @@ const projects: ProjectData[] = [
     thumbnail: "/images/popol-bg/content05.webp",
     images: [],
     link: "https://myhome-portfolio.vercel.app/",
+    bgWhite: true,
   },
   {
     id: "galaxy",
@@ -189,6 +193,7 @@ const projects: ProjectData[] = [
     thumbnail: "/images/popol-bg/content06.webp",
     images: [],
     link: "https://three-galaxy-lake.vercel.app/",
+    bgWhite: true,
   },
   {
     id: "mentor",
@@ -203,6 +208,7 @@ const projects: ProjectData[] = [
     thumbnail: "/images/popol-bg/content07.webp",
     images: [],
     link: "https://mentor-dashboard-navy.vercel.app/",
+    bgWhite: true,
   },
 ];
 

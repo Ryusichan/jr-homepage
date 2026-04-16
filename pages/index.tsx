@@ -22,17 +22,19 @@ const BgLayer = styled.div`
   z-index: 0;
 `;
 
-const BgImage = styled.div<{ active: boolean }>`
+const BgImage = styled.div<{ active: boolean; bgWhite?: boolean }>`
   position: absolute;
   inset: 0;
   opacity: ${({ active }) => (active ? 1 : 0)};
   transition: opacity 0.8s ease;
+  background: ${({ bgWhite }) => (bgWhite ? "#fff" : "transparent")};
 
   &::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.45);
+    background: ${({ bgWhite }) =>
+      bgWhite ? "rgba(255, 255, 255, 0.15)" : "rgba(0, 0, 0, 0.45)"};
   }
 `;
 
@@ -327,7 +329,7 @@ const Home: NextPage = () => {
         {/* 배경 이미지 - bgIndex 기반 */}
         <BgLayer>
           {projects.map((project, idx) => (
-            <BgImage key={project.id} active={idx === bgIndex}>
+            <BgImage key={project.id} active={idx === bgIndex} bgWhite={project.bgWhite}>
               <Image
                 src={project.thumbnail}
                 layout="fill"
