@@ -165,8 +165,8 @@ const TechTag = styled.span`
   transition: all 0.2s;
 
   &:hover {
-    border-color: #7162d7;
-    color: #7162d7;
+    border-color: #fff;
+    color: #fff;
   }
 `;
 
@@ -181,7 +181,8 @@ const ImageSection = styled.div`
 
 const VisitButton = styled.a`
   display: inline-block;
-  background: #7162d7;
+  background: #fff;
+  color: #0a0a0a;
   color: #fff;
   padding: 14px 40px;
   font-size: 0.95rem;
@@ -191,7 +192,7 @@ const VisitButton = styled.a`
   margin-top: 16px;
 
   &:hover {
-    background: #5a4cc6;
+    background: #ddd;
   }
 `;
 

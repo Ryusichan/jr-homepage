@@ -1,34 +1,32 @@
 import type { NextPage } from "next";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import Seo from "../components/Seo";
 import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
 import projects from "../components/library/projects";
 
-/* ── 가로 스크롤 영역: 세로 스크롤을 가로 이동으로 변환 ── */
-const HorizontalSection = styled.section<{ count: number }>`
-  position: relative;
-  /* 카드 수 * 100vw 만큼 세로 높이를 확보해서 스크롤 공간 생성 */
-  height: ${({ count }) => count * 100}vh;
-`;
-
-const StickyContainer = styled.div`
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  overflow: hidden;
+/* ── 전체 래퍼: wheel 이벤트로 스냅 제어 ── */
+const PageWrapper = styled.div`
   background: #0a0a0a;
 `;
 
-const Track = styled.div<{ offset: number }>`
+const SliderSection = styled.section`
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+`;
+
+const Track = styled.div<{ index: number }>`
   display: flex;
   height: 100%;
-  transform: translateX(${({ offset }) => offset}px);
+  transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+  transform: translateX(${({ index }) => -index * 100}vw);
   will-change: transform;
 `;
 
-/* ── 각 프로젝트 카드 (풀스크린 슬라이드) ── */
+/* ── 각 슬라이드 ── */
 const Slide = styled.div`
   flex-shrink: 0;
   width: 100vw;
@@ -64,7 +62,7 @@ const Slide = styled.div`
   }
 `;
 
-/* ── 카드 안 콘텐츠 ── */
+/* ── 슬라이드 콘텐츠 ── */
 const SlideContent = styled.div`
   position: absolute;
   bottom: 0;
@@ -172,11 +170,11 @@ const ProgressBar = styled.div`
 const ProgressFill = styled.div<{ progress: number }>`
   height: 100%;
   width: ${({ progress }) => progress}%;
-  background: #7162d7;
-  transition: width 0.1s linear;
+  background: #fff;
+  transition: width 0.8s cubic-bezier(0.65, 0, 0.35, 1);
 `;
 
-/* ── 슬라이드 카운터 ── */
+/* ── 카운터 ── */
 const Counter = styled.div`
   position: absolute;
   top: 50%;
@@ -196,6 +194,38 @@ const Counter = styled.div`
   @media (max-width: 768px) {
     right: 16px;
     font-size: 0.7rem;
+  }
+`;
+
+/* ── 도트 네비게이션 ── */
+const DotNav = styled.div`
+  position: absolute;
+  right: 48px;
+  bottom: 56px;
+  z-index: 3;
+  display: flex;
+  gap: 8px;
+
+  @media (max-width: 768px) {
+    right: 24px;
+    bottom: 40px;
+    gap: 6px;
+  }
+`;
+
+const Dot = styled.button<{ active: boolean }>`
+  width: ${({ active }) => (active ? "24px" : "8px")};
+  height: 8px;
+  border-radius: 4px;
+  border: none;
+  background: ${({ active }) =>
+    active ? "#fff" : "rgba(255, 255, 255, 0.3)"};
+  cursor: pointer;
+  transition: all 0.4s ease;
+  padding: 0;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.6);
   }
 `;
 
@@ -230,70 +260,110 @@ const ContactDesc = styled.p`
 
 const ContactButton = styled.a`
   display: inline-block;
-  background: #7162d7;
-  color: #fff;
+  background: #fff;
+  color: #0a0a0a;
   padding: 14px 44px;
   font-size: 0.95rem;
   font-weight: 600;
   text-decoration: none;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
 
   &:hover {
-    background: #5a4cc6;
+    background: #ddd;
   }
 `;
 
 const Home: NextPage = () => {
-  const sectionRef = useRef<HTMLElement>(null);
-  const [offset, setOffset] = useState(0);
-  const [progress, setProgress] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const isAnimating = useRef(false);
   const count = projects.length;
+  const touchStart = useRef(0);
+
+  const goTo = useCallback(
+    (idx: number) => {
+      if (idx < 0 || idx >= count || isAnimating.current) return;
+      isAnimating.current = true;
+      setCurrentIndex(idx);
+      setTimeout(() => {
+        isAnimating.current = false;
+      }, 900);
+    },
+    [count]
+  );
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (!sectionRef.current) return;
+    const handleWheel = (e: WheelEvent) => {
+      // Contact 섹션 위에서는 무시
+      const target = e.target as HTMLElement;
+      if (target.closest("[data-contact]")) return;
 
-      const rect = sectionRef.current.getBoundingClientRect();
-      const sectionTop = -rect.top;
-      const sectionHeight = sectionRef.current.offsetHeight - window.innerHeight;
+      e.preventDefault();
 
-      if (sectionTop < 0 || sectionTop > sectionHeight) {
-        // 가로 스크롤 영역 밖
-        if (sectionTop < 0) {
-          setOffset(0);
-          setProgress(0);
-          setCurrentIndex(0);
-        } else {
-          setOffset(-(count - 1) * window.innerWidth);
-          setProgress(100);
-          setCurrentIndex(count - 1);
+      if (isAnimating.current) return;
+
+      if (e.deltaY > 30) {
+        if (currentIndex < count - 1) {
+          goTo(currentIndex + 1);
         }
-        return;
+      } else if (e.deltaY < -30) {
+        if (currentIndex > 0) {
+          goTo(currentIndex - 1);
+        }
       }
-
-      const ratio = sectionTop / sectionHeight;
-      const maxOffset = (count - 1) * window.innerWidth;
-      setOffset(-(ratio * maxOffset));
-      setProgress(ratio * 100);
-      setCurrentIndex(Math.min(Math.floor(ratio * count), count - 1));
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [count]);
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+        goTo(currentIndex + 1);
+      } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+        goTo(currentIndex - 1);
+      }
+    };
+
+    const handleTouchStart = (e: TouchEvent) => {
+      touchStart.current = e.touches[0].clientX;
+    };
+
+    const handleTouchEnd = (e: TouchEvent) => {
+      const diff = touchStart.current - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 60) {
+        if (diff > 0) goTo(currentIndex + 1);
+        else goTo(currentIndex - 1);
+      }
+    };
+
+    window.addEventListener("wheel", handleWheel, { passive: false });
+    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("touchstart", handleTouchStart, { passive: true });
+    window.addEventListener("touchend", handleTouchEnd, { passive: true });
+
+    return () => {
+      window.removeEventListener("wheel", handleWheel);
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchend", handleTouchEnd);
+    };
+  }, [currentIndex, count, goTo]);
+
+  const progress = ((currentIndex + 1) / count) * 100;
 
   return (
     <>
       <Seo title="Pluton | Digital Experience Studio" />
 
-      <HorizontalSection ref={sectionRef} count={count}>
-        <StickyContainer>
-          <Track offset={offset}>
+      <PageWrapper>
+        <SliderSection>
+          <Track index={currentIndex}>
             {projects.map((project, idx) => (
               <Link key={project.id} href={`/portfolio/${project.id}`}>
-                <a style={{ display: "block", flexShrink: 0, width: "100vw", height: "100%" }}>
+                <a
+                  style={{
+                    display: "block",
+                    flexShrink: 0,
+                    width: "100vw",
+                    height: "100%",
+                  }}
+                >
                   <Slide>
                     <Image
                       src={project.thumbnail}
@@ -306,7 +376,8 @@ const Home: NextPage = () => {
                     <SlideContent>
                       <TextGroup>
                         <Number>
-                          {String(idx + 1).padStart(2, "0")} / {String(count).padStart(2, "0")}
+                          {String(idx + 1).padStart(2, "0")} /{" "}
+                          {String(count).padStart(2, "0")}
                         </Number>
                         <Category>{project.category}</Category>
                         <Title>{project.client}</Title>
@@ -329,18 +400,18 @@ const Home: NextPage = () => {
           <ProgressBar>
             <ProgressFill progress={progress} />
           </ProgressBar>
-        </StickyContainer>
-      </HorizontalSection>
 
-      <ContactSection>
-        <ContactTitle>프로젝트 문의</ContactTitle>
-        <ContactDesc>
-          새로운 프로젝트에 대해 이야기 나눠보겠습니다.
-        </ContactDesc>
-        <ContactButton href="mailto:godtheenell@gmail.com">
-          Contact Us
-        </ContactButton>
-      </ContactSection>
+          <DotNav>
+            {projects.map((_, idx) => (
+              <Dot
+                key={idx}
+                active={idx === currentIndex}
+                onClick={() => goTo(idx)}
+              />
+            ))}
+          </DotNav>
+        </SliderSection>
+      </PageWrapper>
     </>
   );
 };

@@ -147,7 +147,7 @@ const Appbar = () => {
                       fontSize: "0.875rem",
                       padding: "8px 24px",
                       "&:hover": {
-                        backgroundColor: "#7162d7",
+                        backgroundColor: "#333",
                         color: "#fff",
                       },
                     }}
