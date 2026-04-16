@@ -149,7 +149,7 @@ const projects: ProjectData[] = [
       "/images/g63/g63_inner.webp",
       "/images/g63/g63_color.webp",
     ],
-    link: "",
+    link: "https://g63-modeling.vercel.app/",
   },
   {
     id: "jwork",
