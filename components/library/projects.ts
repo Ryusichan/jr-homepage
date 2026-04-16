@@ -118,6 +118,21 @@ const projects: ProjectData[] = [
     link: "",
   },
   {
+    id: "galaxy",
+    title: "Curiosity Rover",
+    subtitle: "Three.js + Cannon.js 3D 물리엔진 게임",
+    category: "3D Game",
+    date: "2023",
+    client: "Personal Project",
+    description:
+      "Three.js와 Cannon.js 물리엔진을 결합하여 웹 브라우저에서 직접 플레이할 수 있는 3D 게임입니다. 실시간 물리 시뮬레이션을 적용하여 중력, 충돌, 마찰 등 현실적인 물리 반응을 구현했으며, 사용자가 로버를 직접 조작하며 지형을 탐험하는 인터랙티브 체험을 제공합니다. WebGL 기반의 고품질 3D 렌더링으로 생동감 있는 환경을 연출하고, 키보드와 마우스를 활용한 직관적인 조작 시스템으로 누구나 쉽게 게임을 즐길 수 있습니다. 물리 엔진의 정밀한 충돌 감지와 강체 시뮬레이션으로 사실적인 차량 거동을 재현했으며, 다양한 지형과 장애물을 배치하여 게임의 재미를 극대화했습니다. Vite를 사용한 빠른 빌드 환경에서 개발되었으며, 3D 에셋 최적화를 통해 별도 설치 없이 웹 브라우저만으로 부드러운 게임 플레이가 가능합니다. 게임, 시뮬레이션, 인터랙티브 교육 등 물리 엔진이 필요한 다양한 웹 프로젝트에 적용 가능한 기술력을 보여줍니다.",
+    techStack: ["Three.js", "Cannon.js", "WebGL", "Vite"],
+    thumbnail: "/images/popol-bg/content06.webp",
+    images: [],
+    link: "https://curiosity-rover-project.vercel.app/",
+    bgWhite: true,
+  },
+  {
     id: "lyft",
     title: "LYFT 랜딩 & 관리자",
     subtitle: "LYFT 쇼핑몰 랜딩페이지 및 관리자 시스템",
@@ -194,21 +209,6 @@ const projects: ProjectData[] = [
     thumbnail: "/images/popol-bg/content05.webp",
     images: [],
     link: "https://myhome-portfolio.vercel.app/",
-    bgWhite: true,
-  },
-  {
-    id: "galaxy",
-    title: "Galaxy 프로젝트",
-    subtitle: "Three.js 기반 3D 은하계 시뮬레이션",
-    category: "3D Web",
-    date: "2023",
-    client: "Personal Project",
-    description:
-      "우주의 광활함을 웹 브라우저에서 체험할 수 있는 Three.js 기반 3D 은하계 시뮬레이션입니다. 실제 천문학 데이터를 참고하여 은하계의 각 행성 간 크기 비율과 공전 거리를 사실적으로 표현했으며, 파티클 시스템을 활용한 성운과 별들의 연출로 우주 공간의 장엄함을 구현했습니다. 사용자가 자유롭게 시점을 이동하며 태양계를 탐험할 수 있는 인터랙티브 카메라 컨트롤을 제공하며, 각 행성에 가까이 다가가면 상세 정보가 표시되는 정보 레이어를 구현했습니다. WebGL 셰이더를 활용한 행성 표면 렌더링과 대기 효과로 시각적 완성도를 높였으며, 실시간 조명 계산으로 태양 빛에 의한 행성의 명암을 사실적으로 표현합니다. Vite를 사용한 빠른 빌드 환경에서 개발되었으며, 3D 에셋 최적화를 통해 다양한 디바이스에서도 원활한 렌더링 성능을 달성했습니다. 교육 콘텐츠, 인터랙티브 전시, 데이터 시각화 등 다양한 분야에 적용 가능한 기술적 역량을 보여줍니다.",
-    techStack: ["Three.js", "WebGL", "Vite"],
-    thumbnail: "/images/popol-bg/content06.webp",
-    images: [],
-    link: "https://three-galaxy-lake.vercel.app/",
     bgWhite: true,
   },
   {
