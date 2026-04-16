@@ -1,103 +1,83 @@
 import React from "react";
-import { Mail, Phone, RateReview } from "@mui/icons-material";
+import { Mail, RateReview } from "@mui/icons-material";
 import { Box, Container, Stack, Typography } from "@mui/material";
-import AdbIcon from "@mui/icons-material/Adb";
 import styled from "styled-components";
 import Link from "next/link";
 
-const ConpanyContainer = styled(Stack)``;
+const FooterWrap = styled.footer`
+  background-color: #050505;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+`;
 
-const ContactContainer = styled(Stack)``;
-
-const CTContent = styled(Stack)``;
+const FooterLink = styled.a`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666;
+  transition: color 0.2s;
+  &:hover {
+    color: #fff;
+  }
+`;
 
 const Footer = () => {
   return (
-    <React.Fragment>
-      <Box sx={{ bgcolor: "#3F3059", p: { xs: 2, sm: 4 } }}>
-        <Container maxWidth="lg">
-          <Stack
-            sx={{
-              color: "white",
-              width: "100%",
-              flexDirection: { xs: "column", sm: "row" },
-            }}
-            direction="row"
-            justifyContent={"space-between"}
-          >
-            <ConpanyContainer spacing={4} sx={{ mb: { xs: 4, sm: 0 } }}>
-              <Stack direction={"row"}>
-                {/* <AdbIcon
-                  sx={{
-                    mr: 1,
-                  }}
-                /> */}
-                <Typography
-                  variant="h6"
-                  noWrap
-                  component="a"
-                  sx={{
-                    mr: 2,
-                    fontFamily: "monospace",
-                    fontWeight: 700,
-                    letterSpacing: ".3rem",
-                    color: "inherit",
-                    textDecoration: "none",
-                  }}
-                >
-                  PLUTON
-                </Typography>
-              </Stack>
-
-              <Typography
-                variant="body2"
-                component="h6"
-                sx={{ color: "inherit" }}
-              >
-                최적의 서비스를 제작하기 위해 노력합니다.
-              </Typography>
-            </ConpanyContainer>
-
-            <ContactContainer spacing={2}>
-              <Typography
-                variant="body2"
-                component="h6"
-                sx={{ color: "inherit" }}
-              >
-                Contact
-              </Typography>
-              <Stack spacing={2}>
-                <Link href={"https://velog.io/@godtheenell"}>
-                  <a target="_blank">
-                    <CTContent direction={"row"} spacing={2}>
-                      <RateReview />
-                      <Typography
-                        variant="body2"
-                        component="h6"
-                        sx={{ color: "inherit" }}
-                      >
-                        Velog
-                      </Typography>
-                    </CTContent>
-                  </a>
-                </Link>
-                <CTContent direction={"row"} spacing={2}>
-                  <Mail />
-                  <Typography
-                    variant="body2"
-                    component="h6"
-                    sx={{ color: "inherit" }}
-                  >
-                    godtheenell@gmail.com
-                  </Typography>
-                </CTContent>
-              </Stack>
-            </ContactContainer>
+    <FooterWrap>
+      <Container maxWidth="lg" sx={{ py: { xs: 4, sm: 6 } }}>
+        <Stack
+          sx={{
+            flexDirection: { xs: "column", sm: "row" },
+            gap: { xs: 4, sm: 0 },
+          }}
+          justifyContent="space-between"
+          alignItems={{ xs: "flex-start", sm: "center" }}
+        >
+          <Stack spacing={1}>
+            <Typography
+              sx={{
+                fontFamily: "monospace",
+                fontWeight: 700,
+                letterSpacing: ".2rem",
+                color: "#fff",
+                fontSize: "1.2rem",
+              }}
+            >
+              PLUTON
+            </Typography>
+            <Typography sx={{ color: "#555", fontSize: "0.85rem" }}>
+              Digital Experience Studio
+            </Typography>
           </Stack>
-        </Container>
-        ;
-      </Box>
-    </React.Fragment>
+
+          <Stack spacing={1.5}>
+            <Link href="https://velog.io/@godtheenell">
+              <FooterLink target="_blank">
+                <RateReview sx={{ fontSize: 18 }} />
+                <Typography sx={{ fontSize: "0.85rem" }}>Velog</Typography>
+              </FooterLink>
+            </Link>
+            <FooterLink href="mailto:godtheenell@gmail.com">
+              <Mail sx={{ fontSize: 18 }} />
+              <Typography sx={{ fontSize: "0.85rem" }}>
+                godtheenell@gmail.com
+              </Typography>
+            </FooterLink>
+          </Stack>
+        </Stack>
+
+        <Box
+          sx={{
+            mt: 4,
+            pt: 3,
+            borderTop: "1px solid rgba(255,255,255,0.06)",
+          }}
+        >
+          <Typography sx={{ color: "#333", fontSize: "0.75rem" }}>
+            &copy; {new Date().getFullYear()} Pluton. All rights reserved.
+          </Typography>
+        </Box>
+      </Container>
+    </FooterWrap>
   );
 };
 

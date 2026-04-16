@@ -58,9 +58,6 @@
 html * {
   margin: 0;
   padding: 0;
-  font-family: "Roboto", "malgun Gothic", sans-serif, "Apple SD Gothic Neo",
-    dotum;
-  /* font-family: 'Noto Sans KR', sans-serif; */
   font-family: "SCDream", sans-serif !important;
 }
 
@@ -69,14 +66,8 @@ body {
   padding: 0;
   margin: 0;
   font-family: "SCDream", sans-serif !important;
-}
-
-::-webkit-scrollbar-button:start:decrement,
-::-webkit-scrollbar-button:end:increment {
-  width: 0px;
-  height: 0px;
-  background-color: rgba(200, 200, 200, 0.1);
-  border-radius: 4px;
+  background-color: #0a0a0a;
+  color: #ffffff;
 }
 
 a {
@@ -87,41 +78,41 @@ a {
 * {
   box-sizing: border-box;
 }
+
 body {
   max-width: 100%;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
-}
-
-::-webkit-scrollbar {
-  width: 8px; /* 스크롤바의 너비 */
-  height: 8px;
-}
-
-::-webkit-scrollbar-thumb {
-  height: 30%; /* 스크롤바의 길이 */
-  background: #a5d1ff; /* 스크롤바의 색상 */
-
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: rgb(147 193 255 / 10%); /*스크롤바 뒷 배경 색상*/
-}
-
-/* 아이폰 이미지 저장 방지 */
-body {
   -webkit-touch-callout: none;
 }
-/* PC에서 이미지 다운로드 방지하기 */
+
 img {
   pointer-events: none;
 }
 
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
 @media (max-width: 415px) {
   ::-webkit-scrollbar {
-    width: 4px; /* 스크롤바의 너비 */
-    height: 4px;
+    width: 3px;
+    height: 3px;
   }
 }
