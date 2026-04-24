@@ -140,12 +140,19 @@ const SectionHeading = styled.h2`
   margin-bottom: 20px;
 `;
 
+const DescriptionBlock = styled.div`
+  margin-bottom: 48px;
+`;
+
 const DescriptionText = styled.p`
   font-size: 1.05rem;
   color: #aaa;
   line-height: 1.8;
-  margin-bottom: 48px;
   word-break: keep-all;
+
+  & + & {
+    margin-top: 20px;
+  }
 `;
 
 const TechList = styled.div`
@@ -261,7 +268,11 @@ const PortfolioDetail = ({ project }: Props) => {
         </MetaGrid>
 
         <SectionHeading>Overview</SectionHeading>
-        <DescriptionText>{project.description}</DescriptionText>
+        <DescriptionBlock>
+          {project.description.split(/\n\n+/).map((para, i) => (
+            <DescriptionText key={i}>{para.trim()}</DescriptionText>
+          ))}
+        </DescriptionBlock>
 
         <SectionHeading>Tech Stack</SectionHeading>
         <TechList>
